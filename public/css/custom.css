@@ -19,6 +19,16 @@ body.bg-dark {
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
 }
+
+.badge {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.badge.bg-dark {
+    background-color: #252525 !important;
+}
+
 .cover-container {
   max-width: 60em;
 }
@@ -37,14 +47,15 @@ body.bg-dark {
 .nav-masthead .nav-link {
     padding: .25rem 0;
     font-weight: 700;
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .75);
     background-color: transparent;
     border-bottom: .25rem solid transparent;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-    border-bottom-color: rgba(255, 255, 255, .25);
+    border-bottom-color: rgba(255, 255, 255, .5);
 }
 
 .nav-masthead .nav-link + .nav-link {
@@ -65,4 +76,25 @@ body.bg-dark {
         text-align: center !important;
         padding-top: 2rem;
     }
+}
+
+a {
+    color: #fff
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.bg-orange {
+    background:#ee4426;
+}
+
+a.badge {
+    text-decoration: none;
+}
+
+a:hover.badge {
+    text-decoration: underline;
 }
