@@ -15,9 +15,12 @@ body {
 body.bg-dark {
     background-image: url('../img/background.jpg'); /* The image used */
     background-color: #212529; /* Used if the image is unavailable */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-position: center center; /* Center the image */
+    background-repeat: repeat-y; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 .badge {
@@ -31,6 +34,8 @@ body.bg-dark {
 
 .cover-container {
   max-width: 60em;
+  padding: 20px auto;
+  overflow: auto;
 }
 
 .rounded {
