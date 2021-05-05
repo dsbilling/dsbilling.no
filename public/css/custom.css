@@ -79,6 +79,7 @@ body.bg-dark {
     .description {
         text-align: center !important;
         padding-top: 2rem;
+        padding-bottom: 2rem;
     }
 }
 
