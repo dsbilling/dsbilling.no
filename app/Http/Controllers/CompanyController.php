@@ -43,7 +43,9 @@ class CompanyController extends Controller
             ],
         ]);
         Company::create($validatedData);
-        return redirect()->route('companies.index')->with('success', 'Created company!');
+        session()->flash('flash.banner', 'Created Company!');
+        session()->flash('flash.bannerStyle', 'success');
+        return redirect()->route('companies.index');
     }
 
     /**
@@ -84,7 +86,9 @@ class CompanyController extends Controller
             ],
         ]);
         $company->update($validatedData);
-        return redirect()->route('companies.index')->with('success', 'Updated company!');
+        session()->flash('flash.banner', 'Updated Company!');
+        session()->flash('flash.bannerStyle', 'success');
+        return redirect()->route('companies.index');
     }
 
     /**
@@ -93,9 +97,11 @@ class CompanyController extends Controller
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Company $company)
+    public function destroy(Request $request, Company $company)
     {
         $company->delete();
-        return redirect()->route('companies.index')->with('success', 'Deleted company!');
+        session()->flash('flash.banner', 'Deleted Company!');
+        session()->flash('flash.bannerStyle', 'success');
+        return redirect()->route('companies.index');
     }
 }
