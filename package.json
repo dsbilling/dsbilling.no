@@ -19,5 +19,9 @@
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
         "tailwindcss": "^2.0.1"
+    },
+    "dependencies": {
+        "bootstrap": "^5.0.1",
+        "fontawesome-svg-loader": "^0.4.0"
     }
 }
