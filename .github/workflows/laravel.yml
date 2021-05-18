@@ -37,6 +37,12 @@ jobs:
           php artisan key:generate
       - name: Clear Config
         run: php artisan config:clear
+      - name: Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
+      - name: Create Database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
       - name: Test with phpunit
         env:
           DB_CONNECTION: sqlite
