@@ -66,8 +66,9 @@
     </main>
 
     <footer>
-        <nav class="nav nav-masthead justify-content-center mb-4">
-        </nav>
+        <div class="text-center justify-content-center text-muted mb-2">
+            Built with Laravel v{{ Illuminate\Foundation\Application::VERSION }}, check it out on <a class="ml-1 text-muted" href="https://github.com/DanielRTRD/daniel.rtrd.no"><i class="fab fa-github"></i>Github</a>
+        </div>
     </footer>
 
 </div>
