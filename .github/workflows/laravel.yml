@@ -38,4 +38,7 @@ jobs:
       - name: Clear Config
         run: php artisan config:clear
       - name: Test with phpunit
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
         run: vendor/bin/phpunit --coverage-text
