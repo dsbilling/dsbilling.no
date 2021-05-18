@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/home.css') }}" rel="stylesheet">
 
   </head>
 <body class="d-flex h-100 text-white bg-dark">
