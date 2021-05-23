@@ -52,7 +52,7 @@
                                         issued_at
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $course->issued_at->toDateString() }}
+                                        {{ $course->issued_at->diffForHumans() }} &mdash; {{ $course->issued_at->toDateString() }}
                                     </td>
                                 </tr>
                                 <tr class="border-b">

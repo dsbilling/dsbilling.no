@@ -41,7 +41,7 @@
                                 </tr>
                                 <tr class="border-b">
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        NaIdentifierme
+                                        Identifier
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                         {{ $certification->identifier }}
@@ -52,7 +52,7 @@
                                         issued_at
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $certification->issued_at->toDateString() }}
+                                        {{ $certification->issued_at->diffForHumans() }} &mdash; {{ $certification->issued_at->toDateString() }}
                                     </td>
                                 </tr>
                                 <tr class="border-b">
@@ -60,7 +60,7 @@
                                         expiration_at
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
-                                        {{ $certification->expiration_at ? $certification->expiration_at->toDateString() : '' }}
+                                        {!! $certification->expiration_at ? $certification->expiration_at->diffForHumans() . ' &mdash; ' . $certification->expiration_at->toDateString() : '' !!}
                                     </td>
                                 </tr>
                                 <tr class="border-b">

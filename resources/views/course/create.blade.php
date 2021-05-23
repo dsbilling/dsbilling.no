@@ -30,6 +30,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="type" class="block font-medium text-sm text-gray-700">Type</label>
                             <select name="type" id="type" class="form-multiselect block rounded-md shadow-sm mt-1 block w-full">
+                                <option value="">-</option>
                                 <option value="Interactive Online"{{ ("Interactive Online" == old('type')) ? ' selected' : '' }}>Interactive Online</option>
                                 <option value="Classroom"{{ ("Classroom" == old('type')) ? ' selected' : '' }}>Classroom</option>
                                 <option value="Online"{{ ("Online" == old('type')) ? ' selected' : '' }}>Online</option>
@@ -49,6 +50,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="company_id" class="block font-medium text-sm text-gray-700">Company</label>
                             <select name="company_id" id="company_id" class="form-multiselect block rounded-md shadow-sm mt-1 block w-full">
+                                <option value="">-</option>
                                 @foreach($companies as $id => $company)
                                     <option value="{{ $id }}"{{ ($id == old('company_id', '')) ? ' selected' : '' }}>{{ $company }}</option>
                                 @endforeach
