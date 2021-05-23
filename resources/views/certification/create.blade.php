@@ -38,7 +38,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="issued_at" class="block font-medium text-sm text-gray-700">issued_at</label>
                             <input type="date" name="issued_at" id="issued_at" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('issued_at', '') }}" />
+                                   value="{{ old('issued_at', '') }}" max="{{ now()->toDateString() }}" />
                             @error('issued_at')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
@@ -46,7 +46,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="expiration_at" class="block font-medium text-sm text-gray-700">expiration_at</label>
                             <input type="date" name="expiration_at" id="expiration_at" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('expiration_at', '') }}" />
+                                   value="{{ old('expiration_at', '') }}" min="{{ now()->toDateString() }}" />
                             @error('expiration_at')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
