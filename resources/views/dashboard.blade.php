@@ -13,7 +13,7 @@
                     <div class="p-5">
                         <div class="ml-2 w-full flex-1">
                             <div>
-                                <div class="mt-3 text-3xl font-bold leading-8">{{ App\Models\Course::count() }}</div>
+                                <div class="mt-3 text-3xl font-bold leading-8">{{ $courses }}</div>
 
                                 <div class="mt-1 text-base text-gray-600">Courses</div>
                             </div>
@@ -25,7 +25,7 @@
                     <div class="p-5">
                         <div class="ml-2 w-full flex-1">
                             <div>
-                                <div class="mt-3 text-3xl font-bold leading-8">{{ App\Models\Certification::count() }}</div>
+                                <div class="mt-3 text-3xl font-bold leading-8">{{ $certifications }}</div>
 
                                 <div class="mt-1 text-base text-gray-600">Certifications</div>
                             </div>
@@ -37,7 +37,7 @@
                     <div class="p-5">
                         <div class="ml-2 w-full flex-1">
                             <div>
-                                <div class="mt-3 text-3xl font-bold leading-8">{{ App\Models\Company::count() }}</div>
+                                <div class="mt-3 text-3xl font-bold leading-8">{{ $companies }}</div>
 
                                 <div class="mt-1 text-base text-gray-600">Companies</div>
                             </div>
