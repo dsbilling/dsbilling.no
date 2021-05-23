@@ -48,7 +48,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="started_at" class="block font-medium text-sm text-gray-700">Started at</label>
                             <input type="date" name="started_at" id="started_at" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('started_at', $experience->started_at->toDateString()) }}" max="{{ now()->toDateString() }}" />
+                                   value="{{ old('started_at', $experience->started_at->toDateString()) }}" />
                             @error('started_at')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
@@ -56,7 +56,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="ended_at" class="block font-medium text-sm text-gray-700">Ended at</label>
                             <input type="date" name="ended_at" id="ended_at" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ ($experience->ended_at) ? $experience->ended_at->toDateString() : old('ended_at') }}" min="{{ now()->toDateString() }}" />
+                                   value="{{ ($experience->ended_at) ? $experience->ended_at->toDateString() : old('ended_at') }}" max="{{ now()->toDateString() }}" />
                             @error('ended_at')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
