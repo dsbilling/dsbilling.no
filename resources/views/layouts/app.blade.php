@@ -42,6 +42,7 @@
 
             <!-- Page Content -->
             <main>
+                <x-jet-validation-errors class="relative py-3 pl-4 pr-10 leading-normal text-red-700 bg-red-100 rounded-lg max-w-4xl mx-auto my-5" />
                 {{ $slot }}
             </main>
         </div>
