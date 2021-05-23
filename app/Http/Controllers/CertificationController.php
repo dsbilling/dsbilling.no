@@ -45,7 +45,7 @@ class CertificationController extends Controller
             ],
             'short' => [
                 'string',
-                'required',
+                'nullable',
             ],
             'identifier' => [
                 'string',
@@ -109,7 +109,7 @@ class CertificationController extends Controller
             ],
             'short' => [
                 'string',
-                'required',
+                'nullable',
             ],
             'identifier' => [
                 'string',
