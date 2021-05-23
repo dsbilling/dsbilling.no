@@ -7,8 +7,43 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                
+            <div class="grid grid-cols-12 gap-6 mt-5">
+                <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                    href="{{ route('courses.index') }}">
+                    <div class="p-5">
+                        <div class="ml-2 w-full flex-1">
+                            <div>
+                                <div class="mt-3 text-3xl font-bold leading-8">{{ App\Models\Course::count() }}</div>
+
+                                <div class="mt-1 text-base text-gray-600">Courses</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                    href="{{ route('certifications.index') }}">
+                    <div class="p-5">
+                        <div class="ml-2 w-full flex-1">
+                            <div>
+                                <div class="mt-3 text-3xl font-bold leading-8">{{ App\Models\Certification::count() }}</div>
+
+                                <div class="mt-1 text-base text-gray-600">Certifications</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                    href="{{ route('companies.index') }}">
+                    <div class="p-5">
+                        <div class="ml-2 w-full flex-1">
+                            <div>
+                                <div class="mt-3 text-3xl font-bold leading-8">{{ App\Models\Company::count() }}</div>
+
+                                <div class="mt-1 text-base text-gray-600">Companies</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
