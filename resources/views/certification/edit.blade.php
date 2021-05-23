@@ -47,7 +47,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="expiration_at" class="block font-medium text-sm text-gray-700">expiration_at</label>
                             <input type="date" name="expiration_at" id="expiration_at" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('expiration_at', $certification->expiration_at->toDateString()) }}" min="{{ now()->toDateString() }}" />
+                                   value="{{ old('expiration_at', ($certification->expiration_at ? $certification->expiration_at->toDateString():'')) }}" min="{{ now()->toDateString() }}" />
                             @error('expiration_at')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
