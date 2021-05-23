@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Course;
+use App\Models\Certification;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('daniel');
+        $certifications = Certification::count();
+        $courses = Course::count();
+        return view('daniel', compact('certifications', 'courses'));
     }
 
 }

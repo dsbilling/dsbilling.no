@@ -43,6 +43,8 @@
 
                             <h1>Hello, I'm Daniel S. Billing &#x1F44B;</h1>
                             <h5 class="mb-4">...a Software Systems Engineer from Norway &#x1F1F3;&#x1F1F4;</h5>
+
+                            <p>I have {{ $certifications }} certifications and {{ $courses }} courses, under my belt. &#x1F913;</p>
                             
                             <p>What I do in short; AV Systems Development as a primary job, PHP/Laravel as a hobby/side-job, and frelance work for e-sport teams and LAN-parties.</p>
                             
