@@ -84,7 +84,9 @@
                     </div>
                 </div>
             </div>
-
+            <div class="py-3">
+                {{ $courses->links() }}
+            </div>
         </div>
     </div>
 </x-app-layout>

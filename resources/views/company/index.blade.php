@@ -56,7 +56,9 @@
                     </div>
                 </div>
             </div>
-
+            <div class="py-3">
+                {{ $companies->links() }}
+            </div>
         </div>
     </div>
 </x-app-layout>

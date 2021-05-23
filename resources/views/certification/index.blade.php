@@ -91,7 +91,9 @@
                     </div>
                 </div>
             </div>
-
+            <div class="py-3">
+                {{ $certifications->links() }}
+            </div>
         </div>
     </div>
 </x-app-layout>

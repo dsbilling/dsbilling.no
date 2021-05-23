@@ -15,7 +15,7 @@ class CertificationController extends Controller
      */
     public function index()
     {
-        $certifications = Certification::all();
+        $certifications = Certification::orderBy('issued_at', 'desc')->paginate(10);
         return view('certification.index', compact('certifications'));
     }
 
