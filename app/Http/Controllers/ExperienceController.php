@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Experience;
 use Illuminate\Http\Request;
-use App\Models\Certification;
 
-class CertificationController extends Controller
+class ExperienceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class CertificationController extends Controller
      */
     public function index()
     {
-        $certifications = Certification::orderBy('issued_at', 'desc')->paginate(10);
-        return view('certification.index', compact('certifications'));
+        $experiences = Experience::orderBy('started_at', 'desc')->paginate(10);
+        return view('experience.index', compact('experiences'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CertificationController extends Controller
     public function create()
     {
         $companies = Company::pluck('name', 'id');
-        return view('certification.create', compact('companies'));
+        return view('experience.create', compact('companies'));
     }
 
     /**
@@ -39,23 +39,22 @@ class CertificationController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => [
+            'title' => [
                 'string',
                 'required',
             ],
-            'short' => [
+            'department' => [
                 'string',
                 'nullable',
             ],
-            'identifier' => [
-                'string',
-                'nullable'
+            'type' => [
+                'required',
             ],
-            'issued_at' => [
+            'started_at' => [
                 'date',
                 'required',
             ],
-            'expiration_at' => [
+            'ended_at' => [
                 'date',
                 'nullable'
             ],
@@ -64,62 +63,62 @@ class CertificationController extends Controller
                 'integer',
             ],
         ]);
-        Certification::create($validatedData);
-        session()->flash('flash.banner', 'Created Certification!');
+        Experience::create($validatedData);
+        session()->flash('flash.banner', 'Created Experience!');
         session()->flash('flash.bannerStyle', 'success');
-        return redirect()->route('certifications.index');
+        return redirect()->route('experiences.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Certification  $certification
+     * @param  \App\Models\Experience  $experience
      * @return \Illuminate\Http\Response
      */
-    public function show(Certification $certification)
+    public function show(Experience $experience)
     {
-        return view('certification.show', compact('certification'));
+        return view('experience.show', compact('experience'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Certification  $certification
+     * @param  \App\Models\Experience  $experience
      * @return \Illuminate\Http\Response
      */
-    public function edit(Certification $certification)
+    public function edit(Experience $experience)
     {
         $companies = Company::all();
-        return view('certification.edit', compact('certification', 'companies'));
+        return view('experience.edit', compact('experience', 'companies'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Certification  $certification
+     * @param  \App\Models\Experience  $experience
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Certification $certification)
+    public function update(Request $request, Experience $experience)
     {
         $validatedData = $request->validate([
-            'name' => [
+            'title' => [
                 'string',
                 'required',
             ],
-            'short' => [
+            'department' => [
                 'string',
                 'nullable',
             ],
-            'identifier' => [
+            'type' => [
                 'string',
-                'nullable'
+                'required'
             ],
-            'issued_at' => [
+            'started_at' => [
                 'date',
                 'required',
             ],
-            'expiration_at' => [
+            'ended_at' => [
                 'date',
                 'nullable'
             ],
@@ -128,23 +127,23 @@ class CertificationController extends Controller
                 'integer',
             ],
         ]);
-        $certification->update($validatedData);
-        session()->flash('flash.banner', 'Updated Certification!');
+        $experience->update($validatedData);
+        session()->flash('flash.banner', 'Updated Experience!');
         session()->flash('flash.bannerStyle', 'success');
-        return redirect()->route('certifications.index');
+        return redirect()->route('experiences.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Certification  $certification
+     * @param  \App\Models\Experience  $experience
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Certification $certification)
+    public function destroy(Experience $experience)
     {
-        $certification->delete();
-        session()->flash('flash.banner', 'Deleted Certification!');
+        $experience->delete();
+        session()->flash('flash.banner', 'Deleted Experience!');
         session()->flash('flash.bannerStyle', 'success');
-        return redirect()->route('certifications.index');
+        return redirect()->route('experiences.index');
     }
 }
