@@ -59,7 +59,7 @@ class CertificationController extends Controller
                 'date',
                 'nullable'
             ],
-            'company_id'    => [
+            'company_id' => [
                 'required',
                 'integer',
             ],
@@ -123,7 +123,7 @@ class CertificationController extends Controller
                 'date',
                 'nullable'
             ],
-            'company_id'    => [
+            'company_id' => [
                 'required',
                 'integer',
             ],
