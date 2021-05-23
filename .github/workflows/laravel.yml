@@ -1,4 +1,4 @@
-name: Testing Laravel
+name: Laravel
 on: [push, pull_request]
 jobs:
   laravel:
