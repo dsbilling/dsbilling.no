@@ -71,7 +71,7 @@
                                             </td>
 
                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
-                                                {{ $certification->company->name }}
+                                                {{ $certification->company->name ?? 'N/A' }}
                                             </td>
 
                                             <td class="p-3 whitespace-nowrap text-sm font-medium">
