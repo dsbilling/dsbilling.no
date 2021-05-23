@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Company;
+use App\Models\Experience;
 use App\Models\Certification;
 
 class HomeController extends Controller
@@ -30,7 +31,8 @@ class HomeController extends Controller
         $certifications = Certification::count();
         $courses = Course::count();
         $companies = Company::count();
-        return view('dashboard', compact('certifications', 'courses', 'companies'));
+        $experiences = Experience::count();
+        return view('dashboard', compact('certifications', 'courses', 'companies', 'experiences'));
     }
 
 }
