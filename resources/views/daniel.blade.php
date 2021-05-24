@@ -77,21 +77,7 @@
 
 </div>
 
-<!-- Loader script -->
-<script src="https://cdn.jsdelivr.net/npm/fontawesome-svg-loader@latest/dist/fontawesome-svg-loader.js"></script>
- 
-<!-- Fallback when JavaScript is not available -->
-<noscript>
-  <link
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
-    rel="stylesheet"
-  />
-</noscript>
-
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        awesomeLoader.init()
-    });
     var coll = document.getElementsByClassName("collapsible");
     var i;
     
