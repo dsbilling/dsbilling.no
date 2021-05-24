@@ -20,7 +20,8 @@ class HomeController extends Controller
         $certifications = Certification::count();
         $courses = Course::count();
         $socials = Social::all();
-        return view('daniel', compact('certifications', 'courses', 'socials'));
+        $experience = Experience::orderBy('started_at', 'ASC')->pluck('started_at')->first();
+        return view('daniel', compact('certifications', 'courses', 'socials', 'experience'));
     }
 
     /**
