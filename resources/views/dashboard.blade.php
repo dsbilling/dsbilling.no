@@ -57,7 +57,7 @@
                     </div>
                 </a>
                 <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
-                    href="{{ route('experiences.index') }}">
+                    href="{{ route('socials.index') }}">
                     <div class="p-5">
                         <div class="ml-2 w-full flex-1">
                             <div>
