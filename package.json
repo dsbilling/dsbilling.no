@@ -21,7 +21,7 @@
         "tailwindcss": "^2.0.1"
     },
     "dependencies": {
-        "bootstrap": "^5.0.1",
-        "fontawesome-svg-loader": "^0.4.0"
+        "@fortawesome/fontawesome-free": "^5.15.3",
+        "bootstrap": "^5.0.1"
     }
 }

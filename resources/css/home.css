@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import '@fortawesome/fontawesome-free';
 
 body {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
@@ -65,8 +66,8 @@ body.bg-dark {
     border-bottom-color: #fff;
 }
 
-.fab {
-    margin-right: 0.25rem;
+.svg-inline--fa {
+    margin-right: 0.25rem !important;
 }
 
 @media (max-width: 768px) {

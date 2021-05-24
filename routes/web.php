@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\CertificationController;
@@ -26,4 +27,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('certifications', CertificationController::class);
     Route::resource('courses', CourseController::class);
     Route::resource('experiences', ExperienceController::class);
+    Route::resource('socials', SocialController::class);
 });

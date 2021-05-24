@@ -16,6 +16,8 @@
 
     <link href="{{ mix('css/home.css') }}" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="{{ mix('js/home.js') }}" defer></script>
   </head>
 <body class="d-flex h-100 text-white bg-dark">
     
@@ -23,13 +25,9 @@
 
     <header>
         <nav class="nav nav-masthead justify-content-center mb-4">
-            <a class="nav-link" href="https://discordapp.com/users/183250357403648000"><i class="fab fa-discord"></i>Discord</a>
-            <a class="nav-link" href="https://github.com/DanielRTRD"><i class="fab fa-github"></i>Github</a>
-            <a class="nav-link" href="https://www.facebook.com/dsbilling"><i class="fab fa-facebook"></i>Facebook</a>
-            <a class="nav-link" href="https://twitter.com/DanielRTRD"><i class="fab fa-twitter"></i>Twitter</a>
-            <a class="nav-link" href="https://instagram.com/DanielRTRD"><i class="fab fa-instagram"></i>Instagram</a>
-            <a class="nav-link" href="https://twitch.tv/DanielRTRD"><i class="fab fa-twitch"></i>Twitch</a>
-            <a class="nav-link" href="https://www.linkedin.com/in/dsbilling/"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
+            @foreach($socials as $social)
+                <a class="nav-link" href="{{ $social->link }}"><i class="{{ $social->icon }}"></i>{{ $social->name }}</a>
+            @endforeach
         </nav>
     </header>
 
@@ -77,21 +75,7 @@
 
 </div>
 
-<!-- Loader script -->
-<script src="https://cdn.jsdelivr.net/npm/fontawesome-svg-loader@latest/dist/fontawesome-svg-loader.js"></script>
- 
-<!-- Fallback when JavaScript is not available -->
-<noscript>
-  <link
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
-    rel="stylesheet"
-  />
-</noscript>
-
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        awesomeLoader.init()
-    });
     var coll = document.getElementsByClassName("collapsible");
     var i;
     

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Social;
 use App\Models\Company;
 use App\Models\Experience;
 use App\Models\Certification;
@@ -18,7 +19,8 @@ class HomeController extends Controller
     {
         $certifications = Certification::count();
         $courses = Course::count();
-        return view('daniel', compact('certifications', 'courses'));
+        $socials = Social::all();
+        return view('daniel', compact('certifications', 'courses', 'socials'));
     }
 
     /**
@@ -32,7 +34,8 @@ class HomeController extends Controller
         $courses = Course::count();
         $companies = Company::count();
         $experiences = Experience::count();
-        return view('dashboard', compact('certifications', 'courses', 'companies', 'experiences'));
+        $socials = Social::count();
+        return view('dashboard', compact('certifications', 'courses', 'companies', 'experiences', 'socials'));
     }
 
 }
