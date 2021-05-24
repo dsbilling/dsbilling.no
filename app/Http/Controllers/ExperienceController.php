@@ -50,6 +50,10 @@ class ExperienceController extends Controller
             'type' => [
                 'required',
             ],
+            'description' => [
+                'string',
+                'nullable',
+            ],
             'started_at' => [
                 'date',
                 'required',
@@ -113,6 +117,10 @@ class ExperienceController extends Controller
             'type' => [
                 'string',
                 'required'
+            ],
+            'description' => [
+                'string',
+                'nullable',
             ],
             'started_at' => [
                 'date',

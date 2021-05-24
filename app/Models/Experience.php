@@ -15,6 +15,7 @@ class Experience extends Model
         'title',
         'department',
         'type',
+        'description',
         'started_at',
         'ended_at',
         'company_id',

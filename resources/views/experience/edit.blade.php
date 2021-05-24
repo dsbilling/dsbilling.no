@@ -46,6 +46,13 @@
                             @enderror
                         </div>
                         <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="description" class="block font-medium text-sm text-gray-700">Description</label>
+                            <textarea type="text" name="description" id="description" class="form-input rounded-md shadow-sm mt-1 block w-full">{{ old('description', $experience->description) }}</textarea>
+                            @error('description')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="started_at" class="block font-medium text-sm text-gray-700">Started at</label>
                             <input type="date" name="started_at" id="started_at" class="form-input rounded-md shadow-sm mt-1 block w-full"
                                    value="{{ old('started_at', $experience->started_at->toDateString()) }}" />
