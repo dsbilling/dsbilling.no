@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="pt-4 bg-gray-100">
+    <div class="pt-4 pb-8 bg-gray-100">
         <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
             <div>
                 <img src="{{ asset('img/logo.png') }}" class="block w-auto" />
