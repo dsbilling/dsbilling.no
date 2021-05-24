@@ -66,8 +66,8 @@ body.bg-dark {
     border-bottom-color: #fff;
 }
 
-.fab {
-    margin-right: 0.25rem;
+.svg-inline--fa {
+    margin-right: 0.25rem !important;
 }
 
 @media (max-width: 768px) {
