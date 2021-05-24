@@ -16,6 +16,8 @@
 
     <link href="{{ mix('css/home.css') }}" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="{{ mix('js/home.js') }}" defer></script>
   </head>
 <body class="d-flex h-100 text-white bg-dark">
     
