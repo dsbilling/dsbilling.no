@@ -19,7 +19,8 @@ class HomeController extends Controller
     {
         $certifications = Certification::count();
         $courses = Course::count();
-        return view('daniel', compact('certifications', 'courses'));
+        $socials = Social::all();
+        return view('daniel', compact('certifications', 'courses', 'socials'));
     }
 
     /**
