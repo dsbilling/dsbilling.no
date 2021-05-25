@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Models\Certification;
+use Illuminate\Support\Facades\Storage;
 
 class CertificationController extends Controller
 {
@@ -63,7 +64,17 @@ class CertificationController extends Controller
                 'required',
                 'integer',
             ],
+            'file' => [
+                'mimes:pdf',
+                'max:2048',
+                'nullable'
+            ],
         ]);
+        if($request->file()) {
+            $fileName = time().'_'.$request->file->getClientOriginalName();
+            $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+            $validatedData["file_path"] = $filePath;
+        }
         Certification::create($validatedData);
         session()->flash('flash.banner', 'Created Certification!');
         session()->flash('flash.bannerStyle', 'success');
@@ -127,7 +138,18 @@ class CertificationController extends Controller
                 'required',
                 'integer',
             ],
+            'file' => [
+                'mimes:pdf',
+                'max:2048',
+                'nullable'
+            ],
         ]);
+        if($request->file()) {
+            Storage::disk('public')->delete($certification->file_path); // Delete the old file
+            $fileName = time().'_'.$request->file->getClientOriginalName();
+            $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+            $validatedData["file_path"] = $filePath;
+        }
         $certification->update($validatedData);
         session()->flash('flash.banner', 'Updated Certification!');
         session()->flash('flash.bannerStyle', 'success');

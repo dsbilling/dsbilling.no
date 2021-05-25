@@ -18,6 +18,7 @@ class Certification extends Model
         'issued_at',
         'expiration_at',
         'company_id',
+        'file_path',
     ];
 
     protected $dates = ['issued_at', 'expiration_at'];
