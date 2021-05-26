@@ -6,7 +6,7 @@
     </x-slot>
 
     <div>
-        <div class="max-w-6xl mx-auto py-10 overflow-hidden">
+        <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div class="block mb-8">
                 <a href="{{ route('experiences.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add</a>
             </div>
