@@ -17,9 +17,6 @@
                             <table class="min-w-full divide-y divide-gray-200">
                                 <thead class="bg-gray-50">
                                     <tr>
-                                        <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            ID
-                                        </th>
                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                             Name
                                         </th>
@@ -30,10 +27,10 @@
                                             identifier
                                         </th>
                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            issued_at
+                                            issued
                                         </th>
                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                            expiration_at
+                                            expiration
                                         </th>
                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                             company
@@ -49,10 +46,6 @@
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     @foreach ($certifications as $certification)
                                         <tr>
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
-                                                {{ $certification->id }}
-                                            </td>
-
                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
                                                 {{ $certification->name }}
                                             </td>
