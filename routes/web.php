@@ -22,6 +22,11 @@ use App\Http\Controllers\CertificationController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth:sanctum', 'verified'])->name('dashboard');
 
+Route::prefix('tools')->group(function () {
+    Route::get('/liter', [HomeController::class, 'liter'])->name('liter-calculator');
+    Route::post('/liter', [HomeController::class, 'literCalculate'])->name('liter-calculator.store');
+});
+
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::resource('companies', CompanyController::class);
     Route::resource('certifications', CertificationController::class);
