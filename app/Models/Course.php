@@ -17,6 +17,7 @@ class Course extends Model
         'type',
         'issued_at',
         'company_id',
+        'file_path',
     ];
 
     protected $dates = ['issued_at'];
