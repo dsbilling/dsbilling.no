@@ -69,7 +69,7 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                         @if(Storage::disk('public')->exists($course->file_path))
-                                            <a href="{{ Storage::url($certification->file_path) }}"><i class="fas fa-file-pdf text-green-600"></i> {{ str_replace('uploads/', '', $course->file_path) }}</a>
+                                            <a href="{{ Storage::url($course->file_path) }}"><i class="fas fa-file-pdf text-green-600"></i> {{ str_replace('uploads/', '', $course->file_path) }}</a>
                                         @else
                                             <i class="fas fa-file-pdf text-red-600"></i> File missing
                                         @endif
