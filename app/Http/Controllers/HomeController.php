@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Social;
 use App\Models\Company;
 use App\Models\Experience;
+use Illuminate\Http\Request;
 use App\Models\Certification;
 
 class HomeController extends Controller
@@ -37,6 +38,52 @@ class HomeController extends Controller
         $experiences = Experience::count();
         $socials = Social::count();
         return view('dashboard', compact('certifications', 'courses', 'companies', 'experiences', 'socials'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function liter()
+    {
+        $volume = NULL;
+        $totalprice = NULL;
+        return view('tools.liter-calculator', compact('volume', 'totalprice'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Course  $course
+     * @return \Illuminate\Http\Response
+     */
+    public function literCalculate(Request $request, Course $course)
+    {
+        $request->validate([
+            'bredde' => [
+                'numeric',
+                'required',
+            ],
+            'lengde' => [
+                'numeric',
+                'nullable',
+            ],
+            'tykkelse' => [
+                'numeric',
+                'required'
+            ],
+            'pris' => [
+                'numeric',
+                'required',
+            ],
+        ]);
+
+        $liters = ($request->bredde * $request->lengde * $request->tykkelse) / 1000;
+        $totalprice = ($liters * $request->pris);
+        $request->flash();
+        return view('tools.liter-calculator', compact('liters', 'totalprice'));
     }
 
 }
