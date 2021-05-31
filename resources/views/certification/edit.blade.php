@@ -66,7 +66,7 @@
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="file" class="block font-medium text-sm text-gray-700">File</label>
                             <input type="file" name="file" id="file" class="form-input rounded-md shadow-sm mt-1 block w-full" accept=".pdf" />
-                            <p class="text-sm text-yellow-600 py-2"><i class="fas fa-exclamation-triangle"></i> Uploading a new file will delete the previous.</p>
+                            @if($certification->file_path)<p class="text-sm text-yellow-600 py-2"><i class="fas fa-exclamation-triangle"></i> Uploading a new file will delete the previous.</p>@endif
                             @error('file')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror

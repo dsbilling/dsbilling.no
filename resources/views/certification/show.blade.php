@@ -6,7 +6,7 @@
     </x-slot>
 
     <div>
-        <div class="max-w-6xl mx-auto py-10 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
             <div class="block mb-8">
                 <a href="{{ route('certifications.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">Back to list</a>
             </div>
@@ -77,7 +77,7 @@
                                     </th>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 bg-white divide-y divide-gray-200">
                                         @if(Storage::disk('public')->exists($certification->file_path))
-                                            <i class="fas fa-file-pdf text-green-600"></i> {{ str_replace('uploads/', '', $certification->file_path) }}
+                                            <a href="{{ Storage::url($certification->file_path) }}"><i class="fas fa-file-pdf text-green-600"></i> {{ str_replace('uploads/', '', $certification->file_path) }}</a>
                                         @else
                                             <i class="fas fa-file-pdf text-red-600"></i> File missing
                                         @endif

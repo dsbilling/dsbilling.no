@@ -6,7 +6,7 @@
     </x-slot>
 
     <div>
-        <div class="max-w-6xl mx-auto py-10 overflow-hidden">
+        <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div class="block mb-8">
                 <a href="{{ route('courses.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add</a>
             </div>
@@ -34,6 +34,9 @@
                                         </th>
                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                             company
+                                        </th>
+                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                            file
                                         </th>
                                         <th scope="col" width="200" class="p-3 bg-gray-50">
 
@@ -65,6 +68,10 @@
 
                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
                                                 {{ $course->company->name }}
+                                            </td>
+
+                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                                {!! (Storage::disk('public')->exists($course->file_path)) ? '<i class="fas fa-file-pdf text-green-600"></i>' : '<i class="fas fa-file-pdf text-red-600"></i>' !!}
                                             </td>
 
                                             <td class="p-3 whitespace-nowrap text-sm font-medium">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
 {
@@ -55,11 +56,21 @@ class CourseController extends Controller
                 'date',
                 'required',
             ],
-            'company_id'    => [
+            'company_id' => [
                 'required',
                 'integer',
             ],
+            'file' => [
+                'mimes:pdf',
+                'max:2048',
+                'nullable'
+            ],
         ]);
+        if($request->file()) {
+            $fileName = time().'_'.$request->file->getClientOriginalName();
+            $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+            $validatedData["file_path"] = $filePath;
+        }
         Course::create($validatedData);
         session()->flash('flash.banner', 'Created Course!');
         session()->flash('flash.bannerStyle', 'success');
@@ -115,11 +126,22 @@ class CourseController extends Controller
                 'date',
                 'required',
             ],
-            'company_id'    => [
+            'company_id' => [
                 'required',
                 'integer',
             ],
+            'file' => [
+                'mimes:pdf',
+                'max:2048',
+                'nullable'
+            ],
         ]);
+        if($request->file()) {
+            Storage::disk('public')->delete($course->file_path); // Delete the old file
+            $fileName = time().'_'.$request->file->getClientOriginalName();
+            $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
+            $validatedData["file_path"] = $filePath;
+        }
         $course->update($validatedData);
         session()->flash('flash.banner', 'Updated Course!');
         session()->flash('flash.bannerStyle', 'success');
