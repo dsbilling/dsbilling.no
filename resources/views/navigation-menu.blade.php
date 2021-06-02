@@ -18,6 +18,11 @@
                         </x-jet-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
+                            {{ __('Timeline') }}
+                        </x-jet-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
                             Companies
                         </x-jet-nav-link>

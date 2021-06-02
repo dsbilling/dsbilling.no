@@ -86,4 +86,15 @@ class HomeController extends Controller
         return view('tools.liter-calculator', compact('liters', 'totalprice'));
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function timeline()
+    {
+        $experiences = Experience::orderByRaw("-ended_at", 'DESC')->orderby('started_at', 'DESC')->get();
+        return view('timeline', compact('experiences'));
+    }
+
 }
