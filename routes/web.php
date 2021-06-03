@@ -28,7 +28,7 @@ Route::prefix('tools')->group(function () {
     Route::post('/liter', [HomeController::class, 'literCalculate'])->name('liter-calculator.store');
 });
 
-Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+Route::group(['middleware' => ['auth:sanctum', 'verified', 'super-admin']], function () {
     Route::resource('companies', CompanyController::class);
     Route::resource('certifications', CertificationController::class);
     Route::resource('courses', CourseController::class);
