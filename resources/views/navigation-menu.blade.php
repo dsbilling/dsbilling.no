@@ -26,27 +26,27 @@
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
-                                Companies
+                                {{ __('Companies') }}
                             </x-jet-nav-link>
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
-                                Certifications
+                                {{ __('Certifications') }}
                             </x-jet-nav-link>
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
-                                Course
+                                {{ __('Course') }}
                             </x-jet-nav-link>
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
-                                Experience
+                                {{ __('Experience') }}
                             </x-jet-nav-link>
                         </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
-                                Social
+                                {{ __('Social') }}
                             </x-jet-nav-link>
                         </div>
                     @endrole
