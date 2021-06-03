@@ -11,42 +11,45 @@
                 </div>
 
                 @auth
-                    <!-- Navigation Links -->
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
-                            {{ __('Timeline') }}
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
-                            Companies
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
-                            Certifications
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
-                            Course
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
-                            Experience
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
-                            Social
-                        </x-jet-nav-link>
-                    </div>
+                    @can('timeline')
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
+                                {{ __('Timeline') }}
+                            </x-jet-nav-link>
+                        </div>
+                    @endcan
+                    @role('super-admin')
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                                {{ __('Dashboard') }}
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
+                                Companies
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
+                                Certifications
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
+                                Course
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
+                                Experience
+                            </x-jet-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
+                                Social
+                            </x-jet-nav-link>
+                        </div>
+                    @endrole
                 @endauth
             </div>
 
