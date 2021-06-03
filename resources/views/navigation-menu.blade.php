@@ -175,9 +175,31 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            @can('timeline')
+            <x-jet-responsive-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
+                {{ __('Timeline') }}
             </x-jet-responsive-nav-link>
+            @endcan
+            @role('super-admin')
+                <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    {{ __('Dashboard') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
+                    {{ __('Companies') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
+                    {{ __('Certifications') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
+                    {{ __('Courses') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
+                    {{ __('Experiences') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
+                    {{ __('Socials') }}
+                </x-jet-responsive-nav-link>
+            @endrole
         </div>
 
         @auth
