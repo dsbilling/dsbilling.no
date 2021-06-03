@@ -21,7 +21,7 @@ use App\Http\Controllers\CertificationController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth:sanctum', 'verified'])->name('dashboard');
-Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['auth:sanctum', 'verified'])->name('timeline');
+Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['auth:sanctum', 'verified', 'headhunter'])->name('timeline');
 
 Route::prefix('tools')->group(function () {
     Route::get('/liter', [HomeController::class, 'liter'])->name('liter-calculator');
