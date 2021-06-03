@@ -11,6 +11,11 @@
                 </div>
 
                 @auth
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-jet-nav-link>
+                    </div>
                     @can('timeline')
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
@@ -19,11 +24,6 @@
                         </div>
                     @endcan
                     @role('super-admin')
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                                {{ __('Dashboard') }}
-                            </x-jet-nav-link>
-                        </div>
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
                                 {{ __('Companies') }}
@@ -175,15 +175,15 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                {{ __('Dashboard') }}
+            </x-jet-responsive-nav-link>
             @can('timeline')
             <x-jet-responsive-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
                 {{ __('Timeline') }}
             </x-jet-responsive-nav-link>
             @endcan
             @role('super-admin')
-                <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
-                </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
                     {{ __('Companies') }}
                 </x-jet-responsive-nav-link>
