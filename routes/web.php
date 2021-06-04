@@ -30,7 +30,7 @@ Route::prefix('tools')->group(function () {
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/want-access', [AccessController::class, 'wantAccess'])->middleware(['throttle:1'])->name('want-access');
-    Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['headhunter'])->name('timeline');
+    Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['permission:timeline'])->name('timeline');
 });
 
 Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:super-admin']], function () {
