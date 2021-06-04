@@ -4,8 +4,10 @@
             {{ __('Timeline') }}
         </h2>
     </x-slot>
+    
+    <span class="text-center visible md:invisible">Use the full website to view this page. This will be responsive in the future!</span>
 
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 invisible md:visible">
         <div class="relative wrap overflow-hidden h-full">
             <div class="border-2-2 absolute border-opacity-20 border-gray-500 h-full border" style="left: 50%"></div>
 
