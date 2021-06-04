@@ -71,9 +71,14 @@
                     </a>
                 </div>
             @else
-                <h1 class="text-3xl text-center md:text-5xl lg:text-6xl font-bold leading-tight">Welcome {{ auth()->user()->name }}!</h1>
+                <h1 class="text-3xl text-center lg:text-4xl font-bold leading-tight">Welcome {{ auth()->user()->name }}! &#x1F44B;</h1>
                 @unlessrole('headhunter')
-                    <p class="text-1xl text-center py-3 font-bold leading-tight">Seems like you do not have permission from me to view anything yet. Please hold on, I'll notify you.</p>
+                    <div class="text-center max-w-2xl mx-auto p-3">
+                        <p class="text-1xl py-1 leading-tight">Seems like you do not have permission from me to view anything yet. &#x1F62C;</p>
+                        <p class="text-1xl py-1 leading-tight">I don't give out access automatically, because spam-bots is always present, I hope you understand. &#x1F604;</p>
+                        <button class="h-12 mt-8 px-6 m-2 text-lg text-indigo-100 transition-colors duration-150 bg-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-600"><i class="fas fa-bullhorn"></i> Ask me for access &dagger;</button>
+                        <p class="text-gray-600 mt-3 text-xs">&dagger; This will just notify me via email that you want access.</p>
+                    </div>
                 @endunlessrole
             @endrole
         </div>
