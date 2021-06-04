@@ -54,7 +54,7 @@
                             
                             <button type="button" class="btn btn-dark collapsible">More about me</button>
                             <div class="content">
-                                <p>I started my career by getting my diploma for the media graphics profession. After this I go a job as a Support Technician at <a class="badge rounded-pill bg-primary" href="https://intility.no">Intility</a>. About three years later I moved to the AV department of the same company, and there I have been for ~6 years.</p>
+                                <p>I started my career by getting my diploma for the media graphics profession. After this I go a job as a Support Technician at <a class="badge rounded-pill bg-primary" href="https://intility.no">Intility</a>. About three years later I moved to the AV department of the same company, and that was ~{{ now()->diffInYears('2015-08-01') }} years ago.</p>
 
                                 <p>In the AV realm I have been developing meeting room control with <span class="badge rounded-pill bg-dark">Crestron</span> and creating digital signage displays with <a class="badge rounded-pill bg-dark" href="https://scala.com">Scala</a> and <span class="badge rounded-pill bg-dark">Python</span>. &#x1F4FA;</p>
 
