@@ -22,16 +22,18 @@ use App\Http\Controllers\CertificationController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth:sanctum', 'verified'])->name('dashboard');
-Route::get('/want-access', [AccessController::class, 'wantAccess'])->middleware(['auth:sanctum', 'verified', 'throttle:1'])->name('want-access');
-Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['auth:sanctum', 'verified', 'headhunter'])->name('timeline');
-
 Route::prefix('tools')->group(function () {
     Route::get('/liter', [HomeController::class, 'liter'])->name('liter-calculator');
     Route::post('/liter', [HomeController::class, 'literCalculate'])->name('liter-calculator.store');
 });
 
-Route::group(['middleware' => ['auth:sanctum', 'verified', 'super-admin']], function () {
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('/want-access', [AccessController::class, 'wantAccess'])->middleware(['throttle:1'])->name('want-access');
+    Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['headhunter'])->name('timeline');
+});
+
+Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:super-admin']], function () {
     Route::resource('companies', CompanyController::class);
     Route::resource('certifications', CertificationController::class);
     Route::resource('courses', CourseController::class);
