@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AccessController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CompanyController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\CertificationController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth:sanctum', 'verified'])->name('dashboard');
+Route::get('/want-access', [AccessController::class, 'wantAccess'])->middleware(['auth:sanctum', 'verified', 'throttle:1'])->name('want-access');
 Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['auth:sanctum', 'verified', 'headhunter'])->name('timeline');
 
 Route::prefix('tools')->group(function () {
