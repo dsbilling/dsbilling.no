@@ -46,7 +46,7 @@
 
                             <p>I have {{ $certifications }} certifications, {{ $courses }} courses and {{ ($experience) ? $experience->diffInYears(now()) : '0' }} years of experience under my belt. &#x1F913;</p>
                             
-                            <p>What I do in short; AV Systems Development as a primary job, PHP/Laravel as a hobby/side-job, and frelance work for e-sport teams and LAN-parties.</p>
+                            <p>What I do in short; AV Systems Development as a primary job, PHP/Laravel as a hobby/side-job, and freelance work for e-sport teams and LAN-parties.</p>
                             
                             <p>If you want to get in touch with me use one of my socials on the top of this page. Say hi! &#x1F44A;</p>
 
