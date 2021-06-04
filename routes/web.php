@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccessController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\SocialController;
@@ -36,4 +37,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'super-admin']], func
     Route::resource('courses', CourseController::class);
     Route::resource('experiences', ExperienceController::class);
     Route::resource('socials', SocialController::class);
+    Route::resource('users', UserController::class);
 });
