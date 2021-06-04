@@ -72,6 +72,12 @@
                 </div>
             @else
                 <h1 class="text-3xl text-center lg:text-4xl font-bold leading-tight">Welcome {{ auth()->user()->name }}! &#x1F44B;</h1>
+                @role('headhunter')
+                    <div class="text-center max-w-2xl mx-auto p-3">
+                        <p class="text-1xl py-1 leading-tight">Now you should have access to anything I would like to share with you. &#x1F604;</p>
+                        <a href="{{ route('timeline') }}" class="inline-block py-2 m-2 mt-8 px-3 text-indigo-100 transition-colors duration-150 bg-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-600"><i class="fas fa-business-time"></i> Check out my timeline</a>
+                    </div>
+                @endrole
                 @unlessrole('headhunter')
                     <div class="text-center max-w-2xl mx-auto p-3">
                         <p class="text-1xl py-1 leading-tight">Seems like you do not have permission from me to view anything yet. &#x1F62C;</p>
