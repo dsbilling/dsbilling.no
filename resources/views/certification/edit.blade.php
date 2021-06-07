@@ -56,7 +56,7 @@
                             <label for="company_id" class="block font-medium text-sm text-gray-700">Company</label>
                             <select name="company_id" id="company_id" class="form-multiselect block rounded-md shadow-sm mt-1 block w-full">
                                 @foreach($companies as $company)
-                                    <option value="{{ $company->id }}"{{ ($company->id == old('company_id', $certification->company_id)) ? ' selected' : '' }}>{{ $company->name }}</option>
+                                    <option value="{{ $company->id }}" {{ ($company->id == old('company_id', $certification->company_id)) ? ' selected' : '' }}>{{ $company->name }}</option>
                                 @endforeach
                             </select>
                             @error('company_id')
