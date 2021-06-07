@@ -38,6 +38,9 @@
                                         <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                             company
                                         </th>
+                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                            tags
+                                        </th>
                                         <th scope="col" width="200" class="p-3 bg-gray-50">
 
                                         </th>
@@ -72,6 +75,10 @@
 
                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
                                                 {{ $experience->company->name ?? 'N/A' }}
+                                            </td>
+
+                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                                {{ $experience->tags->count() }}
                                             </td>
 
                                             <td class="p-3 whitespace-nowrap text-sm font-medium">

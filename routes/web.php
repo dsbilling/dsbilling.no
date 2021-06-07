@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccessController;
@@ -40,4 +41,5 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:super-admin']],
     Route::resource('experiences', ExperienceController::class);
     Route::resource('socials', SocialController::class);
     Route::resource('users', UserController::class);
+    Route::resource('tags', TagController::class);
 });

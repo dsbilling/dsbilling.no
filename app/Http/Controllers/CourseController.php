@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\Tags\Tag;
 use App\Models\Course;
 use App\Models\Company;
 use Illuminate\Http\Request;
@@ -28,7 +29,8 @@ class CourseController extends Controller
     public function create()
     {
         $companies = Company::pluck('name', 'id');
-        return view('course.create', compact('companies'));
+        $tags = Tag::all();
+        return view('course.create', compact('companies', 'tags'));
     }
 
     /**
@@ -71,7 +73,8 @@ class CourseController extends Controller
             $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
             $validatedData["file_path"] = $filePath;
         }
-        Course::create($validatedData);
+        $course = Course::create($validatedData);
+        $course->attachTags($request->tags);
         session()->flash('flash.banner', 'Created Course!');
         session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('courses.index');
@@ -97,7 +100,8 @@ class CourseController extends Controller
     public function edit(Course $course)
     {
         $companies = Company::all();
-        return view('course.edit', compact('course', 'companies'));
+        $tags = Tag::all();
+        return view('course.edit', compact('course', 'companies', 'tags'));
     }
 
     /**
@@ -143,6 +147,7 @@ class CourseController extends Controller
             $validatedData["file_path"] = $filePath;
         }
         $course->update($validatedData);
+        $course->syncTags($request->tags);
         session()->flash('flash.banner', 'Updated Course!');
         session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('courses.index');

@@ -56,7 +56,7 @@
                             <label for="company_id" class="block font-medium text-sm text-gray-700">Company</label>
                             <select name="company_id" id="company_id" class="form-multiselect block rounded-md shadow-sm mt-1 block w-full">
                                 @foreach($companies as $company)
-                                    <option value="{{ $company->id }}"{{ ($company->id == old('company_id', $certification->company_id)) ? ' selected' : '' }}>{{ $company->name }}</option>
+                                    <option value="{{ $company->id }}" {{ ($company->id == old('company_id', $certification->company_id)) ? ' selected' : '' }}>{{ $company->name }}</option>
                                 @endforeach
                             </select>
                             @error('company_id')
@@ -68,6 +68,18 @@
                             <input type="file" name="file" id="file" class="form-input rounded-md shadow-sm mt-1 block w-full" accept=".pdf" />
                             @if($certification->file_path)<p class="text-sm text-yellow-600 py-2"><i class="fas fa-exclamation-triangle"></i> Uploading a new file will delete the previous.</p>@endif
                             @error('file')
+                                <p class="text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="px-4 py-5 bg-white sm:p-6">
+                            <label for="tags" class="block font-medium text-sm text-gray-700">Tags</label>
+                            @foreach($tags as $tag)
+                                <label class="inline-flex items-center text-gray-700 m-2">
+                                    <input class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" value="{{ $tag->name }}" name="tags[]" {{ ($certification->tags->contains('name', $tag->name)) ? ' checked' : '' }} />
+                                    <span class="ml-1">{{ $tag->name }}</span>
+                                </label>
+                            @endforeach
+                            @error('tags')
                                 <p class="text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>

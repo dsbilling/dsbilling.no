@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\Tags\Tag;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Models\Certification;
@@ -28,7 +29,8 @@ class CertificationController extends Controller
     public function create()
     {
         $companies = Company::pluck('name', 'id');
-        return view('certification.create', compact('companies'));
+        $tags = Tag::all();
+        return view('certification.create', compact('companies', 'tags'));
     }
 
     /**
@@ -75,7 +77,8 @@ class CertificationController extends Controller
             $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
             $validatedData["file_path"] = $filePath;
         }
-        Certification::create($validatedData);
+        $certification = Certification::create($validatedData);
+        $certification->attachTags($request->tags);
         session()->flash('flash.banner', 'Created Certification!');
         session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('certifications.index');
@@ -101,7 +104,8 @@ class CertificationController extends Controller
     public function edit(Certification $certification)
     {
         $companies = Company::all();
-        return view('certification.edit', compact('certification', 'companies'));
+        $tags = Tag::all();
+        return view('certification.edit', compact('certification', 'companies', 'tags'));
     }
 
     /**
@@ -151,6 +155,7 @@ class CertificationController extends Controller
             $validatedData["file_path"] = $filePath;
         }
         $certification->update($validatedData);
+        $certification->syncTags($request->tags);
         session()->flash('flash.banner', 'Updated Certification!');
         session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('certifications.index');
