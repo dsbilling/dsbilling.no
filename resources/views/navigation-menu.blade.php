@@ -54,6 +54,11 @@
                                 {{ __('Users') }}
                             </x-jet-nav-link>
                         </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.*')">
+                                {{ __('Tags') }}
+                            </x-jet-nav-link>
+                        </div>
                     @endrole
                 @endauth
             </div>
@@ -206,6 +211,9 @@
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
                     {{ __('Users') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.*')">
+                    {{ __('Tags') }}
                 </x-jet-responsive-nav-link>
             @endrole
         </div>
