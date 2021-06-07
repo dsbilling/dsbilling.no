@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\Tags\Tag;
 use App\Models\Company;
 use App\Models\Experience;
 use Illuminate\Http\Request;
@@ -27,7 +28,8 @@ class ExperienceController extends Controller
     public function create()
     {
         $companies = Company::pluck('name', 'id');
-        return view('experience.create', compact('companies'));
+        $tags = Tag::all();
+        return view('experience.create', compact('companies', 'tags'));
     }
 
     /**
@@ -67,7 +69,8 @@ class ExperienceController extends Controller
                 'integer',
             ],
         ]);
-        Experience::create($validatedData);
+        $experience = Experience::create($validatedData);
+        $experience->attachTags($request->tags);
         session()->flash('flash.banner', 'Created Experience!');
         session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('experiences.index');
@@ -93,7 +96,8 @@ class ExperienceController extends Controller
     public function edit(Experience $experience)
     {
         $companies = Company::all();
-        return view('experience.edit', compact('experience', 'companies'));
+        $tags = Tag::all();
+        return view('experience.edit', compact('experience', 'companies', 'tags'));
     }
 
     /**
@@ -136,6 +140,7 @@ class ExperienceController extends Controller
             ],
         ]);
         $experience->update($validatedData);
+        $experience->syncTags($request->tags);
         session()->flash('flash.banner', 'Updated Experience!');
         session()->flash('flash.bannerStyle', 'success');
         return redirect()->route('experiences.index');
