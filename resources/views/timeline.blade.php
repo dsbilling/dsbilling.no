@@ -22,6 +22,9 @@
                         <h5 class="mb-2 font-bold">{{ ucfirst($experience->type) }} <span class="text-gray-300">{{ __('at') }}</span> {{ $experience->company->name }}</h5>
                         <h6 class="font-bold">{{ $experience->started_at->isoFormat('MMMM Y') }} &mdash; {{ $experience->ended_at ? $experience->ended_at->isoFormat('MMMM Y') : 'now' }}</h6>
                         @if($experience->description)<p class="mt-2 text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">{{ $experience->description }}</p>@endif
+                        @foreach ($experience->tags as $tag)
+                            <span class="inline-flex items-center justify-center px-2 py-1 mr-1 text-xs font-bold leading-none bg-gray-600 rounded">{{ $tag->name }}</span>
+                        @endforeach
                     </div>
                 </div>
             @endforeach
