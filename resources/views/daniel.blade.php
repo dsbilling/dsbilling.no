@@ -59,7 +59,7 @@
                         <button type="button" class="px-4 py-2 my-4 text-gray-200 transition-colors duration-150 bg-gray-800 rounded focus:shadow-outline hover:bg-gray-700" @click="showMore = !showMore">More about me <i class="fas " :class="{ 'fa-long-arrow-alt-down': !showMore, 'fa-long-arrow-alt-up': showMore }"></i></button>
 
                         <div class="transition-all duration-300" :class="{ ' hidden max-h-0': !showMore }" :style="handleToggle()">
-                            <p class="py-2">I started my career by getting my diploma for the media graphics profession. After this I go a job as a Support Technician at <a class="badge rounded-pill bg-primary" href="https://intility.no">Intility</a>. About three years later I moved to the AV department of the same company, and that was ~{{ now()->diffInYears('2015-08-01') }} years ago.</p>
+                            <p class="py-2">I started my career by getting my diploma for the media graphics profession. After this I go a job as a Support Technician at <a class="badge rounded-pill bg-primary" href="https://intility.no">Intility</a>. About three years later I moved to the AV department of the same company, and that was over {{ now()->diffInYears('2015-08-01') }} years ago.</p>
 
                             <p class="py-2">In the AV realm I have been developing meeting room control with <span class="badge rounded-pill bg-dark">Crestron</span> and creating digital signage displays with <a class="badge rounded-pill bg-dark" href="https://scala.com">Scala</a> and <span class="badge rounded-pill bg-dark">Python</span>. &#x1F4FA;</p>
 
@@ -71,8 +71,8 @@
                 </div>
             </main>
 
-            <div class="flex flex-col text-base">
-                <div class="flex items-center justify-center my-4 text-gray-600">
+            <div class="flex flex-col text-xs">
+                <div class="flex items-center justify-center my-4 text-gray-700">
                     Built with Laravel {{ explode('.', Illuminate\Foundation\Application::VERSION)[0] }}, check it out on <a class="ml-1 text-muted" href="https://github.com/DanielRTRD/daniel.rtrd.no"><i class="fab fa-github"></i>Github</a>
                 </div>
             </div>
