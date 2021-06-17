@@ -31,9 +31,9 @@
         <div class="flex flex-col min-h-full h-screen justify-between bg-black bg-opacity-80 text-white">
 
             <header class="flex items-center w-full my-6">
-                <nav class="flex items-center justify-center w-full text-gray-500 font-bold">
+                <nav class="flex flex-wrap items-center justify-center w-full text-gray-500 font-bold">
                     @foreach($socials as $social)
-                        <a class="mx-4 hover:text-gray-400 inline-block align-middle" href="{{ $social->link }}"><i class="{{ $social->icon }}"></i>{{ $social->name }}</a>
+                        <a class="mx-4 my-2 hover:text-gray-400 inline-block align-middle" href="{{ $social->link }}"><i class="{{ $social->icon }}"></i>{{ $social->name }}</a>
                     @endforeach
                 </nav>
             </header>
