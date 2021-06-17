@@ -30,10 +30,10 @@
 
         <div class="flex flex-col min-h-full h-screen justify-between bg-black bg-opacity-80 text-white">
 
-            <header class="flex items-center w-full my-4">
+            <header class="flex items-center w-full my-6">
                 <nav class="flex items-center justify-center w-full text-gray-500 font-bold">
                     @foreach($socials as $social)
-                        <a class="my-2 mx-6 hover:text-gray-400 inline-block align-middle" href="{{ $social->link }}"><i class="{{ $social->icon }}"></i>{{ $social->name }}</a>
+                        <a class="mx-4 hover:text-gray-400 inline-block align-middle" href="{{ $social->link }}"><i class="{{ $social->icon }}"></i>{{ $social->name }}</a>
                     @endforeach
                 </nav>
             </header>
@@ -72,8 +72,8 @@
             </main>
 
             <div class="flex flex-col text-xs">
-                <div class="flex items-center justify-center my-4 text-gray-700">
-                    Built with Laravel {{ explode('.', Illuminate\Foundation\Application::VERSION)[0] }}, check it out on <a class="ml-1 text-muted" href="https://github.com/DanielRTRD/daniel.rtrd.no"><i class="fab fa-github"></i>Github</a>
+                <div class="flex items-center justify-center my-4 text-gray-600 hover:text-gray-500">
+                    Built with Laravel {{ explode('.', Illuminate\Foundation\Application::VERSION)[0] }} and Tailwind, check it out on <a class="ml-1" href="https://github.com/DanielRTRD/daniel.rtrd.no"><i class="fab fa-github"></i>Github</a>
                 </div>
             </div>
 
