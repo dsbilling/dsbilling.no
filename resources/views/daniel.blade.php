@@ -25,10 +25,10 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased bg-cover bg-code">
+    <body class="font-sans antialiased bg-cover bg-fixed bg-center bg-fk">
         <x-jet-banner />
 
-        <div class="flex flex-col min-h-full h-screen justify-between bg-black bg-opacity-80 text-white">
+        <div class="flex flex-col min-h-full h-screen justify-between text-white">
 
             <header class="flex items-center w-full my-6">
                 <nav class="flex flex-wrap items-center justify-center w-full text-gray-500 font-bold">
