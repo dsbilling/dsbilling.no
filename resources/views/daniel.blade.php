@@ -54,7 +54,7 @@
                         
                         <p class="py-2">If you want to get in touch with me use one of my socials on the top of this page. Say hi! &#x1F44A;</p>
 
-                        <a href="{{ route('register') }}" class="px-4 py-2 my-4 text-gray-200 transition-colors duration-150 bg-yellow-700 rounded focus:shadow-outline hover:bg-yellow-600"><i class="far fa-file-alt"></i> Get my detailed CV</a>
+                        <a href="{{ route('register') }}" class="px-4 py-2 my-4 text-gray-200 transition-colors duration-150 bg-yellow-600 rounded focus:shadow-outline hover:bg-yellow-700"><i class="far fa-file-alt"></i> Get my detailed CV</a>
                         
                         <button type="button" class="px-4 py-2 my-4 text-gray-200 transition-colors duration-150 bg-gray-800 rounded focus:shadow-outline hover:bg-gray-700" @click="showMore = !showMore">More about me <i class="fas " :class="{ 'fa-long-arrow-alt-down': !showMore, 'fa-long-arrow-alt-up': showMore }"></i></button>
 
