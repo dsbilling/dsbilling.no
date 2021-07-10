@@ -49,3 +49,6 @@ jobs:
           DB_DATABASE: database/database.sqlite
           PRIVATE_EMAIL: 'test@example.com'
         run: vendor/bin/phpunit --coverage-text
+      - name: Codecov
+        uses: codecov/codecov-action@v1.5.2
+
