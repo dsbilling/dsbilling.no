@@ -1,5 +1,8 @@
 language: php
 
+before-script:
+    composer install --no-interaction
+
 script:
     - vendor/bin/phpunit --coverage-clover coverage.xml
 
