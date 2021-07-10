@@ -4,10 +4,19 @@ php:
     - 7.4
     - 8.0
 
+services:
+  - mysql
+
+cache:
+  directories:
+    - node_modules
+    - vendor
+
 before_script:
+    - cp .env.example .env
+    - sudo mysql -e 'create database laravel;'
     - travis_retry composer self-update
     - travis_retry composer install --no-interaction --prefer-source --dev
-    - cp .env.example .env
     - php artisan key:generate
     - php artisan migrate
 
