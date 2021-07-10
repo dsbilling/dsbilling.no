@@ -48,7 +48,7 @@ jobs:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
           PRIVATE_EMAIL: 'test@example.com'
-        run: vendor/bin/phpunit
+        run: vendor/bin/phpunit --coverage-clover clover.xml
       - name: Codecov
         uses: codecov/codecov-action@v1.5.2
         with:
