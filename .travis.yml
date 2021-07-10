@@ -9,6 +9,7 @@ before_script:
     - travis_retry composer install --no-interaction --prefer-source --dev
     - cp .env.example .env
     - php artisan key:generate
+    - php artisan migrate
 
 script:
     - vendor/bin/phpunit --coverage-clover coverage.xml
