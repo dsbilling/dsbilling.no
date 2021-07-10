@@ -51,4 +51,9 @@ jobs:
         run: vendor/bin/phpunit --coverage-text
       - name: Codecov
         uses: codecov/codecov-action@v1.5.2
+        with:
+          file: ./clover.xml
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
 
