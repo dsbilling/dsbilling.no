@@ -1,6 +1,6 @@
 language: php
 
-before-script:
+before_script:
     composer install --no-interaction
 
 script:
