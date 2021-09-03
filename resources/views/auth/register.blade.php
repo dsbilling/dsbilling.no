@@ -8,6 +8,7 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
+            @honeypot
 
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
