@@ -25,23 +25,23 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased bg-cover bg-fixed bg-center bg-fk">
+    <body class="font-sans antialiased bg-fixed bg-center bg-cover bg-fk">
         <x-jet-banner />
 
-        <div class="flex flex-col min-h-full h-screen justify-between text-white">
+        <div class="flex flex-col justify-between h-screen min-h-full text-white">
 
             <header class="flex items-center w-full my-6">
-                <nav class="flex flex-wrap items-center justify-center w-full text-gray-500 font-bold">
+                <nav class="flex flex-wrap items-center justify-center w-full font-bold text-gray-500">
                     @foreach($socials as $social)
-                        <a class="mx-4 my-2 hover:text-gray-300 inline-block align-middle" href="{{ $social->link }}"><i class="{{ $social->icon }}"></i>{{ $social->name }}</a>
+                        <a class="inline-block mx-4 my-2 align-middle hover:text-gray-300" href="{{ $social->link }}"><i class="{{ $social->icon }}"></i>{{ $social->name }}</a>
                     @endforeach
                 </nav>
             </header>
 
-            <main class="max-w-5xl mx-auto flex content-center">
-                <div class="flex gap-8 flex-wrap p-8">
+            <main class="flex content-center max-w-5xl mx-auto">
+                <div class="flex flex-wrap gap-8 p-8">
                     <div class="flex w-full md:w-auto">
-                        <img src="{{ asset('img/daniel.jpg') }}" class="h-64 rounded-full mx-auto border-white border-solid border-8 sm:float-right">
+                        <img src="{{ asset('img/daniel.jpg') }}" class="h-64 mx-auto border-8 border-white border-solid rounded-full sm:float-right">
                     </div>
                     <div class="flex-initial md:flex-1" x-data="{ showMore: false }">
 
