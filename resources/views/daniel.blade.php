@@ -46,7 +46,7 @@
                     <div class="flex-initial md:flex-1" x-data="{ showMore: false }">
 
                         <h1 class="text-4xl">Hello, I'm Daniel S. Billing &#x1F44B;</h1>
-                        <h5 class="text-xl mb-4">...a Software Systems Engineer from Norway &#x1F1F3;&#x1F1F4;</h5>
+                        <h5 class="mb-4 text-xl">...a DevOps Engineer from Norway &#x1F1F3;&#x1F1F4;</h5>
 
                         <p class="py-2">I have {{ $certifications }} certifications, {{ $courses }} courses and {{ ($experience) ? $experience->diffInYears(now()) : '0' }} years of experience under my belt. &#x1F913;</p>
                         
