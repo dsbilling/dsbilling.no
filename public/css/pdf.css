@@ -1,0 +1,60 @@
+
+body {
+    font-family: sans-serif;
+    font-weight: 400;
+    color:black;
+}
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+margin: 0;
+}
+.my-4 {
+    margin-top: 1rem/* 16px */;
+    margin-bottom: 1rem/* 16px */;
+}
+.text-xl {
+    font-size: 1.25rem/* 20px */;
+    line-height: 1.75rem/* 28px */;
+}
+.text-sm {
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+}
+.mt-2 {
+    margin-top: 0.5rem/* 8px */;
+}
+.my-2 {
+    margin-top: 0.5rem/* 8px */;
+    margin-bottom: 0.5rem/* 8px */;
+}
+.text-xs {
+    font-size: 0.75rem/* 12px */;
+    line-height: 1rem/* 16px */;
+}
+.font-medium {
+    font-weight: 500;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+h4 {
+    color: rgb(212, 105, 16);
+}
+.mt-6 {
+    margin-top: 1.5rem/* 24px */;
+}
