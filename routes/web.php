@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccessController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ExperienceController;
@@ -42,4 +43,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:super-admin']],
     Route::resource('socials', SocialController::class);
     Route::resource('users', UserController::class);
     Route::resource('tags', TagController::class);
+    Route::prefix('export')->group(function () {
+        Route::get('/cv', [ExportController::class, 'cv'])->name('export.cv');
+        Route::get('/courses', [ExportController::class, 'courses'])->name('export.cv');
+    });
 });
