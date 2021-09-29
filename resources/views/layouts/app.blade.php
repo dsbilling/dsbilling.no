@@ -34,7 +34,7 @@
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
@@ -42,7 +42,7 @@
 
             <!-- Page Content -->
             <main>
-                <x-jet-validation-errors class="relative py-3 pl-4 pr-10 leading-normal text-red-700 bg-red-100 rounded-lg max-w-4xl mx-auto my-5" />
+                <x-jet-validation-errors class="relative max-w-4xl py-3 pl-4 pr-10 mx-auto my-5 leading-normal text-red-700 bg-red-100 rounded-lg" />
                 {{ $slot }}
             </main>
         </div>
