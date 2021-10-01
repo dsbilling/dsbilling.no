@@ -38,7 +38,7 @@
     </nav>
     <main class="max-w-4xl px-4 mx-auto mt-8 antialiased sm:mt-16 sm:px-0">
         <div class="space-y-14 lg:space-y-24">
-            <div id="about">
+            <section id="about">
                 <div class="container mx-auto">
                     <div class="space-x-5 lg:flex item-center lg:-mx-4">
                         <div class="lg:px-4 ">
@@ -55,8 +55,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="blog">
+            </section>
+
+            {{--
+            <section id="blog">
                 <div class="container mx-auto">
                     <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200">Recent Posts</h2>
                     <h4 class="mt-2 text-gray-500 dark:text-gray-400">Thoughts on what I'm building and learning.</h4>
@@ -81,7 +83,8 @@
 
                     </div>
                 </div>
-            </div>
+            </section>
+            --}}
         </div>
     </main>
     <div class="pb-12 mt-24">
