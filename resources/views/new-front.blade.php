@@ -89,4 +89,19 @@
             </div>
         </div>
     </main>
+    <div class="pb-12 mt-24">
+        <div class="max-w-4xl mx-auto text-xs text-gray-400">
+            <div class="pb-4 mb-2 border-t border-gray-100 dark:border-gray-800"></div>
+            <div class="flex justify-between">
+                <div class="pt-6 space-x-4 font-medium lg:pt-0">
+                    @foreach ($socials as $social)
+                        <a href="{{$social->link}}" class="transition-colors rounded hover:text-red-500 focus:text-red-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none"><i class="{{$social->icon}} text-sm"></i>{{$social->name}}</a>
+                    @endforeach
+                </div>
+            </div>
+            <div class="justify-center mx-auto my-4">
+                <a href="https://github.com/DanielRTRD/daniel.rtrd.no" class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400">Built with Laravel and Tailwind, check it out on <i class="fab fa-github"></i>Github</a>
+            </div>
+        </div>
+    </div>
 </x-guest-layout>
