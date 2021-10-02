@@ -22,7 +22,7 @@ class HomeController extends Controller
         $courses = Course::count();
         $socials = Social::all();
         $experience = Experience::orderBy('started_at', 'ASC')->pluck('started_at')->first();
-        return view('daniel', compact('certifications', 'courses', 'socials', 'experience'));
+        return view('new-front', compact('certifications', 'courses', 'socials', 'experience'));
     }
 
     /**

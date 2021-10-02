@@ -8,6 +8,8 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
 
+    darkMode: 'media',
+
     theme: {
         extend: {
             fontFamily: {
@@ -18,6 +20,9 @@ module.exports = {
                 'fk': "url('/img/fk.jpg')",
             }),
         },
+        debugScreens: {
+            position: ['top', 'left'],
+        },
     },
 
     variants: {
@@ -26,5 +31,9 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
+        require('tailwindcss-debug-screens')
+    ],
 };

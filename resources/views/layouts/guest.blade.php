@@ -16,8 +16,8 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
+    <body class="h-screen min-h-full">
+        <div class="pb-8 font-sans text-gray-900 min-h-full bg-white dark:bg-gray-900 antialiased {{ env('APP_DEBUG') ? 'debug-screens' : '' }}">
             {{ $slot }}
         </div>
     </body>
