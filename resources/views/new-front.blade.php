@@ -15,7 +15,7 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="flex items-baseline ml-auto space-x-3">
-                        <x-nav-link-front href="{{ route('register') }}">Get my detailed CV</x-nav-link-front>
+                        <x-nav-link-front href="{{ route('register') }}">CV</x-nav-link-front>
                     </div>
                 </div>
                 <div class="flex -mr-2 md:hidden">
@@ -32,7 +32,7 @@
         </div>
         <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <x-nav-link-responsive-front href="{{ route('register') }}">Get my detailed CV</x-nav-link-responsive-front>
+                <x-nav-link-responsive-front href="{{ route('register') }}">CV</x-nav-link-responsive-front>
             </div>
         </div>
     </nav>
@@ -44,9 +44,8 @@
                         <div class="lg:px-4 ">
                             <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-50 lg:text-4xl">Hi there, I'm Daniel &#x1F44B;</h1>
                             <div class="mt-4 text-gray-800 dark:text-gray-100">
-                                <p>I work as a <x-gradient-text>Systems Developer</x-gradient-text> at <a href="https://intility.no/" class="font-bold transition-colors rounded hover:text-red-500 focus:text-red-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" rel="noreferrer">Intility</a> &mdash; focusing on developing a internal portal, but I also do develop solutions for digital signage as well as programming meetingrooms, audiotoriums, and operation centers.</p>
-                                <p class="mt-2">I do <x-gradient-text>Laravel</x-gradient-text> development as a hobby/side-job, and freelance work for <x-gradient-text>e-sport</x-gradient-text> teams, <x-gradient-text>LAN-parties</x-gradient-text>, games and digital communities.</p>
-                                <p class="mt-2">Welcome to my digital profile where I share what I'm learning about creating products, becoming a better developer and growing knowledge in tech. <x-gradient-text>I love making websites</x-gradient-text> that are usable, simple and user-friendly. </p>
+                                <p>I work as a <x-gradient-text>Systems Developer</x-gradient-text> in the <x-gradient-text>AV</x-gradient-text> department at <a href="https://intility.no/" class="font-bold transition-colors rounded hover:text-red-500 focus:text-red-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" rel="noreferrer">Intility</a> &mdash; focusing on developing a internal portal, but I also do develop solutions for digital signage as well as programming meetingrooms, audiotoriums, and operation centers.</p>
+                                <p class="mt-2">I do <x-gradient-text>Laravel</x-gradient-text> development as a hobby/side-job, and freelance work for <x-gradient-text>e-sport</x-gradient-text> teams, <x-gradient-text>LAN-parties</x-gradient-text>, games and digital communities. <x-gradient-text>I love making websites</x-gradient-text> that are usable, simple and user-friendly. </p>
                                 <p class="mt-2">If you want to get in touch with me use one of my socials. Say hi!</p>
                             </div>
                         </div>
