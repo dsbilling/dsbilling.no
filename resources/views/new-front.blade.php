@@ -45,8 +45,8 @@
                             <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-50 lg:text-4xl">Hi there, I'm Daniel &#x1F44B;</h1>
                             <div class="mt-4 text-gray-800 dark:text-gray-100">
                                 <p>I work as a <x-gradient-text>Systems Developer</x-gradient-text> in the <x-gradient-text>AV</x-gradient-text> department at <a href="https://intility.no/" class="font-bold transition-colors rounded hover:text-red-500 focus:text-red-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" rel="noreferrer">Intility</a> &mdash; focusing on developing a internal portal, but I also do develop solutions for digital signage as well as programming meetingrooms, audiotoriums, and operation centers.</p>
-                                <p class="mt-2">I do <x-gradient-text>Laravel</x-gradient-text> development as a hobby/side-job, and freelance work for <x-gradient-text>e-sport</x-gradient-text> teams, <x-gradient-text>LAN-parties</x-gradient-text>, games and digital communities. <x-gradient-text>I love making websites</x-gradient-text> that are usable, simple and user-friendly. </p>
-                                <p class="mt-2">If you want to get in touch with me use one of my socials. Say hi!</p>
+                                <p class="mt-2">I do <x-gradient-text>Laravel</x-gradient-text> development as a hobby/side-job, and <x-gradient-text>freelance work</x-gradient-text> for <x-gradient-text>e-sport</x-gradient-text> teams, <x-gradient-text>LAN-parties</x-gradient-text>, <x-gradient-text>games</x-gradient-text> and <x-gradient-text>digital communities</x-gradient-text>. I love making websites that are usable, simple and user-friendly.</p>
+                                <p class="mt-2">If you want to get in touch with me use one of my socials. <x-gradient-text>Say hi!</x-gradient-text></p>
                             </div>
                         </div>
                         <div class="items-center flex-shrink-0 mx-auto mt-12 lg:px-4 lg:mt-0 sm:mx-0">
