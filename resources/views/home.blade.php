@@ -92,7 +92,7 @@
             <div class="flex flex-row justify-between">
                 <div class="space-x-4 space-y-2 font-medium">
                     @foreach ($socials as $social)
-                        <a href="{{$social->link}}" class="transition-colors rounded hover:text-red-500 focus:text-red-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none"><i class="{{$social->icon}} text-sm"></i>{{$social->name}}</a>
+                        <a href="{{$social->link}}" class="transition-colors rounded hover:text-red-500 focus:text-red-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" target="_blank"><i class="{{$social->icon}} text-sm"></i>{{$social->name}}</a>
                     @endforeach
                 </div>
             </div>
