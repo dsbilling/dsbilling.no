@@ -5,7 +5,7 @@
                 <div class="flex items-center">
                     <a class="flex" href="{{ route('home') }}">
                         <div
-                            class="flex items-center font-semibold tracking-wider text-gray-900 uppercase transition-colors dark:text-white hover:text-red-400 focus:text-red-400 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none">
+                            class="flex items-center font-semibold tracking-wider text-gray-900 uppercase transition-colors dark:text-white hover:text-orange-400 focus:text-orange-400 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none">
                             {{ config('app.name') }}</div>
                     </a>
                 </div>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="flex -mr-2 md:hidden">
                     <button @click="open = !open"
-                        class="inline-flex items-center justify-center p-2 text-gray-800 rounded-md dark:text-white hover:text-red-400 focus:outline-none">
+                        class="inline-flex items-center justify-center p-2 text-gray-800 rounded-md dark:text-white hover:text-orange-400 focus:outline-none">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -92,7 +92,7 @@
             <div class="flex flex-row justify-between">
                 <div class="space-x-4 space-y-2 font-medium">
                     @foreach ($socials as $social)
-                        <a href="{{$social->link}}" class="transition-colors rounded hover:text-red-500 focus:text-red-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" target="_blank"><i class="{{$social->icon}} text-sm"></i>{{$social->name}}</a>
+                        <a href="{{$social->link}}" class="transition-colors rounded hover:text-orange-500 focus:text-orange-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" target="_blank"><i class="{{$social->icon}} text-sm"></i>{{$social->name}}</a>
                     @endforeach
                 </div>
             </div>
