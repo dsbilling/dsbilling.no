@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="justify-center mx-auto my-4">
-                        <a href="https://github.com/DanielRTRD/daniel.rtrd.no" class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400">Built with Laravel and Tailwind, check it out on <i class="fab fa-github"></i> Github</a>
+                        <a href="https://github.com/DanielRTRD/daniel.rtrd.no" class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400">Built with Laravel and Tailwind, it's open-source on <i class="fab fa-github"></i> Github</a>
                     </div>
                 </div>
             </div>
