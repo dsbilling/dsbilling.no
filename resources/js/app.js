@@ -14,3 +14,9 @@ flatpickr(".flatpickrSelector", {
     dateFormat: "Y-m-d H:i:S",
     time_24hr: true,
 });
+
+import EasyMDE from 'easyMDE';
+const easyMDE = new EasyMDE({ 
+    element: document.getElementById("body"),
+    maxHeight: "1000px",
+});

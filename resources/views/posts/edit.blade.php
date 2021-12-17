@@ -78,13 +78,4 @@
 		</div>
 	</div>
 
-{{-- Import CSS and JS for SimpleMDE editor --}}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-
-<script>
-	// Initialise editors
-	var bodyEditor = new SimpleMDE({ element: document.getElementById("body") });
-</script>
-
 </x-app-layout>
