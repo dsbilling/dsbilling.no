@@ -15,14 +15,14 @@
 						<div class="flex flex-wrap mb-6">
 							<div class="w-full px-3 mb-6 md:w-3/5 md:mb-0">
 								<label for="title" class="block mb-1 text-gray-700 dark:text-white">Title</label>
-								<input id="title" name="title" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" value="{{ old('title') ? old('title') : $post->title }}">
+								<input id="title" name="title" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg dark:bg-black dark:text-white focus:shadow-outline" value="{{ old('title') ? old('title') : $post->title }}">
                                 @error('title')
                                     <span class="text-xs text-red-700">{{ $message }}</span>
                                 @enderror
 							</div>
 							<div class="w-full px-3 mb-6 md:w-1/5 md:mb-0">
 								<label for="published_at" class="block mb-1 text-gray-700 dark:text-white">Published At</label>
-								<input id="published_at" name="published_at" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline flatpickrSelector" value="{{ old('published_at') ? old('published_at') : $post->published_at }}">
+								<input id="published_at" name="published_at" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg dark:bg-black dark:text-white focus:shadow-outline flatpickrSelector" value="{{ old('published_at') ? old('published_at') : $post->published_at }}">
 								@error('published_at')
                                     <span class="text-xs text-red-700">{{ $message }}</span>
                                 @enderror
@@ -30,7 +30,7 @@
 							<div class="w-full px-3 mb-6 md:w-1/5 md:mb-0">
 								<label for="draft" class="block mb-1 text-gray-700 dark:text-white">Draft?</label>
 								<div class="relative inline-block w-full text-gray-700">
-									<select class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" id="draft" name="draft">
+									<select class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none dark:bg-black dark:text-white focus:shadow-outline" id="draft" name="draft">
 										<option value="1" {{ $post->draft == 1 ? 'selected' : '' }}>Yes</option>
 										<option value="0" {{ $post->draft == 0 ? 'selected' : '' }}>No</option>
 									</select>

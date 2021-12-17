@@ -15,14 +15,14 @@
 						<div class="flex flex-wrap mb-6">
 							<div class="w-full px-3 mb-6 md:w-3/5 md:mb-0">
 								<label for="title" class="block mb-1 text-gray-700 dark:text-white">Title</label>
-								<input id="title" name="title" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg dark:text-white focus:shadow-outline" value="{{ old('title') }}">
+								<input id="title" name="title" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg dark:bg-black dark:text-white focus:shadow-outline" value="{{ old('title') }}">
 								@error('title')
                                     <span class="text-xs text-red-700">{{ $message }}</span>
                                 @enderror
 							</div>
 							<div class="w-full px-3 mb-6 md:w-1/5 md:mb-0">
 								<label for="published_at" class="block mb-1 text-gray-700 dark:text-white">Published At</label>
-								<input id="published_at" name="published_at" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg dark:text-white focus:shadow-outline flatpickrSelector" value="{{ old('published_at') }}">
+								<input id="published_at" name="published_at" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg dark:bg-black dark:text-white focus:shadow-outline flatpickrSelector" value="{{ old('published_at') }}">
 								@error('published_at')
                                     <span class="text-xs text-red-700">{{ $message }}</span>
                                 @enderror
@@ -30,7 +30,7 @@
 							<div class="w-full px-3 mb-6 md:w-1/5 md:mb-0">
 								<label for="draft" class="block mb-1 text-gray-700 dark:text-white">Draft?</label>
 								<div class="relative inline-block w-full text-gray-700 dark:text-white">
-									<select class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" id="draft" name="draft">
+									<select class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none dark:bg-black focus:shadow-outline" id="draft" name="draft">
 										<option value="1" {{ (old('draft') == "1") ? 'selected' : '' }}>Yes</option>
 										<option value="0" {{ (old('draft') == "0") ? 'selected' : '' }}>No</option>
 									</select>
@@ -57,7 +57,7 @@
                             <label for="tags" class="block text-sm font-medium text-gray-700 dark:text-white">Tags</label>
                             @foreach($tags as $tag)
                                 <label class="inline-flex items-center m-2 text-gray-700 dark:text-white">
-                                    <input class="text-indigo-600 border-gray-300 rounded shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" value="{{ $tag->name }}" name="tags[]" />
+                                    <input class="text-orange-600 border-gray-300 rounded shadow-sm focus:border-orange-300 focus:ring focus:ring-offset-0 focus:ring-orange-200 focus:ring-opacity-50" type="checkbox" value="{{ $tag->name }}" name="tags[]" />
                                     <span class="ml-1">{{ $tag->name }}</span>
                                 </label>
                             @endforeach

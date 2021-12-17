@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="flex flex-col max-w-2xl mx-auto mt-6 sm:mt-0">
 
-        <h1 class="text-4xl font-semibold break-word"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
+        <h1 class="text-3xl font-semibold sm:text-4xl break-word"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
 
         <p class="text-sm font-medium text-orange-800/90 dark:text-orange-100/50">
             {{ $post->user->name }} &middot; {{ $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }}
@@ -11,7 +11,7 @@
         </p>
 
         @if (now()->subYears(1) > $post->published_at)
-            <div class="flex items-center p-2 my-8 leading-none bg-orange-700 text-orange-50 lg:rounded-full lg:inline-flex" role="alert">
+            <div class="flex items-center p-2 my-8 text-sm leading-none bg-orange-700 rounded-lg text-orange-50 lg:rounded-xl lg:inline-flex sm:text-base" role="alert">
                 <span class="flex px-1 py-1 mr-3 text-xs font-bold text-white uppercase bg-orange-400 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -27,7 +27,7 @@
             @endforeach
         </div>--}}
         
-        <article class="w-full mt-8 prose prose-lg dark:prose-invert">
+        <article class="w-full mt-8 prose dark:prose-invert">
             {!! $html !!}
             {{--<x-markdown>{{ $post->body }}</x-markdown>--}}
         </article>
