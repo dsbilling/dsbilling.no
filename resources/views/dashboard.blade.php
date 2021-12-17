@@ -1,18 +1,18 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl font-semibold leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             @role('super-admin')
                 <div class="grid grid-cols-12 gap-6 mt-5">
-                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                    <a class="col-span-12 transition duration-300 transform bg-white rounded-lg shadow-xl hover:scale-105 sm:col-span-6 xl:col-span-3 intro-y"
                         href="{{ route('courses.index') }}">
                         <div class="p-5">
-                            <div class="ml-2 w-full flex-1">
+                            <div class="flex-1 w-full ml-2">
                                 <div>
                                     <div class="mt-3 text-3xl font-bold leading-8">{{ $courses }}</div>
 
@@ -21,10 +21,10 @@
                             </div>
                         </div>
                     </a>
-                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                    <a class="col-span-12 transition duration-300 transform bg-white rounded-lg shadow-xl hover:scale-105 sm:col-span-6 xl:col-span-3 intro-y"
                         href="{{ route('certifications.index') }}">
                         <div class="p-5">
-                            <div class="ml-2 w-full flex-1">
+                            <div class="flex-1 w-full ml-2">
                                 <div>
                                     <div class="mt-3 text-3xl font-bold leading-8">{{ $certifications }}</div>
 
@@ -33,10 +33,10 @@
                             </div>
                         </div>
                     </a>
-                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                    <a class="col-span-12 transition duration-300 transform bg-white rounded-lg shadow-xl hover:scale-105 sm:col-span-6 xl:col-span-3 intro-y"
                         href="{{ route('companies.index') }}">
                         <div class="p-5">
-                            <div class="ml-2 w-full flex-1">
+                            <div class="flex-1 w-full ml-2">
                                 <div>
                                     <div class="mt-3 text-3xl font-bold leading-8">{{ $companies }}</div>
 
@@ -45,10 +45,10 @@
                             </div>
                         </div>
                     </a>
-                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                    <a class="col-span-12 transition duration-300 transform bg-white rounded-lg shadow-xl hover:scale-105 sm:col-span-6 xl:col-span-3 intro-y"
                         href="{{ route('experiences.index') }}">
                         <div class="p-5">
-                            <div class="ml-2 w-full flex-1">
+                            <div class="flex-1 w-full ml-2">
                                 <div>
                                     <div class="mt-3 text-3xl font-bold leading-8">{{ $experiences }}</div>
 
@@ -57,10 +57,10 @@
                             </div>
                         </div>
                     </a>
-                    <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                    <a class="col-span-12 transition duration-300 transform bg-white rounded-lg shadow-xl hover:scale-105 sm:col-span-6 xl:col-span-3 intro-y"
                         href="{{ route('socials.index') }}">
                         <div class="p-5">
-                            <div class="ml-2 w-full flex-1">
+                            <div class="flex-1 w-full ml-2">
                                 <div>
                                     <div class="mt-3 text-3xl font-bold leading-8">{{ $socials }}</div>
 
@@ -71,19 +71,19 @@
                     </a>
                 </div>
             @else
-                <h1 class="text-3xl text-center lg:text-4xl font-bold leading-tight">Welcome {{ auth()->user()->name }}! &#x1F44B;</h1>
+                <h1 class="text-3xl font-bold leading-tight text-center lg:text-4xl">Welcome {{ auth()->user()->name }}! &#x1F44B;</h1>
                 @role('headhunter')
-                    <div class="text-center max-w-2xl mx-auto p-3">
-                        <p class="text-1xl py-1 leading-tight">Now you should have access to anything I would like to share with you. &#x1F604;</p>
-                        <a href="{{ route('timeline') }}" class="inline-block py-2 m-2 mt-8 px-3 text-indigo-100 transition-colors duration-150 bg-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-600"><i class="fas fa-business-time"></i> Check out my timeline</a>
+                    <div class="max-w-2xl p-3 mx-auto text-center">
+                        <p class="py-1 leading-tight text-1xl">Now you should have access to anything I would like to share with you. &#x1F604;</p>
+                        <a href="{{ route('timeline') }}" class="inline-block px-3 py-2 m-2 mt-8 text-indigo-100 transition-colors duration-150 bg-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-600"><i class="fas fa-business-time"></i> Check out my timeline</a>
                     </div>
                 @endrole
                 @unlessrole('headhunter')
-                    <div class="text-center max-w-2xl mx-auto p-3">
-                        <p class="text-1xl py-1 leading-tight">Seems like you do not have permission from me to view anything yet. &#x1F62C;</p>
-                        <p class="text-1xl py-1 leading-tight">I don't give out access automatically, because spam-bots is always present, that way I have more control. I hope that you understand. &#x1F604;</p>
-                        <a href="{{ route('want-access') }}" class="inline-block py-3 m-2 mt-8 px-6 text-lg text-indigo-100 transition-colors duration-150 bg-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-600"><i class="fas fa-bullhorn"></i> Ask me for access &dagger;</a>
-                        <p class="text-gray-600 mt-3 text-xs">&dagger; This will just notify me via email that you want access and then I will send you an email when you get your access.</p>
+                    <div class="max-w-2xl p-3 mx-auto text-center">
+                        <p class="py-1 leading-tight text-1xl">Seems like you do not have permission from me to view anything yet. &#x1F62C;</p>
+                        <p class="py-1 leading-tight text-1xl">I don't give out access automatically, because spam-bots is always present, that way I have more control. I hope that you understand. &#x1F604;</p>
+                        <a href="{{ route('want-access') }}" class="inline-block px-6 py-3 m-2 mt-8 text-lg text-indigo-100 transition-colors duration-150 bg-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-600"><i class="fas fa-bullhorn"></i> Ask me for access &dagger;</a>
+                        <p class="mt-3 text-xs text-gray-600">&dagger; This will just notify me via email that you want access and then I will send you an email when you get your access.</p>
                     </div>
                 @endunlessrole
             @endrole
