@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccessController;
 use App\Http\Controllers\CourseController;
@@ -43,6 +44,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:super-admin']],
     Route::resource('socials', SocialController::class);
     Route::resource('users', UserController::class);
     Route::resource('tags', TagController::class);
+    Route::resource('posts', PostController::class);
     Route::prefix('export')->group(function () {
         Route::get('/cv', [ExportController::class, 'cv'])->name('export.cv');
         Route::get('/courses', [ExportController::class, 'courses'])->name('export.cv');
