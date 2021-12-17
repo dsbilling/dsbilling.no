@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Course;
 use App\Models\Social;
 use App\Models\Company;
@@ -18,11 +19,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $certifications = Certification::count();
-        $courses = Course::count();
-        $socials = Social::all();
-        $experience = Experience::orderBy('started_at', 'ASC')->pluck('started_at')->first();
-        return view('home', compact('certifications', 'courses', 'socials', 'experience'));
+        $posts = Post::where('published_at', '<=', now())->where('draft', false)->orderByDesc('published_at')->take(4)->get();
+        return view('home', compact('posts'));
     }
 
     /**

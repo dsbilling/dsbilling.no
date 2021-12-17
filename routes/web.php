@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccessController;
 use App\Http\Controllers\CourseController;
@@ -24,6 +26,8 @@ use App\Http\Controllers\CertificationController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::resource('blog', BlogController::class);
+
 Route::prefix('tools')->group(function () {
     Route::get('/liter', [HomeController::class, 'liter'])->name('liter-calculator');
     Route::post('/liter', [HomeController::class, 'literCalculate'])->name('liter-calculator.store');
@@ -43,6 +47,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:super-admin']],
     Route::resource('socials', SocialController::class);
     Route::resource('users', UserController::class);
     Route::resource('tags', TagController::class);
+    Route::resource('posts', PostController::class);
     Route::prefix('export')->group(function () {
         Route::get('/cv', [ExportController::class, 'cv'])->name('export.cv');
         Route::get('/courses', [ExportController::class, 'courses'])->name('export.cv');
