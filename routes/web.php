@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -25,6 +26,8 @@ use App\Http\Controllers\CertificationController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::resource('blog', BlogController::class);
+
 Route::prefix('tools')->group(function () {
     Route::get('/liter', [HomeController::class, 'liter'])->name('liter-calculator');
     Route::post('/liter', [HomeController::class, 'literCalculate'])->name('liter-calculator.store');
