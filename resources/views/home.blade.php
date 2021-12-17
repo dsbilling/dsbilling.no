@@ -15,6 +15,7 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="flex items-baseline ml-auto space-x-3">
+                        <x-nav-link-front href="{{ route('blog.index') }}">Blog</x-nav-link-front>
                         <x-nav-link-front href="{{ route('register') }}">CV</x-nav-link-front>
                     </div>
                 </div>
