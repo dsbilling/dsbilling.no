@@ -4,7 +4,7 @@ import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 Alpine.start();
 
-//require('@fortawesome/fontawesome-free/js/all.js');
+require('@fortawesome/fontawesome-free/js/all.js');
 
 import flatpickr from "flatpickr";
 require("flatpickr/dist/themes/dark.css");
