@@ -7,28 +7,28 @@
 	
 	<div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-			<div class="px-4 py-4 -mx-4 overflow-x-auto sm:-mx-8 sm:px-8">
-				<div class="inline-block min-w-full p-6 overflow-hidden bg-white rounded-lg shadow">
+			<div class="px-4 py-4 -mx-4 overflow-hidden sm:-mx-8 sm:px-8">
+				<div class="inline-block w-full p-6 overflow-visible bg-white rounded-lg shadow dark:bg-gray-900">
 					<form action="{{ route('posts.update', $post) }}" method="POST" enctype="multipart/form-data">
 						@csrf
 						@method("PUT")
 						<div class="flex flex-wrap mb-6">
 							<div class="w-full px-3 mb-6 md:w-3/5 md:mb-0">
-								<label for="title" class="block mb-1 text-gray-700">Title</label>
+								<label for="title" class="block mb-1 text-gray-700 dark:text-white">Title</label>
 								<input id="title" name="title" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" value="{{ old('title') ? old('title') : $post->title }}">
                                 @error('title')
                                     <span class="text-xs text-red-700">{{ $message }}</span>
                                 @enderror
 							</div>
 							<div class="w-full px-3 mb-6 md:w-1/5 md:mb-0">
-								<label for="published_at" class="block mb-1 text-gray-700">Published At</label>
+								<label for="published_at" class="block mb-1 text-gray-700 dark:text-white">Published At</label>
 								<input id="published_at" name="published_at" type="text" class="w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline flatpickrSelector" value="{{ old('published_at') ? old('published_at') : $post->published_at }}">
 								@error('published_at')
                                     <span class="text-xs text-red-700">{{ $message }}</span>
                                 @enderror
 							</div>
 							<div class="w-full px-3 mb-6 md:w-1/5 md:mb-0">
-								<label for="draft" class="block mb-1 text-gray-700">Draft?</label>
+								<label for="draft" class="block mb-1 text-gray-700 dark:text-white">Draft?</label>
 								<div class="relative inline-block w-full text-gray-700">
 									<select class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" id="draft" name="draft">
 										<option value="1" {{ $post->draft == 1 ? 'selected' : '' }}>Yes</option>
@@ -45,19 +45,19 @@
 						</div>
 						<div class="flex flex-wrap">
 							<div class="w-full px-3">
-								<label for="grid-password" class="block mb-1 text-gray-700">Post body</label>
-								<textarea class="input " name="body" id="body">{{ old('body') ? old('body') : $post->body }}</textarea>
+								<label for="grid-password" class="block mb-1 text-gray-700 dark:text-white">Post body</label>
+								<textarea name="body" id="body">{{ old('body') ? old('body') : $post->body }}</textarea>
                                 @error('body')
                                     <span class="text-xs text-red-700">{{ $message }}</span>
                                 @enderror
 							</div>
 						</div>
 
-						<div class="px-4 py-5 mb-6 bg-white sm:p-6">
-                            <label for="tags" class="block text-sm font-medium text-gray-700">Tags</label>
+						<div class="px-4 py-5 mb-6 sm:p-6">
+                            <label for="tags" class="block text-sm font-medium text-gray-700 dark:text-white">Tags</label>
                             @foreach($tags as $tag)
-                                <label class="inline-flex items-center m-2 text-gray-700">
-                                    <input class="text-indigo-600 border-gray-300 rounded shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50" type="checkbox" value="{{ $tag->name }}" name="tags[]" {{ ($post->tags->contains('name', $tag->name)) ? ' checked' : '' }} />
+                                <label class="inline-flex items-center m-2 text-gray-700 dark:text-white">
+                                    <input class="text-orange-600 border-gray-300 rounded shadow-sm focus:border-orange-300 focus:ring focus:ring-offset-0 focus:ring-orange-200 focus:ring-opacity-50" type="checkbox" value="{{ $tag->name }}" name="tags[]" {{ ($post->tags->contains('name', $tag->name)) ? ' checked' : '' }} />
                                     <span class="ml-1">{{ $tag->name }}</span>
                                 </label>
                             @endforeach
