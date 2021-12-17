@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="flex flex-col max-w-2xl mx-auto mt-6 sm:mt-0">
 
-        <h1 class="text-3xl font-semibold sm:text-4xl break-word"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
+        <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl break-word"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
 
         <p class="text-sm font-medium text-orange-800/90 dark:text-orange-100/50">
             {{ $post->user->name }} &middot; {{ now()->subMonth(1) > $post->published_at ? $post->published_at->isoFormat('D MMMM YYYY') : $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }}
@@ -27,7 +27,7 @@
             @endforeach
         </div>--}}
         
-        <article class="w-full mt-8 prose dark:prose-invert">
+        <article class="w-full mt-6 prose lg:mt-10 dark:prose-invert prose-a:text-orange-500 prose-h1:text-4xl">
             {!! $html !!}
             {{--<x-markdown>{{ $post->body }}</x-markdown>--}}
         </article>
