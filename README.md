@@ -6,3 +6,18 @@
 </p>
 
 Just my personal website.
+
+---
+
+## My rank on GitHub for Norway:
+Commits:
+
+<img src="https://user-badge.committers.top/norway/DanielRTRD.svg" alt="">
+
+Contributions:
+
+<img src="https://user-badge.committers.top/norway_public/DanielRTRD.svg" alt="">
+
+All:
+
+<img src="https://user-badge.committers.top/norway_private/DanielRTRD.svg" alt="">
