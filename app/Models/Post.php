@@ -58,6 +58,10 @@ class Post extends Model implements Viewable
         'published_at' => 'datetime',
     ];
 
+    protected $withCount = [
+        'likes',
+    ];
+
     /**
      * Get the user that made this post.
      */
@@ -65,4 +69,36 @@ class Post extends Model implements Viewable
     {
         return $this->belongsTo(User::class);
     }
+
+    public function likes()
+    {
+        return $this->hasMany(PostLike::class);
+    }
+
+    public function isLiked()
+    {
+        if (auth()->user()) {
+            return auth()->user()->likes()->forPost($this)->count();
+        }
+
+        if (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
+            return $this->likes()->forIp($ip)->forUserAgent($userAgent)->count();
+        }
+
+        return false;
+    }
+
+    public function removeLike()
+    {
+        if (auth()->user()) {
+            return auth()->user()->likes()->forPost($this)->delete();
+        }
+
+        if (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
+            return $this->likes()->forIp($ip)->forUserAgent($userAgent)->delete();
+        }
+
+        return false;
+    }
+
 }
