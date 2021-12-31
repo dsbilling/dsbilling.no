@@ -15,6 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
+        seo()->title('Blog - '.config('app.name'));
         $posts = Post::where('published_at', '<=', now())->where('draft', false)->orderByDesc('published_at')->paginate(5);
         return view('blog.index', ['posts' => $posts]);
     }
@@ -37,7 +38,7 @@ class BlogController extends Controller
         $html = app(\Spatie\LaravelMarkdown\MarkdownRenderer::class)
                 ->toHtml($post->body);
 
-        seo()->title($post->title.' - '.config('app.name'));
+        seo()->title($post->title.' - Blog - '.config('app.name'));
         seo()->description(strip_tags(Str::of(Str::limit($post->body, 150))->markdown()));
 
         return view('blog.show', ['post' => $post, 'html' => $html]);
