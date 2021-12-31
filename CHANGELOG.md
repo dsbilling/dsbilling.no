@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.1 - 2021-12-31
+
+## What's Changed
+
+- SEO by @DanielRTRD in https://github.com/DanielRTRD/daniel.rtrd.no/pull/20
+- Post likes by @DanielRTRD in https://github.com/DanielRTRD/daniel.rtrd.no/pull/21
+
+**Full Changelog**: https://github.com/DanielRTRD/daniel.rtrd.no/compare/1.0.0...1.0.1
+
 ## 1.0.0 - 2021-12-29
 
 ## What's Changed
