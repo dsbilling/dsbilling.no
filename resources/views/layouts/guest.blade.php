@@ -65,7 +65,7 @@
             <div class="pb-6 mt-12 sm:mt-24">
                 <div class="max-w-4xl mx-auto text-xs text-gray-400 sm:px-4 lg:px-0">
                     <div class="pb-4 mb-2 border-t border-gray-100 dark:border-gray-800"></div>
-                    <div class="grid grid-flow-row grid-cols-4 gap-1 font-medium sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-8 lg:grid-rows-1 lg:grid-cols-12">
+                    <div class="grid grid-flow-row grid-cols-4 gap-1 font-medium sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-8 lg:grid-rows-1 lg:grid-cols-10">
                         @foreach (\App\Models\Social::all() as $social)
                             <div class="text-center">
                                 <a href="{{$social->link}}" class="transition-colors hover:text-orange-500 focus:text-orange-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" target="_blank"><i class="{{$social->icon}} text-sm mr-1"></i>{{$social->name}}</a>
