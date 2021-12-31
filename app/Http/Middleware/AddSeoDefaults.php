@@ -29,8 +29,10 @@ class AddSeoDefaults
             OpenGraph::make()->property('site_name')->content('Daniel S. Billing'),
             OpenGraph::make()->property('locale')->content('en_US'),
 
+            Twitter::make()->name('card')->content('summary_large_image'),
             Twitter::make()->name('site')->content('@danielrtrd'),
             Twitter::make()->name('creator')->content('@danielrtrd'),
+            Twitter::make()->name('image')->content('/img/banner.jpg', false),
 
         ]);
         
