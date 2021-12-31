@@ -64,14 +64,14 @@
             <div class="pb-6 mt-12 sm:mt-24">
                 <div class="max-w-4xl mx-auto text-xs text-gray-400 sm:px-4 lg:px-0">
                     <div class="pb-4 mb-2 border-t border-gray-100 dark:border-gray-800"></div>
-                    <div class="flex flex-row justify-between">
-                        <div class="space-x-4 space-y-2 font-medium">
-                            @foreach (\App\Models\Social::all() as $social)
-                                <a href="{{$social->link}}" class="transition-colors rounded hover:text-orange-500 focus:text-orange-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" target="_blank"><i class="{{$social->icon}} text-sm mr-1"></i>{{$social->name}}</a>
-                            @endforeach
-                        </div>
+                    <div class="grid grid-flow-row grid-cols-4 gap-1 font-medium sm:grid-flow-col sm:grid-rows-1 sm:grid-cols-8 lg:grid-rows-1 lg:grid-cols-12">
+                        @foreach (\App\Models\Social::all() as $social)
+                            <div class="text-center">
+                                <a href="{{$social->link}}" class="transition-colors hover:text-orange-500 focus:text-orange-500 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500 focus-visible:ring-opacity-60 focus-visible:outline-none focus:outline-none" target="_blank"><i class="{{$social->icon}} text-sm mr-1"></i>{{$social->name}}</a>
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="justify-center mx-auto my-4">
+                    <div class="justify-center mx-auto my-6 text-center sm:text-left">
                         <a href="https://github.com/DanielRTRD/daniel.rtrd.no" class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400">Built with Laravel and Tailwind, it's open-source on <i class="fab fa-github"></i>Github</a>
                     </div>
                 </div>
