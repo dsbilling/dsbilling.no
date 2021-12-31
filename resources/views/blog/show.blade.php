@@ -4,7 +4,7 @@
         <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl break-word"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
 
         <p class="text-sm font-medium text-orange-800/90 dark:text-orange-100/50">
-            {{ $post->user->name }} &middot; {{ now()->subMonth(1) > $post->published_at ? $post->published_at->isoFormat('D MMMM YYYY') : $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }}
+            {{ $post->user->name }} &middot; {{ now()->subMonth(1) > $post->published_at ? $post->published_at->isoFormat('D MMMM YYYY') : $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }} &middot; {{ $post->likes_count }} {{ Str::plural('like', $post->likes_count) }}
             {{--@foreach ($post->tags as $tag)
                 <span class="inline-flex items-center justify-center mr-1 font-semibold leading-none uppercase">{{ $tag->name }}</span>
             @endforeach--}}
