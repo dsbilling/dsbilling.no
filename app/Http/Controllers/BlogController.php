@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -35,6 +36,10 @@ class BlogController extends Controller
         views($post)->cooldown(60)->record();
         $html = app(\Spatie\LaravelMarkdown\MarkdownRenderer::class)
                 ->toHtml($post->body);
+
+        seo()->title($post->title.' - '.config('app.name'));
+        seo()->description(strip_tags(Str::of(Str::limit($post->body, 150))->markdown()));
+
         return view('blog.show', ['post' => $post, 'html' => $html]);
     }
 }
