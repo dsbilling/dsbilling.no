@@ -31,6 +31,8 @@
             {!! $html !!}
             {{--<x-markdown>{{ $post->body }}</x-markdown>--}}
         </article>
+
+        <livewire:like :post="$post" />
         
     </div>
 </x-guest-layout>
