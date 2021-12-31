@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        @livewireStyles
 
         <!-- FavIcon -->
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
@@ -77,5 +78,7 @@
                 </div>
             </div>
         </div>
+        
+        @livewireScripts
     </body>
 </html>

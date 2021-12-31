@@ -27,7 +27,7 @@
                                 {{--<img alt="blog photo" src="{{ asset('img/daniel.jpg') }}" class="object-cover w-full max-h-28"/>--}}
                                 <div class="w-full p-4 bg-white dark:bg-gray-800 hover:dark:bg-gray-700">
                                     <p class="text-xs font-medium text-orange-500 dark:text-orange-400">
-                                        {{ $post->user->name }} &middot; {{ $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }}
+                                        {{ $post->user->name }} &middot; {{ $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }} &middot; {{ $post->likes_count }} {{ Str::plural('like', $post->likes_count) }}
                                     </p>
                                     <p class="my-2 text-xl font-semibold text-gray-800 truncate dark:text-white">
                                         {{ $post->title }}
