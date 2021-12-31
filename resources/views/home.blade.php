@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="px-4 space-y-14 lg:space-y-24">
         <section id="about">
-            <div class="space-x-5 lg:flex item-center lg:-mx-4">
+            <div class="space-x-0 sm:space-x-5 lg:flex item-center lg:-mx-4">
                 <div>
                     <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-50 lg:text-4xl">Hi there, I'm Daniel &#x1F44B;</h1>
                     <div class="mt-4 text-gray-800 dark:text-gray-100">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="items-center flex-shrink-0 mx-auto mt-12 lg:px-4 lg:mt-0 sm:mx-0">
-                    <img alt="Profile" src="{{ asset('img/daniel.jpg') }}" class="flex w-56 h-56 rounded-full">
+                    <img alt="Profile" src="{{ asset('img/daniel.jpg') }}" class="flex w-56 h-56 mx-auto rounded-full sm:mx-0">
                 </div>
             </div>
         </section>
