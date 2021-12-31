@@ -18,6 +18,9 @@ class AddSeoDefaults
 
         seo()->csrfToken();
 
+        seo()->title(config('app.name'));
+        seo()->description('Just my personal website.');
+
         seo()->addMany([
 
             Meta::make()->name('copyright')->content('Daniel S. Billing'),
