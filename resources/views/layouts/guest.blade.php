@@ -37,7 +37,6 @@
                         <div class="hidden sm:block">
                             <div class="flex items-baseline ml-auto space-x-3">
                                 <x-nav-link-front href="{{ route('blog.index') }}">Blog</x-nav-link-front>
-                                <x-nav-link-front href="{{ route('register') }}">CV</x-nav-link-front>
                             </div>
                         </div>
                         <div class="flex -mr-2 sm:hidden">
@@ -55,7 +54,6 @@
                 <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
                     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <x-nav-link-responsive-front href="{{ route('blog.index') }}">Blog</x-nav-link-responsive-front>
-                        <x-nav-link-responsive-front href="{{ route('register') }}">CV</x-nav-link-responsive-front>
                     </div>
                 </div>
             </nav>
