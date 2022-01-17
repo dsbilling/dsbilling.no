@@ -27,5 +27,8 @@
         "easymde": "^2.15.0",
         "flatpickr": "^4.6.9",
         "shiki": "^0.9.15"
+    },
+    "resolutions": {
+        "node-forge": "^1.0.0"
     }
 }
