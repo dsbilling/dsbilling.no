@@ -91,7 +91,7 @@ class HomeController extends Controller
      */
     public function timeline()
     {
-        $experiences = Experience::orderByRaw("-ended_at", 'DESC')->orderby('started_at', 'DESC')->get();
+        $experiences = Experience::orderBy("ended_at", 'DESC')->orderby('started_at', 'DESC')->get();
         return view('timeline', compact('experiences'));
     }
 
