@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Notifications\GotAccess;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Notification;
 
@@ -77,12 +76,6 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        if($request->boolean('gotaccess')) {
-            Notification::send($user, new GotAccess());
-            session()->flash('flash.banner', 'Notification sent!');
-            session()->flash('flash.bannerStyle', 'success');
-            return redirect()->route('dashboard');
-        }
         $user->syncRoles($request->get('roles'));
         return redirect()->route('users.index');
     }
