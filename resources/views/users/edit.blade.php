@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl leading-tight">
+        <h2 class="text-xl font-semibold leading-tight">
             {{ __('Manage User') }} - {{ $user->name }}
         </h2>
     </x-slot>
@@ -8,10 +8,10 @@
         @csrf
         @method("PUT")
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
                     <div class="space-y-10">
-                        <div class="px-4 py-5 sm:p-6 bg-white shadow sm:rounded-lg">
+                        <div class="px-4 py-5 bg-white shadow sm:p-6 sm:rounded-lg">
                             <div class="space-y-6">
                                 @foreach ($roles as $role)
                                     <div class="flex items-center justify-between">
@@ -21,16 +21,11 @@
                                         </label>
                                     </div>
                                 @endforeach
-
                             </div>
                         </div>
                     </div>
-                    <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                        <label class="inline-flex items-center mx-3">
-                            <input name="gotaccess" type="checkbox" class="form-checkbox">
-                            <span class="ml-2 text-sm text-gray-600">{{ __('Send "Got Access" notification?') }}</span>
-                        </label>
-                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
+                    <div class="flex items-center justify-end px-4 py-3 text-right bg-gray-50 sm:px-6">
+                        <button type="submit" class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25">
                             {{ __('Save') }}
                         </button>
                     </div>
