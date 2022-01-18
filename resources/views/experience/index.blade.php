@@ -1,44 +1,44 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl font-semibold leading-tight">
             Experiences
         </h2>
     </x-slot>
 
     <div>
-        <div class="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="px-4 py-10 mx-auto overflow-hidden max-w-7xl sm:px-6 lg:px-8">
             <div class="block mb-8">
-                <a href="{{ route('experiences.create') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add</a>
+                <a href="{{ route('experiences.create') }}" class="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700">Add</a>
             </div>
             <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                    <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                        <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
                             <table class="min-w-full divide-y divide-gray-200">
                                 <thead class="bg-gray-50">
                                     <tr>
-                                        <th scope="col" width="50" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" width="50" class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             ID
                                         </th>
-                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             title
                                         </th>
-                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             department
                                         </th>
-                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             type
                                         </th>
-                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             started_at
                                         </th>
-                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             ended_at
                                         </th>
-                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             company
                                         </th>
-                                        <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                        <th scope="col" class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50">
                                             tags
                                         </th>
                                         <th scope="col" width="200" class="p-3 bg-gray-50">
@@ -49,45 +49,45 @@
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     @foreach ($experiences as $experience)
                                         <tr>
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                            <td class="px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap">
                                                 {{ $experience->id }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                            <td class="px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap">
                                                 {{ $experience->title }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                            <td class="px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap">
                                                 {{ $experience->department }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                            <td class="px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap">
                                                 {{ $experience->type }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                            <td class="px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap">
                                                 {{ $experience->started_at->diffForHumans() }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                            <td class="px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap">
                                                 {{ $experience->ended_at ? $experience->ended_at->diffForHumans() : '' }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                            <td class="px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap">
                                                 {{ $experience->company->name ?? 'N/A' }}
                                             </td>
 
-                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+                                            <td class="px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap">
                                                 {{ $experience->tags->count() }}
                                             </td>
 
-                                            <td class="p-3 whitespace-nowrap text-sm font-medium">
-                                                <a href="{{ route('experiences.show', $experience->id) }}" class="bg-blue-400 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded">View</a>
-                                                <a href="{{ route('experiences.edit', $experience->id) }}" class="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded">Edit</a>
+                                            <td class="p-3 text-sm font-medium whitespace-nowrap">
+                                                <a href="{{ route('experiences.show', $experience->id) }}" class="px-2 py-1 font-bold text-white bg-blue-400 rounded hover:bg-blue-600">View</a>
+                                                <a href="{{ route('experiences.edit', $experience->id) }}" class="px-2 py-1 font-bold text-white bg-yellow-400 rounded hover:bg-yellow-600">Edit</a>
                                                 <form class="inline-block" action="{{ route('experiences.destroy', $experience->id) }}" method="POST" onsubmit="return confirm('Are you sure?');">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-2 rounded">Delete</button>
+                                                    <button type="submit" class="px-2 py-1 font-bold text-white bg-red-400 rounded hover:bg-red-600">Delete</button>
                                                 </form>
                                             </td>
                                         </tr>
