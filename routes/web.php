@@ -6,7 +6,6 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AccessController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\SocialController;
@@ -35,11 +34,10 @@ Route::prefix('tools')->group(function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
-    Route::get('/want-access', [AccessController::class, 'wantAccess'])->middleware(['throttle:1'])->name('want-access');
-    Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['permission:timeline'])->name('timeline');
 });
 
 Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:super-admin']], function () {
+    Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['permission:timeline'])->name('timeline');
     Route::resource('companies', CompanyController::class);
     Route::resource('certifications', CertificationController::class);
     Route::resource('courses', CourseController::class);
