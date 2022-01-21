@@ -2,7 +2,7 @@
 	<div class="flex flex-col items-center">
 		<div class="grid w-full grid-cols-1 gap-8">
 			@forelse($posts as $post)
-				<div class="w-full m-auto overflow-hidden border border-gray-200 rounded-lg shadow-lg cursor-pointer bg-gray-50 group dark:bg-gray-800 hover:dark:bg-gray-700 dark:border-gray-700">
+				<div class="w-full m-auto overflow-hidden border border-gray-200 rounded-lg shadow-lg cursor-pointer bg-gray-50 group dark:bg-gray-800 hover:dark:bg-gray-700 dark:border-gray-700 dark:shadow-gray-100/10">
 					<a href="{{ route('blog.show', $post->slug) }}" class="block w-full h-full">
 						{{--<img alt="blog photo" src="{{ asset('img/daniel.jpg') }}" class="object-cover w-full max-h-28"/>--}}
 						<div class="w-full p-4 ">
