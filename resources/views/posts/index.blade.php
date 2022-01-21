@@ -31,6 +31,12 @@
 									Updated
 								</th>
 								<th scope="col" class="px-5 py-3 text-sm font-normal text-left uppercase border-b border-gray-200 dark:border-gray-700">
+									Views
+								</th>
+								<th scope="col" class="px-5 py-3 text-sm font-normal text-left uppercase border-b border-gray-200 dark:border-gray-700">
+									Likes
+								</th>
+								<th scope="col" class="px-5 py-3 text-sm font-normal text-left uppercase border-b border-gray-200 dark:border-gray-700">
 									Status
 								</th>
 								<th scope="col" class="px-5 py-3 text-sm font-normal text-left uppercase border-b border-gray-200 dark:border-gray-700">
@@ -51,6 +57,12 @@
 									</td>
 									<td class="px-5 py-5 text-sm border-b border-gray-200 dark:border-gray-700">
 										{{ $post->updated_at->diffForHumans() }}
+									</td>
+									<td class="px-5 py-5 text-sm border-b border-gray-200 dark:border-gray-700">
+										{{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }}
+									</td>
+									<td class="px-5 py-5 text-sm border-b border-gray-200 dark:border-gray-700">
+										{{ $post->likes_count }}
 									</td>
 									<td class="px-5 py-5 text-sm border-b border-gray-200 dark:border-gray-700">
 										@if(!$post->draft)
