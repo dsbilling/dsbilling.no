@@ -46,7 +46,7 @@
 						<tbody class="text-gray-900 dark:text-white">
 							@foreach ($posts as $post)
 								<tr>
-									<td class="max-w-sm px-5 py-5 text-sm truncate border-b border-gray-200 dark:border-gray-700">
+									<td class="max-w-xs px-5 py-5 text-sm truncate border-b border-gray-200 dark:border-gray-700">
 										{{ Str::limit($post->title, 100) }}
 									</td>
 									<td class="px-5 py-5 text-sm border-b border-gray-200 dark:border-gray-700">
