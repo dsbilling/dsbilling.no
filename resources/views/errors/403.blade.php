@@ -1,4 +1,4 @@
-@extends('errors::illustrated-layout')
+@extends('errors::guest')
 
 @section('title', __('Forbidden'))
 @section('code', '403')
