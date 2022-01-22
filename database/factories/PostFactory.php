@@ -26,7 +26,7 @@ class PostFactory extends Factory
             'title' => $this->faker->text,
             'slug' => Str::slug($this->faker->text),
             'body' => $this->faker->paragraphs(3, true),
-            'draft' => $this->faker->boolean,
+            'draft' => false,
             'published_at' => $this->faker->dateTimeBetween('-1 year', '+1 year'),
             'user_id' => 1,
         ];
