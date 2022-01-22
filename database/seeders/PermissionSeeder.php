@@ -23,11 +23,6 @@ class PermissionSeeder extends Seeder
         // Create permissions
         Permission::firstOrCreate(['name' => 'timeline']);
         Permission::firstOrCreate(['name' => 'cv']);
-        
-        // Create role and assign permission
-        $role = Role::firstOrCreate(['name' => 'headhunter']);
-        $role->givePermissionTo('timeline');
-        $role->givePermissionTo('cv');
 
         // Super Admin
         $sa = Role::firstOrCreate(['name' => 'super-admin']);
