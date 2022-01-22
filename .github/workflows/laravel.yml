@@ -48,5 +48,5 @@ jobs:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
           PRIVATE_EMAIL: 'test@example.com'
-        run: vendor/bin/phpunit
+        run: vendor/bin/pest
 
