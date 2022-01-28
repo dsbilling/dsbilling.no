@@ -23,6 +23,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script defer data-domain="daniel.rtrd.no" src="https://plausible.io/js/plausible.js"></script>
     </head>
     <body class="h-screen min-h-full {{ env('APP_DEBUG') ? 'debug-screens' : '' }}">
         <div class="min-h-full px-4 pb-8 font-sans antialiased text-gray-900 bg-white dark:bg-gray-900">
