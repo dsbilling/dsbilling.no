@@ -40,7 +40,7 @@
                         <div class="hidden sm:block">
                             <div class="flex items-baseline ml-auto space-x-3">
                                 @if(config('blog.uses'))<x-nav-link-front href="{{ route('uses') }}">My Setup</x-nav-link-front>@endif
-                                <x-nav-link-front href="{{ route('blog.index') }}">Blog</x-nav-link-front>
+                                @if(\App\Models\Post::isPublished()->count() > 0)<x-nav-link-front href="{{ route('blog.index') }}">Blog</x-nav-link-front>@endif
                             </div>
                         </div>
                         <div class="flex -mr-2 sm:hidden">
@@ -58,7 +58,7 @@
                 <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
                     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         @if(config('blog.uses'))<x-nav-link-responsive-front href="{{ route('uses') }}">My Setup</x-nav-link-responsive-front>@endif
-                        <x-nav-link-responsive-front href="{{ route('blog.index') }}">Blog</x-nav-link-responsive-front>
+                        @if(\App\Models\Post::isPublished()->count() > 0)<x-nav-link-responsive-front href="{{ route('blog.index') }}">Blog</x-nav-link-responsive-front>@endif
                     </div>
                 </div>
             </nav>

@@ -101,4 +101,8 @@ class Post extends Model implements Viewable
         return false;
     }
 
+    public function scopeIsPublished($query)
+    {
+        return $query->where('draft', false)->where('published_at', '<=', now());
+    }
 }
