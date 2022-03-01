@@ -39,7 +39,7 @@
                         </div>
                         <div class="hidden sm:block">
                             <div class="flex items-baseline ml-auto space-x-3">
-                                <x-nav-link-front href="{{ route('uses') }}">My Setup</x-nav-link-front>
+                                @if(config('blog.uses'))<x-nav-link-front href="{{ route('uses') }}">My Setup</x-nav-link-front>@endif
                                 <x-nav-link-front href="{{ route('blog.index') }}">Blog</x-nav-link-front>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
                     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <x-nav-link-responsive-front href="{{ route('uses') }}">My Setup</x-nav-link-responsive-front>
+                        @if(config('blog.uses'))<x-nav-link-responsive-front href="{{ route('uses') }}">My Setup</x-nav-link-responsive-front>@endif
                         <x-nav-link-responsive-front href="{{ route('blog.index') }}">Blog</x-nav-link-responsive-front>
                     </div>
                 </div>
