@@ -22,6 +22,9 @@
 									Title
 								</th>
 								<th scope="col" class="px-5 py-3 text-sm font-normal text-left uppercase border-b border-gray-200 dark:border-gray-700">
+									Slug
+								</th>
+								<th scope="col" class="px-5 py-3 text-sm font-normal text-left uppercase border-b border-gray-200 dark:border-gray-700">
 									Published
 								</th>
 								<th scope="col" class="px-5 py-3 text-sm font-normal text-left uppercase border-b border-gray-200 dark:border-gray-700">
@@ -48,6 +51,9 @@
 								<tr>
 									<td class="max-w-xs px-5 py-5 text-sm truncate border-b border-gray-200 dark:border-gray-700">
 										{{ Str::limit($post->title, 100) }}
+									</td>
+									<td class="px-5 py-5 text-sm border-b border-gray-200 dark:border-gray-700">
+										{{ $post->slug }}
 									</td>
 									<td class="px-5 py-5 text-sm border-b border-gray-200 dark:border-gray-700">
 										{{ $post->published_at ? $post->published_at->diffForHumans() : 'Not published' }}
