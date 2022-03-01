@@ -27,7 +27,7 @@
             <script defer data-domain="daniel.rtrd.no" src="https://plausible.io/js/plausible.js"></script>
         @endproduction
     </head>
-    <body class="h-screen min-h-full {{ env('APP_DEBUG') ? 'debug-screens' : '' }}">
+    <body class="h-screen min-h-full {{ config('app.debug') ? 'debug-screens' : '' }}">
         <div class="min-h-full px-4 pb-8 font-sans antialiased text-gray-900 bg-white dark:bg-gray-900">
             <nav x-data="{ open: false }" class="px-4 bg-white md:px-8 dark:bg-gray-900">
                 <div class="max-w-4xl mx-auto">
