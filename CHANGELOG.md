@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.2 - 2022-03-01
+
+## What's Changed
+
+- Pest by @DanielRTRD in https://github.com/DanielRTRD/daniel.rtrd.no/pull/22
+- Bump follow-redirects from 1.14.7 to 1.14.8 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/23
+- Bump laravel/fortify from 1.8.6 to 1.11.1 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/24
+- Bump dependabot/fetch-metadata from 1.2.0 to 1.2.1 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/25
+
+**Full Changelog**: https://github.com/DanielRTRD/daniel.rtrd.no/compare/1.0.1...1.0.2
+
 ## 1.0.1 - 2021-12-31
 
 ## What's Changed
