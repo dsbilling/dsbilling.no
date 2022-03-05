@@ -26,6 +26,9 @@ use App\Http\Controllers\CertificationController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('blog', BlogController::class);
+Route::get('/uses', function () {
+    return redirect()->route('blog.show', ['blog' => config('blog.uses')]);
+})->name('uses');
 
 Route::prefix('tools')->group(function () {
     Route::get('/liter', [HomeController::class, 'liter'])->name('liter-calculator');
