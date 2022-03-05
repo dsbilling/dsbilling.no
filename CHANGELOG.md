@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.3 - 2022-03-05
+
+## What's Changed
+
+- Uses by @DanielRTRD in https://github.com/DanielRTRD/daniel.rtrd.no/pull/26
+
+**Full Changelog**: https://github.com/DanielRTRD/daniel.rtrd.no/compare/1.0.2...1.0.3
+
 ## 1.0.2 - 2022-03-01
 
 ## What's Changed
