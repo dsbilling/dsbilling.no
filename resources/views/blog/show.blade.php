@@ -28,7 +28,7 @@
         </div>--}}
         
         <article class="w-full mt-6 prose lg:mt-10 dark:prose-invert prose-a:text-orange-500 prose-h1:text-4xl">
-            <x-markdown>{!!  $post->body !!}</x-markdown>
+            <x-markdown>{!! $post->body !!}</x-markdown>
         </article>
 
         <livewire:like :post="$post" />
