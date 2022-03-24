@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Kilobyteno\LaravelUserGuestLike\Traits\HasUserGuestLike;
 use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Uuid;
 
 class Post extends Model implements Viewable
@@ -17,6 +18,7 @@ class Post extends Model implements Viewable
     use InteractsWithViews;
     use SoftDeletes;
     use HasTags;
+    use HasUserGuestLike;
 
     protected $removeViewsOnDelete = true;
 
@@ -70,7 +72,7 @@ class Post extends Model implements Viewable
         return $this->belongsTo(User::class);
     }
 
-    public function likes()
+    /*public function likes()
     {
         return $this->hasMany(PostLike::class);
     }
@@ -99,7 +101,7 @@ class Post extends Model implements Viewable
         }
 
         return false;
-    }
+    }*/
 
     public function scopeIsPublished($query)
     {
