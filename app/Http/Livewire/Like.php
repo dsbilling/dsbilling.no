@@ -3,35 +3,30 @@
 namespace App\Http\Livewire;
 
 use App\Models\Post;
+use App\Models\User;
 use Livewire\Component;
 
 class Like extends Component
 {
     public Post $post;
     public int $count;
+    public $user;
 
     public function mount(Post $post)
     {
         $this->post = $post;
-        $this->count = $post->likes_count;
+        $this->count = $post->likes()->count();
+        $this->user = auth()->check() ? auth()->user() : null;
     }
 
     public function like()
     {
-        if ($this->post->isLiked()) {
-            $this->post->removeLike();
-            $this->count--;
-        } elseif (auth()->user()) {
-            $this->post->likes()->create([
-                'user_id' => auth()->id(),
-            ]);
-            $this->count++;
-        } elseif (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
-            $this->post->likes()->create([
-                'ip' => $ip,
-                'user_agent' => $userAgent,
-            ]);
-            $this->count++;
+        if ($this->post->hasLiked($this->user)) {
+            $this->post->dislike($this->user);
+            $this->count = $this->post->likes()->count();
+        } else {
+            $this->post->like($this->user);
+            $this->count = $this->post->likes()->count();
         }
     }
 
