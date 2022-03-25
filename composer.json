@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "danielrtrd/daniel.rtrd.no",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Just my personal website",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
