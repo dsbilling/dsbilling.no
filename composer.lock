@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0db9df3832ab75da918b3f02aa60a340",
+    "content-hash": "26a4c1e587903c7bc6cb3bc26c0273ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1811,16 +1811,16 @@
         },
         {
             "name": "kilobyteno/laravel-user-guest-like",
-            "version": "0.0.1",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kilobyteno/laravel-user-guest-like.git",
-                "reference": "4a84ce1489097a8aad86d96aacf9108fe147e9a0"
+                "reference": "ef4a2250c28399184466d6a75f441daf7cac4fd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kilobyteno/laravel-user-guest-like/zipball/4a84ce1489097a8aad86d96aacf9108fe147e9a0",
-                "reference": "4a84ce1489097a8aad86d96aacf9108fe147e9a0",
+                "url": "https://api.github.com/repos/kilobyteno/laravel-user-guest-like/zipball/ef4a2250c28399184466d6a75f441daf7cac4fd4",
+                "reference": "ef4a2250c28399184466d6a75f441daf7cac4fd4",
                 "shasum": ""
             },
             "require": {
@@ -1864,13 +1864,16 @@
             "description": "A Laravel package to allow guests and users to like models",
             "homepage": "https://github.com/kilobyteno/laravel-user-guest-like",
             "keywords": [
+                "guest",
+                "kilobyte",
                 "kilobyteno",
                 "laravel",
-                "laravel-user-guest-like"
+                "like",
+                "user"
             ],
             "support": {
                 "issues": "https://github.com/kilobyteno/laravel-user-guest-like/issues",
-                "source": "https://github.com/kilobyteno/laravel-user-guest-like/tree/0.0.1"
+                "source": "https://github.com/kilobyteno/laravel-user-guest-like/tree/0.0.2"
             },
             "funding": [
                 {
@@ -1878,7 +1881,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-24T21:55:30+00:00"
+            "time": "2022-03-25T17:35:21+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -10698,7 +10701,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^8.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
