@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.4 - 2022-03-25
+
+## What's Changed
+
+- Bump dependabot/fetch-metadata from 1.2.1 to 1.3.0 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/27
+- Bump actions/checkout from 2 to 3 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/28
+- Bump actions/cache from 2 to 3 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/29
+- User guest like by @DanielRTRD in https://github.com/DanielRTRD/daniel.rtrd.no/pull/30
+
+**Full Changelog**: https://github.com/DanielRTRD/daniel.rtrd.no/compare/1.0.3...1.0.4
+
 ## 1.0.3 - 2022-03-05
 
 ## What's Changed
