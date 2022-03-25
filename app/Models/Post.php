@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Uuid;
+use Kilobyteno\LaravelUserGuestLike\Traits\HasUserGuestLike;
 
 class Post extends Model implements Viewable
 {
@@ -17,6 +17,7 @@ class Post extends Model implements Viewable
     use InteractsWithViews;
     use SoftDeletes;
     use HasTags;
+    use HasUserGuestLike;
 
     protected $removeViewsOnDelete = true;
 
@@ -68,37 +69,6 @@ class Post extends Model implements Viewable
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function likes()
-    {
-        return $this->hasMany(PostLike::class);
-    }
-
-    public function isLiked()
-    {
-        if (auth()->user()) {
-            return auth()->user()->likes()->forPost($this)->count();
-        }
-
-        if (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
-            return $this->likes()->forIp($ip)->forUserAgent($userAgent)->count();
-        }
-
-        return false;
-    }
-
-    public function removeLike()
-    {
-        if (auth()->user()) {
-            return auth()->user()->likes()->forPost($this)->delete();
-        }
-
-        if (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
-            return $this->likes()->forIp($ip)->forUserAgent($userAgent)->delete();
-        }
-
-        return false;
     }
 
     public function scopeIsPublished($query)

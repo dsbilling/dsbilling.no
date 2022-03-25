@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "danielrtrd/daniel.rtrd.no",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Just my personal website",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "kilobyteno/laravel-user-guest-like": "^0.0.1",
         "laravel/framework": "^8.40",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.6",
