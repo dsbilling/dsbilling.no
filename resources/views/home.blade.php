@@ -23,7 +23,7 @@
                 <h4 class="mt-2 text-gray-500 dark:text-gray-400 text-md">My thoughts on what I'm building and learning.</h4>
                 <div class="grid gap-4 pt-8 sm:gap-6 md:grid-cols-2 lg:gap-8">
                     @foreach ($posts as $post)
-                        <div class="w-full h-full m-auto overflow-hidden border border-gray-200 rounded-lg shadow-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-700 group dark:bg-gray-800/50 hover:dark:bg-gray-800 dark:shadow-gray-100/10">
+                        <div class="w-full h-full m-auto overflow-hidden border border-gray-100 rounded-lg shadow-lg cursor-pointer bg-gray-50/50 hover:bg-gray-50 dark:border-gray-700 group dark:bg-gray-800/50 hover:dark:bg-gray-800 dark:shadow-gray-100/10">
                             <a href="{{ route('blog.show', $post->slug) }}" class="block w-full h-full">
                                 {{--<img alt="blog photo" src="{{ asset('img/daniel.jpg') }}" class="object-cover w-full max-h-28"/>--}}
                                 <div class="w-full p-4">
