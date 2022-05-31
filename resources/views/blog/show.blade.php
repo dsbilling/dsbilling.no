@@ -1,10 +1,17 @@
 <x-guest-layout>
-    <div class="flex flex-col max-w-2xl mx-auto mt-6 sm:mt-0">
+    <div class="flex flex-col max-w-2xl mx-auto">
+
+        <a href="{{ route('blog.index') }}" class="text-base md:text-sm text-orange-400 hover:text-orange-300 font-bold no-underline mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to the blog
+        </a>
 
         <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl break-word"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
 
-        <p class="text-sm font-medium text-orange-800/90 dark:text-orange-100/50">
-            {{ now()->subMonth(1) > $post->published_at ? $post->published_at->isoFormat('D MMMM YYYY') : $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }}
+        <p class="text-sm font-medium text-gray-500">
+            {{ now()->subMonth(1) > $post->published_at ? $post->published_at->isoFormat('D. MMMM YYYY') : $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }}
             {{--@foreach ($post->tags as $tag)
                 <span class="inline-flex items-center justify-center mr-1 font-semibold leading-none uppercase">{{ $tag->name }}</span>
             @endforeach--}}
@@ -26,12 +33,12 @@
                 <span class="inline-flex items-center justify-center px-2 py-1 mr-1 font-bold leading-none uppercase bg-gray-900 rounded text-orange-50 dark:text-gray-300 dark:bg-gray-700">{{ $tag->name }}</span>
             @endforeach
         </div>--}}
-        
+
         <article class="w-full mt-6 prose lg:mt-10 dark:prose-invert prose-a:text-orange-500 prose-h1:text-4xl">
             <x-markdown>{!! $post->body !!}</x-markdown>
         </article>
 
         <livewire:like :post="$post" />
-        
+
     </div>
 </x-guest-layout>
