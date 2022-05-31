@@ -6,9 +6,9 @@
 		</div>
 	@endif
 	<div class="flex flex-col items-center">
-		<div class="grid w-full grid-cols-1 gap-8">
+		<div class="grid gap-4 pt-8 sm:gap-6 md:grid-cols-2 w-full">
 			@forelse($posts as $post)
-				<div class="w-full m-auto overflow-hidden border border-gray-200 rounded-lg shadow-lg cursor-pointer bg-gray-50 hover:bg-gray-100 group dark:bg-gray-800/50 hover:dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-100/10">
+				<div class="w-full h-full m-auto overflow-hidden border border-gray-200 rounded-lg shadow-lg cursor-pointer bg-gray-50/50 hover:bg-gray-50 dark:border-gray-700 group dark:bg-gray-800/50 hover:dark:bg-gray-800 dark:shadow-gray-100/10">
 					<a href="{{ route('blog.show', $post->slug) }}" class="block w-full h-full">
 						{{--<img alt="blog photo" src="{{ asset('img/daniel.jpg') }}" class="object-cover w-full max-h-28"/>--}}
 						<div class="w-full p-4 ">
@@ -18,7 +18,7 @@
 							<p class="my-2 text-2xl font-semibold text-gray-800 sm:text-3xl dark:text-white">
 								{{ $post->title }}
 							</p>
-							<p class="text-sm font-light text-gray-400 dark:text-gray-300">
+							<p class="text-sm font-light text-gray-500 dark:text-gray-300">
 								{!! strip_tags(Str::of(Str::limit($post->body, 500))->markdown()) !!}
 							</p>
 						</div>
@@ -32,4 +32,4 @@
 			@endforelse
 		</div>
 	</div>
-</x-guest-layout>
+</x-guest-layout></x-guest-layout>
