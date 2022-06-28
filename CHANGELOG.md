@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.5 - 2022-06-28
+
+### What's Changed
+
+- Bump async from 2.6.3 to 2.6.4 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/31
+- Bump dependabot/fetch-metadata from 1.3.0 to 1.3.1 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/32
+- Bump guzzlehttp/guzzle from 7.4.2 to 7.4.3 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/37
+- Blog update by @DanielRTRD in https://github.com/DanielRTRD/daniel.rtrd.no/pull/38
+- Bump guzzlehttp/guzzle from 7.4.3 to 7.4.4 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/39
+- Bump guzzlehttp/guzzle from 7.4.4 to 7.4.5 by @dependabot in https://github.com/DanielRTRD/daniel.rtrd.no/pull/40
+
+**Full Changelog**: https://github.com/DanielRTRD/daniel.rtrd.no/compare/1.0.4...1.0.5
+
 ## 1.0.4 - 2022-03-25
 
 ## What's Changed
