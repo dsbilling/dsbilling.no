@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-guest-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl leading-tight">
             {{ __('Liter Calculator') }}
@@ -60,4 +60,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-guest-layout>
