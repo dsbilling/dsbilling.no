@@ -43,52 +43,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function liter()
-    {
-        $volume = NULL;
-        $totalprice = NULL;
-        return view('tools.liter-calculator', compact('volume', 'totalprice'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
-    public function literCalculate(Request $request, Course $course)
-    {
-        $request->validate([
-            'bredde' => [
-                'numeric',
-                'required',
-            ],
-            'lengde' => [
-                'numeric',
-                'nullable',
-            ],
-            'tykkelse' => [
-                'numeric',
-                'required'
-            ],
-            'pris' => [
-                'numeric',
-                'required',
-            ],
-        ]);
-
-        $liters = ($request->bredde * $request->lengde * $request->tykkelse) / 1000;
-        $totalprice = ($liters * $request->pris);
-        $request->flash();
-        return view('tools.liter-calculator', compact('liters', 'totalprice'));
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function timeline()
     {
         $experiences = Experience::orderBy("ended_at", 'DESC')->orderby('started_at', 'DESC')->get();
