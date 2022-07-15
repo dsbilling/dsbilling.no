@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Spatie\Tags\Tag;
 use App\Models\Company;
 use App\Models\Experience;
 use Illuminate\Http\Request;
+use Spatie\Tags\Tag;
 
 class ExperienceController extends Controller
 {
@@ -17,6 +17,7 @@ class ExperienceController extends Controller
     public function index()
     {
         $experiences = Experience::orderBy('started_at', 'desc')->paginate(10);
+
         return view('experience.index', compact('experiences'));
     }
 
@@ -29,6 +30,7 @@ class ExperienceController extends Controller
     {
         $companies = Company::pluck('name', 'id');
         $tags = Tag::all();
+
         return view('experience.create', compact('companies', 'tags'));
     }
 
@@ -62,7 +64,7 @@ class ExperienceController extends Controller
             ],
             'ended_at' => [
                 'date',
-                'nullable'
+                'nullable',
             ],
             'company_id' => [
                 'required',
@@ -73,6 +75,7 @@ class ExperienceController extends Controller
         $experience->attachTags($request->tags);
         session()->flash('flash.banner', 'Created Experience!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('experiences.index');
     }
 
@@ -97,6 +100,7 @@ class ExperienceController extends Controller
     {
         $companies = Company::all();
         $tags = Tag::all();
+
         return view('experience.edit', compact('experience', 'companies', 'tags'));
     }
 
@@ -120,7 +124,7 @@ class ExperienceController extends Controller
             ],
             'type' => [
                 'string',
-                'required'
+                'required',
             ],
             'description' => [
                 'string',
@@ -132,7 +136,7 @@ class ExperienceController extends Controller
             ],
             'ended_at' => [
                 'date',
-                'nullable'
+                'nullable',
             ],
             'company_id' => [
                 'required',
@@ -143,6 +147,7 @@ class ExperienceController extends Controller
         $experience->syncTags($request->tags);
         session()->flash('flash.banner', 'Updated Experience!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('experiences.index');
     }
 
@@ -157,6 +162,7 @@ class ExperienceController extends Controller
         $experience->delete();
         session()->flash('flash.banner', 'Deleted Experience!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('experiences.index');
     }
 }

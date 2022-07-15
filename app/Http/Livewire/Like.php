@@ -3,13 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Post;
-use App\Models\User;
 use Livewire\Component;
 
 class Like extends Component
 {
     public Post $post;
+
     public int $count;
+
     public $user;
 
     public function mount(Post $post)

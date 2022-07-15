@@ -15,6 +15,7 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::orderBy('created_at', 'desc')->paginate(10);
+
         return view('company.index', compact('companies'));
     }
 
@@ -45,6 +46,7 @@ class CompanyController extends Controller
         Company::create($validatedData);
         session()->flash('flash.banner', 'Created Company!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('companies.index');
     }
 
@@ -88,6 +90,7 @@ class CompanyController extends Controller
         $company->update($validatedData);
         session()->flash('flash.banner', 'Updated Company!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('companies.index');
     }
 
@@ -102,6 +105,7 @@ class CompanyController extends Controller
         $company->delete();
         session()->flash('flash.banner', 'Deleted Company!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('companies.index');
     }
 }

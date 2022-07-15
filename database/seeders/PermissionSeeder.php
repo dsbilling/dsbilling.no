@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
 
 class PermissionSeeder extends Seeder
@@ -30,7 +30,7 @@ class PermissionSeeder extends Seeder
 
         // Add role to private email
         $user = User::where('email', env('PRIVATE_EMAIL'))->firstOrFail();
-        if($user) {
+        if ($user) {
             $user->assignRole($sa);
         }
     }

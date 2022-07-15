@@ -1,17 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TagController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CertificationController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\ExportController;
 use App\Http\Controllers\SocialController;
-use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\ExperienceController;
-use App\Http\Controllers\CertificationController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------

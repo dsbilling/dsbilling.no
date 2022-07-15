@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Spatie\Tags\Tag;
-use App\Models\Course;
 use App\Models\Company;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Tags\Tag;
 
 class CourseController extends Controller
 {
@@ -18,6 +18,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::orderBy('issued_at', 'desc')->paginate(10);
+
         return view('course.index', compact('courses'));
     }
 
@@ -30,6 +31,7 @@ class CourseController extends Controller
     {
         $companies = Company::pluck('name', 'id');
         $tags = Tag::all();
+
         return view('course.create', compact('companies', 'tags'));
     }
 
@@ -52,7 +54,7 @@ class CourseController extends Controller
             ],
             'type' => [
                 'string',
-                'required'
+                'required',
             ],
             'issued_at' => [
                 'date',
@@ -65,18 +67,19 @@ class CourseController extends Controller
             'file' => [
                 'mimes:pdf',
                 'max:2048',
-                'nullable'
+                'nullable',
             ],
         ]);
-        if($request->file()) {
+        if ($request->file()) {
             $fileName = time().'_'.$request->file->getClientOriginalName();
             $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
-            $validatedData["file_path"] = $filePath;
+            $validatedData['file_path'] = $filePath;
         }
         $course = Course::create($validatedData);
         $course->attachTags($request->tags);
         session()->flash('flash.banner', 'Created Course!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('courses.index');
     }
 
@@ -101,6 +104,7 @@ class CourseController extends Controller
     {
         $companies = Company::all();
         $tags = Tag::all();
+
         return view('course.edit', compact('course', 'companies', 'tags'));
     }
 
@@ -124,7 +128,7 @@ class CourseController extends Controller
             ],
             'type' => [
                 'string',
-                'required'
+                'required',
             ],
             'issued_at' => [
                 'date',
@@ -137,19 +141,20 @@ class CourseController extends Controller
             'file' => [
                 'mimes:pdf',
                 'max:2048',
-                'nullable'
+                'nullable',
             ],
         ]);
-        if($request->file()) {
+        if ($request->file()) {
             Storage::disk('public')->delete($course->file_path); // Delete the old file
             $fileName = time().'_'.$request->file->getClientOriginalName();
             $filePath = $request->file('file')->storeAs('uploads', $fileName, 'public');
-            $validatedData["file_path"] = $filePath;
+            $validatedData['file_path'] = $filePath;
         }
         $course->update($validatedData);
         $course->syncTags($request->tags);
         session()->flash('flash.banner', 'Updated Course!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('courses.index');
     }
 
@@ -164,6 +169,7 @@ class CourseController extends Controller
         $course->delete();
         session()->flash('flash.banner', 'Deleted Course!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('courses.index');
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use romanzipp\Seo\Structs\Link;
 use romanzipp\Seo\Structs\Meta;
 use romanzipp\Seo\Structs\Meta\OpenGraph;
 use romanzipp\Seo\Structs\Meta\Twitter;
@@ -38,7 +37,7 @@ class AddSeoDefaults
             Twitter::make()->name('image')->content(config('app.url').'/img/banner.jpg', false),
 
         ]);
-        
+
         seo('body')->add(
             Script::make()->attr('src', '/js/app.js')
         );

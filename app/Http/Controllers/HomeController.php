@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Course;
-use App\Models\Social;
-use App\Models\Company;
-use App\Models\Experience;
-use Illuminate\Http\Request;
 use App\Models\Certification;
+use App\Models\Company;
+use App\Models\Course;
+use App\Models\Experience;
+use App\Models\Post;
+use App\Models\Social;
 
 class HomeController extends Controller
 {
@@ -20,6 +19,7 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::where('published_at', '<=', now())->where('draft', false)->orderByDesc('published_at')->take(4)->get();
+
         return view('home', compact('posts'));
     }
 
@@ -35,6 +35,7 @@ class HomeController extends Controller
         $companies = Company::count();
         $experiences = Experience::count();
         $socials = Social::count();
+
         return view('dashboard', compact('certifications', 'courses', 'companies', 'experiences', 'socials'));
     }
 
@@ -45,8 +46,8 @@ class HomeController extends Controller
      */
     public function timeline()
     {
-        $experiences = Experience::orderBy("ended_at", 'DESC')->orderby('started_at', 'DESC')->get();
+        $experiences = Experience::orderBy('ended_at', 'DESC')->orderby('started_at', 'DESC')->get();
+
         return view('timeline', compact('experiences'));
     }
-
 }

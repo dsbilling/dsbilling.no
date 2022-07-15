@@ -7,10 +7,15 @@ use Livewire\Component;
 class LiterTool extends Component
 {
     public $volume;
+
     public $totalprice;
+
     public $width;
+
     public $depth;
+
     public $length;
+
     public $price;
 
     public $rules = [
@@ -33,7 +38,7 @@ class LiterTool extends Component
             'required',
             'numeric',
             'min:0.1',
-            'max:10'
+            'max:10',
         ],
     ];
 
@@ -44,7 +49,8 @@ class LiterTool extends Component
         ]);
     }
 
-    public function calculate() {
+    public function calculate()
+    {
         $this->validate();
         $this->volume = ($this->width * $this->length * $this->depth) / 1000;
         $this->totalprice = ($this->volume * $this->price);
@@ -53,7 +59,7 @@ class LiterTool extends Component
     public function updated()
     {
         $validation = $this->validate();
-        if($validation) {
+        if ($validation) {
             $this->calculate();
         }
     }

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
-use App\Models\Social;
-use App\Models\Experience;
-use Illuminate\Http\Request;
 use App\Models\Certification;
+use App\Models\Course;
+use App\Models\Experience;
+use App\Models\Social;
 use Illuminate\Support\Facades\App;
 
 class ExportController extends Controller
@@ -24,6 +23,7 @@ class ExportController extends Controller
         $courses = Course::count();
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.cv', compact('certifications', 'courses', 'socials', 'experiences'));
+
         return $pdf->stream();
     }
 
@@ -37,6 +37,7 @@ class ExportController extends Controller
         $courses = Course::orderBy('issued_at', 'DESC')->get();
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.courses', compact('courses'));
+
         return $pdf->stream();
     }
 }

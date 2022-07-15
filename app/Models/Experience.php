@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use Spatie\Tags\HasTags;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Tags\HasTags;
 
 class Experience extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use HasTags;
-    
+
     protected $fillable = [
         'title',
         'department',

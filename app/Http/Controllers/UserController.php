@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Notification;
 
 class UserController extends Controller
 {
@@ -17,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         return view('users.index', [
-            'users' => User::orderBy('name')->paginate(10)
+            'users' => User::orderBy('name')->paginate(10),
         ]);
     }
 
@@ -63,7 +62,7 @@ class UserController extends Controller
     {
         return view('users.edit', [
             'user' => $user,
-            'roles' => Role::all()
+            'roles' => Role::all(),
         ]);
     }
 
@@ -77,6 +76,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->syncRoles($request->get('roles'));
+
         return redirect()->route('users.index');
     }
 

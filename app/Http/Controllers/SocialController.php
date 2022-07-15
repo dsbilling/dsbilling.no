@@ -15,6 +15,7 @@ class SocialController extends Controller
     public function index()
     {
         $socials = Social::orderBy('created_at', 'desc')->paginate(10);
+
         return view('social.index', compact('socials'));
     }
 
@@ -53,6 +54,7 @@ class SocialController extends Controller
         Social::create($validatedData);
         session()->flash('flash.banner', 'Created Social!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('socials.index');
     }
 
@@ -104,6 +106,7 @@ class SocialController extends Controller
         $social->update($validatedData);
         session()->flash('flash.banner', 'Updated Social!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('socials.index');
     }
 
@@ -118,6 +121,7 @@ class SocialController extends Controller
         $social->delete();
         session()->flash('flash.banner', 'Deleted Social!');
         session()->flash('flash.bannerStyle', 'success');
+
         return redirect()->route('socials.index');
     }
 }
