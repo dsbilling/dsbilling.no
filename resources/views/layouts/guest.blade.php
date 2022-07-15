@@ -76,12 +76,12 @@
                         @endforeach
                     </div>
                     <div class="justify-center mx-auto my-6 text-center sm:text-left">
-                        <a href="https://github.com/DanielRTRD/daniel.rtrd.no" class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400">Built with Laravel and Tailwind, and it's open-source on <i class="fab fa-github"></i>Github</a>
+                        <a href="https://github.com/dsbilling/dsbilling.no" class="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400">Built with Laravel and Tailwind, and it's open-source on <i class="fab fa-github"></i>Github</a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         @livewireScripts
     </body>
 </html>
