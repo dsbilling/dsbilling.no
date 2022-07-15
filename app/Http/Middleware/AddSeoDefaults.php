@@ -32,8 +32,8 @@ class AddSeoDefaults
             OpenGraph::make()->property('locale')->content('en_US'),
 
             Twitter::make()->name('card')->content('summary_large_image'),
-            Twitter::make()->name('site')->content('@danielrtrd'),
-            Twitter::make()->name('creator')->content('@danielrtrd'),
+            Twitter::make()->name('site')->content('@dsbilling'),
+            Twitter::make()->name('creator')->content('@dsbilling'),
             Twitter::make()->name('image')->content(config('app.url').'/img/banner.jpg', false),
 
         ]);
