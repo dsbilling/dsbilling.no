@@ -24,7 +24,7 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
         @production
-            <script defer data-domain="daniel.rtrd.no" src="https://plausible.io/js/plausible.js"></script>
+            <script defer data-domain="dsbilling.no" src="https://plausible.io/js/plausible.js"></script>
         @endproduction
     </head>
     <body class="h-screen min-h-full {{ config('app.debug') ? 'debug-screens' : '' }}">
