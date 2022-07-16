@@ -34,7 +34,7 @@ class AddSeoDefaults
             Twitter::make()->name('card')->content('summary_large_image'),
             Twitter::make()->name('site')->content('@dsbilling'),
             Twitter::make()->name('creator')->content('@dsbilling'),
-            Twitter::make()->name('image')->content(config('app.url').'/img/banner.jpg', false),
+            Twitter::make()->name('image')->content(asset('/img/banner.jpg'), false),
 
         ]);
 
