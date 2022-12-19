@@ -1,4 +1,4 @@
-# daniel.rtrd.no
+# dsbilling.no
 
 <p align="center">
 <img src="https://github.com/danielrtrd/daniel.rtrd.no/workflows/Laravel/badge.svg" alt="Test Status">
