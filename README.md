@@ -1,8 +1,8 @@
 # dsbilling.no
 
 <p align="center">
-<img src="https://github.com/danielrtrd/daniel.rtrd.no/workflows/Laravel/badge.svg" alt="Test Status">
-<img src="https://img.shields.io/github/license/danielrtrd/daniel.rtrd.no" alt="License">
+<img src="https://github.com/dsbilling/dsbilling.no/workflows/Laravel/badge.svg" alt="Test Status">
+<img src="https://img.shields.io/github/license/dsbilling/dsbilling.no" alt="License">
 </p>
 
 Just my personal website.
