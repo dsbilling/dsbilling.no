@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0 - 2022-12-21
+
+### What's Changed
+
+- Bump dependabot/fetch-metadata from 1.3.1 to 1.3.3 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/41
+- Bump terser from 4.8.0 to 4.8.1 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/42
+- Bump actions/checkout from 2 to 3 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/43
+- Bump dependabot/fetch-metadata from 1.3.3 to 1.3.4 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/44
+- Bump dependabot/fetch-metadata from 1.3.4 to 1.3.5 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/45
+- Bump loader-utils from 1.4.0 to 1.4.1 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/46
+- Bump loader-utils from 1.4.1 to 1.4.2 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/47
+- Laravel 9.x Shift by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/48
+
+**Full Changelog**: https://github.com/dsbilling/dsbilling.no/compare/1.0.5...1.1.0
+
 ## 1.0.5 - 2022-06-28
 
 ### What's Changed
