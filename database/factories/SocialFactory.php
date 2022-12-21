@@ -2,19 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Social;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 class SocialFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = Social::class;
-
     /**
      * Define the model's default state.
      *
@@ -23,9 +15,9 @@ class SocialFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->company,
-            'icon' => Str::slug($this->faker->name),
-            'link' => $this->faker->url,
+            'name' => $this->faker->company(),
+            'icon' => Str::slug($this->faker->name()),
+            'link' => $this->faker->url(),
         ];
     }
 }
