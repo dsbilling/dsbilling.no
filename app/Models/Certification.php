@@ -22,8 +22,10 @@ class Certification extends Model
         'company_id',
         'file_path',
     ];
-
-    protected $dates = ['issued_at', 'expiration_at'];
+    protected $casts = [
+        'issued_at' => 'datetime',
+        'expiration_at' => 'datetime',
+    ];
 
     /**
      * Get the company for the certification.
