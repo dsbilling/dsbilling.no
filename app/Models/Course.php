@@ -21,6 +21,7 @@ class Course extends Model
         'company_id',
         'file_path',
     ];
+
     protected $casts = [
         'issued_at' => 'datetime',
     ];

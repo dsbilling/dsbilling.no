@@ -22,6 +22,7 @@ class Experience extends Model
         'ended_at',
         'company_id',
     ];
+
     protected $casts = [
         'started_at' => 'datetime',
         'ended_at' => 'datetime',
