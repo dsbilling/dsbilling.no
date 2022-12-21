@@ -9,13 +9,6 @@ use Illuminate\Support\Str;
 class SocialFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = Social::class;
-
-    /**
      * Define the model's default state.
      *
      * @return array
