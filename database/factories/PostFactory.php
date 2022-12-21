@@ -23,8 +23,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->text,
-            'slug' => Str::slug($this->faker->text),
+            'title' => $this->faker->text(),
+            'slug' => Str::slug($this->faker->text()),
             'body' => $this->faker->paragraphs(3, true),
             'draft' => false,
             'published_at' => $this->faker->dateTimeBetween('-1 year', '-1 month'),
