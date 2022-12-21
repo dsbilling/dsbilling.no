@@ -2,7 +2,10 @@
     "name": "danielrtrd/daniel.rtrd.no",
     "type": "project",
     "description": "Just my personal website",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0",
@@ -10,7 +13,6 @@
         "cyrildewit/eloquent-viewable": "^6.0",
         "doctrine/dbal": "^3.1",
         "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "kilobyteno/laravel-user-guest-like": "^0.0.2",
         "laravel/framework": "^8.40",
