@@ -38,7 +38,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 });
 
-Route::group(['middleware' => ['auth:sanctum', 'verified', 'role:super-admin']], function () {
+Route::middleware('auth:sanctum', 'verified', 'role:super-admin')->group(function () {
     Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['permission:timeline'])->name('timeline');
     Route::resource('companies', CompanyController::class);
     Route::resource('certifications', CertificationController::class);
