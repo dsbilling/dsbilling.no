@@ -24,7 +24,6 @@
 						</div>
 					</a>
 				</div>
-				{!! $posts->links() !!}
 			@empty
 				<div class="w-full m-auto text-center">
 					<x-gradient-text>{{ \Illuminate\Foundation\Inspiring::quote() }}</x-gradient-text>
@@ -32,4 +31,9 @@
 			@endforelse
 		</div>
 	</div>
+    @if(!$posts->isEmpty())
+        <div class="mt-8 w-full m-auto">
+            {!! $posts->links() !!}
+        </div>
+    @endif
 </x-guest-layout>
