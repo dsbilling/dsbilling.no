@@ -32,7 +32,7 @@
 		</div>
 	</div>
     @if(!$posts->isEmpty())
-        <div class="flex justify-center mt-8">
+        <div class="mt-8 w-full m-auto">
             {!! $posts->links() !!}
         </div>
     @endif
