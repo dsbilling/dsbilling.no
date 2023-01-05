@@ -18,13 +18,13 @@
         </p>
 
         @if (now()->subYears(1) > $post->published_at)
-            <div class="flex items-center p-2 my-8 text-sm leading-none bg-orange-700 rounded-lg text-orange-50 lg:rounded-xl lg:inline-flex sm:text-base" role="alert">
-                <span class="flex px-1 py-1 mr-3 text-xs font-bold text-white uppercase bg-orange-400 rounded-full">
+            <div class="flex items-center p-2 mt-8 text-sm leading-none bg-orange-700 rounded-lg text-orange-50 lg:rounded-xl lg:inline-flex sm:text-base" role="alert">
+                <span class="flex px-1 py-1 mr-3 ml-1 text-xs font-bold text-white uppercase bg-orange-400 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </span>
-                <span class="flex-auto mr-2 font-semibold text-left">{{ __('Please be aware that this article is over a year old, and some of the information it contains may no longer be up-to-date. While I strive to keep my content as current and accurate as possible, I recommend double-checking any important details before relying on them.') }}</span>
+                <span class="flex-auto mr-2 font-semibold text-left text-sm">{{ __('Please be aware that this article is over a year old, and some of the information it contains may no longer be up-to-date. While I strive to keep my content as current and accurate as possible, I recommend double-checking any important details before relying on them.') }}</span>
             </div>
         @endif
 
@@ -34,7 +34,7 @@
             @endforeach
         </div>--}}
 
-        <article class="w-full mt-6 prose lg:mt-10 dark:prose-invert prose-a:text-orange-500 prose-h1:text-4xl">
+        <article class="w-full mt-6 prose max-w-2xl lg:mt-10 dark:prose-invert prose-a:text-orange-500 prose-h1:text-4xl">
             <x-markdown>{!! $post->body !!}</x-markdown>
         </article>
 
