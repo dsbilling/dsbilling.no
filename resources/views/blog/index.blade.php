@@ -24,12 +24,14 @@
 						</div>
 					</a>
 				</div>
-				{!! $posts->links() !!}
 			@empty
 				<div class="w-full m-auto text-center">
 					<x-gradient-text>{{ \Illuminate\Foundation\Inspiring::quote() }}</x-gradient-text>
 				</div>
 			@endforelse
+            @if(!$posts->isEmpty())
+                {!! $posts->links() !!}
+            @endif
 		</div>
 	</div>
 </x-guest-layout>
