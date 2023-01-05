@@ -29,9 +29,9 @@
 					<x-gradient-text>{{ \Illuminate\Foundation\Inspiring::quote() }}</x-gradient-text>
 				</div>
 			@endforelse
-            @if(!$posts->isEmpty())
-                {!! $posts->links() !!}
-            @endif
 		</div>
 	</div>
+    @if(!$posts->isEmpty())
+        {!! $posts->links() !!}
+    @endif
 </x-guest-layout>
