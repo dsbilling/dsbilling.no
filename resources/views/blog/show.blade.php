@@ -24,7 +24,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </span>
-                <span class="flex-auto mr-2 font-semibold text-left">This article is older than one year, some information might be out of date!</span>
+                <span class="flex-auto mr-2 font-semibold text-left">{{ __('Please be aware that this article is over a year old, and some of the information it contains may no longer be up-to-date. While I strive to keep my content as current and accurate as possible, I recommend double-checking any important details before relying on them.') }}</span>
             </div>
         @endif
 
