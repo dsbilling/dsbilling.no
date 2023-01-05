@@ -17,7 +17,7 @@
                                     <div class="flex items-center justify-between">
                                         <label class="flex items-center">
                                             <input name="roles[]" type="checkbox" class="form-checkbox" value="{{ $role->name }}" {{ $user->getRoleNames()->contains($role->name) ? "checked='checked'":"" }}>
-                                            <span class="ml-2 text-sm text-gray-600">{{ $role->name }}</span>
+                                            <span class="ml-2 text-sm text-gray-600 dark:text-gray-200">{{ $role->name }}</span>
                                         </label>
                                     </div>
                                 @endforeach
