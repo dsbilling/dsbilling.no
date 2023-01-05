@@ -15,7 +15,7 @@ class BlogController extends Controller
     public function index()
     {
         seo()->title('Blog - '.config('app.name'));
-        $posts = Post::where('published_at', '<=', now())->where('draft', false)->orderByDesc('published_at')->paginate(5);
+        $posts = Post::where('published_at', '<=', now())->where('draft', false)->orderByDesc('published_at')->paginate(6);
 
         return view('blog.index', ['posts' => $posts]);
     }
