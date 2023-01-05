@@ -32,6 +32,8 @@
 		</div>
 	</div>
     @if(!$posts->isEmpty())
-        {!! $posts->links() !!}
+        <div class="flex justify-center mt-8">
+            {!! $posts->links() !!}
+        </div>
     @endif
 </x-guest-layout>
