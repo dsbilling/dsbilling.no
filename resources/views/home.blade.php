@@ -42,6 +42,14 @@
                         </div>
                     @endforeach
                 </div>
+                @if($posts->count() >= 4)
+                    <h6 class="mt-8 text-gray-500 dark:text-gray-400 text-sm">
+                        I have written {{ $posts->count() }} {{ Str::plural('post', $posts->count()) }} so
+                        far, read more of them <x-link-text link="{{ route('blog.index') }}" referrer="false" target="_self"><x-gradient-text>here
+                                &rarr;
+                            </x-gradient-text></x-link-text>
+                    </h6>
+                @endif
             </section>
         @endif
     </div>
