@@ -40,5 +40,23 @@
 
         <livewire:like :post="$post" />
 
+        <div class="mt-4 pt-8">
+            <script src="https://giscus.app/client.js"
+                    data-repo="dsbilling/dsbilling.no"
+                    data-repo-id="MDEwOlJlcG9zaXRvcnkzNTg2MDUzMTk="
+                    data-category="Comments"
+                    data-category-id="DIC_kwDOFV_iB84CTbW2"
+                    data-mapping="pathname"
+                    data-strict="0"
+                    data-reactions-enabled="0"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="dark"
+                    data-lang="en"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </div>
+
     </div>
 </x-guest-layout>
