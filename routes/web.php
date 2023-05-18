@@ -11,6 +11,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,21 @@ Route::resource('blog', BlogController::class);
 Route::get('/uses', function () {
     return redirect()->route('blog.show', ['blog' => config('blog.uses')]);
 })->name('uses');
+
+Route::get('/blog-post/292041f5-10d9-425a-bf5b-1330fb6c3bd4', function () {
+    // Get IP and user agent from request
+    $ip = request()->ip();
+    $userAgent = request()->userAgent();
+    // Save to hacker table db raw
+    DB::table('hacker')->insert([
+        'ip' => $ip,
+        'user_agent' => $userAgent,
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+    return redirect()->route('blog.show', ['blog' => '292041f5-10d9-425a-bf5b-1330fb6c3bd4']);
+
+})->name('hacker');
 
 Route::prefix('tools')->group(function () {
     Route::get('/liter', \App\Http\Livewire\LiterTool::class)->name('liter-calculator');

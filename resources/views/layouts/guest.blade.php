@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        @vite('resources/css/app.css')
         @livewireStyles
 
         <!-- FavIcon -->
@@ -22,7 +22,7 @@
         <link rel="icon" type="image/png" href="{{ asset('favicon/favicon.ico') }}">
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        @vite('resources/js/app.js')
         @production
             <script defer data-domain="dsbilling.no" src="https://plausible.io/js/plausible.js"></script>
         @endproduction
