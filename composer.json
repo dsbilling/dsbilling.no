@@ -7,6 +7,12 @@
         "laravel"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../sureflap-for-laravel-test"
+        }
+    ],
     "require": {
         "php": "^8.0",
         "barryvdh/laravel-dompdf": "^2.0.0",
@@ -14,6 +20,7 @@
         "doctrine/dbal": "^3.1",
         "guzzlehttp/guzzle": "^7.2",
         "kilobyteno/laravel-user-guest-like": "^1.1",
+        "kilobyteno/sureflap": "dev-main",
         "laravel/framework": "^9.45",
         "laravel/jetstream": "^2.6",
         "laravel/sanctum": "^3.0",

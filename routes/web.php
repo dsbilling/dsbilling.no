@@ -46,6 +46,8 @@ Route::get('/blog-post/292041f5-10d9-425a-bf5b-1330fb6c3bd4', function () {
 
 })->name('hacker');
 
+Route::get('/cats', \App\Http\Livewire\CatsIndex::class)->name('cats');
+
 Route::prefix('tools')->group(function () {
     Route::get('/liter', \App\Http\Livewire\LiterTool::class)->name('liter-calculator');
 });
