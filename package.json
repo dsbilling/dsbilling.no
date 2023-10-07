@@ -11,7 +11,7 @@
         "autoprefixer": "^10.4.0",
         "axios": "^0.25",
         "lodash": "^4.17.19",
-        "postcss": "^8.4.5",
+        "postcss": "^8.4.31",
         "postcss-import": "^14.0.1",
         "tailwindcss": "^3.0.6",
         "tailwindcss-debug-screens": "^2.1.0",
