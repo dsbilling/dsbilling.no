@@ -1,10 +1,7 @@
 <x-guest-layout>
-	@if(!$posts->isEmpty())
-		<div class="mb-8">
-			<h2 class="text-xl font-bold text-gray-800 dark:text-gray-200">Recent Posts</h2>
-			<h4 class="mt-2 text-gray-500 dark:text-gray-400 text-md">My thoughts on what I'm building and learning.</h4>
-		</div>
-	@endif
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-50 lg:text-4xl">
+        <x-gradient-text>Blog</x-gradient-text>
+    </h1>
 	<div class="flex flex-col items-center">
 		<div class="grid gap-4 pt-8 sm:gap-6 md:grid-cols-2 w-full">
 			@forelse($posts as $post)
