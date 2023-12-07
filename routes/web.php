@@ -26,6 +26,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/cv', function () {
+    return view('about');
+})->name('cv');
+
 Route::resource('blog', BlogController::class);
 Route::get('/uses', function () {
     return redirect()->route('blog.show', ['blog' => config('blog.uses')]);
