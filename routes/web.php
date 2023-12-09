@@ -26,25 +26,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/cv', function () {
+    return view('about');
+})->name('cv');
+
 Route::resource('blog', BlogController::class);
 Route::get('/uses', function () {
     return redirect()->route('blog.show', ['blog' => config('blog.uses')]);
 })->name('uses');
-
-Route::get('/blog-post/292041f5-10d9-425a-bf5b-1330fb6c3bd4', function () {
-    // Get IP and user agent from request
-    $ip = request()->ip();
-    $userAgent = request()->userAgent();
-    // Save to hacker table db raw
-    DB::table('hacker')->insert([
-        'ip' => $ip,
-        'user_agent' => $userAgent,
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
-    return redirect()->route('blog.show', ['blog' => '292041f5-10d9-425a-bf5b-1330fb6c3bd4']);
-
-})->name('hacker');
 
 Route::prefix('tools')->group(function () {
     Route::get('/liter', \App\Http\Livewire\LiterTool::class)->name('liter-calculator');
@@ -54,7 +47,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 });
 
-Route::middleware('auth:sanctum', 'verified', 'role:super-admin')->group(function () {
+Route::middleware(['auth:sanctum', 'verified', 'role:super-admin'])->group(function () {
     Route::get('/timeline', [HomeController::class, 'timeline'])->middleware(['permission:timeline'])->name('timeline');
     Route::resource('companies', CompanyController::class);
     Route::resource('certifications', CertificationController::class);

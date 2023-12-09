@@ -1,30 +1,38 @@
 <x-guest-layout>
     <div class="flex flex-col max-w-2xl mx-auto">
 
-        <a href="{{ route('blog.index') }}" class="text-base md:text-sm text-orange-400 hover:text-orange-300 font-bold no-underline mb-8">
+        {{--<a href="{{ route('blog.index') }}" class="text-base md:text-sm text-orange-400 hover:text-orange-300 font-bold no-underline mb-8">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to the blog
-        </a>
+        </a>--}}
 
-        <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl break-word"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
+        <time datetime="{{ $post->published_at->isoFormat('Y-m-d') }}" class="order-first flex items-center text-sm sm:text-base text-slate-400 dark:text-slate-500"><span class="h-4 w-0.5 rounded-full bg-slate-200 dark:bg-slate-500"></span><span class="ml-3">{{ $post->published_at->isoFormat('D. MMMM YYYY') }}</span></time>
 
-        <p class="text-sm font-medium text-gray-500">
-            {{ now()->subMonth(1) > $post->published_at ? $post->published_at->isoFormat('D. MMMM YYYY') : $post->published_at->diffForHumans() }} &middot; {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }}
+        <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl break-word mt-4"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
+
+        <p class="text-xs sm:text-sm font-medium text-gray-400 mt-2">
+            {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }} &middot; {{ $post->likes_count }} {{ Str::plural('like', $post->likes_count) }}
             {{--@foreach ($post->tags as $tag)
                 <span class="inline-flex items-center justify-center mr-1 font-semibold leading-none uppercase">{{ $tag->name }}</span>
             @endforeach--}}
         </p>
 
         @if (now()->subYears(1) > $post->published_at)
-            <div class="flex items-center p-2 mt-8 text-sm leading-none bg-orange-700 rounded-lg text-orange-50 lg:rounded-xl lg:inline-flex sm:text-base" role="alert">
-                <span class="flex px-1 py-1 mr-3 ml-1 text-xs font-bold text-white uppercase bg-orange-400 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </span>
-                <span class="flex-auto mr-2 font-semibold text-left text-sm">{{ __('Please be aware that this article is over a year old, and some of the information it contains may no longer be up-to-date. While I strive to keep my content as current and accurate as possible, I recommend double-checking any important details before relying on them.') }}</span>
+            <div class="rounded-md bg-blue-50 p-4 mt-8">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3 flex-1 md:flex md:justify-between">
+                        <p class="text-sm text-blue-700">{{ __('Note: This article was published over a year ago. Information within may have changed since then. While efforts are made to keep content current, please verify critical details before making decisions based on this information.') }}</p>
+                    </div>
+                </div>
             </div>
         @endif
 
@@ -51,7 +59,7 @@
                     data-reactions-enabled="0"
                     data-emit-metadata="0"
                     data-input-position="bottom"
-                    data-theme="dark"
+                    data-theme="dark_dimmed"
                     data-lang="en"
                     crossorigin="anonymous"
                     async>
