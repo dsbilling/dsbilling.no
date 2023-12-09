@@ -62,15 +62,18 @@ class PostResource extends Resource
 
                 TextColumn::make('published_at')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->dateTime(),
 
                 TextColumn::make('created_at')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->dateTime(),
 
                 TextColumn::make('updated_at')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->dateTime(),
 
 
             ])

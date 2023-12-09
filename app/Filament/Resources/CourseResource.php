@@ -30,10 +30,14 @@ class CourseResource extends Resource
                     ->placeholder(__('Name')),
 
                 TextInput::make('short')
-                    ->required()
                     ->placeholder(__('Short')),
 
-                TextInput::make('type')
+                Select::make('type')
+                    ->options([
+                        'Online' => __('Online'),
+                        'Classroom' => __('Classroom'),
+                        'Interactive Online' => __('Interactive Online'),
+                    ])
                     ->required()
                     ->placeholder(__('Type')),
 
@@ -63,10 +67,15 @@ class CourseResource extends Resource
                     ->sortable(),
                 TextColumn::make('issued_at')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->date(),
                 TextColumn::make('company.name')
                     ->searchable()
                     ->sortable(),
+                TextColumn::make('created_at')
+                    ->searchable()
+                    ->sortable()
+                    ->dateTime(),
             ])
             ->filters([
                 //
@@ -78,7 +87,8 @@ class CourseResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('issued_at', 'desc');
     }
 
     public static function getRelations(): array

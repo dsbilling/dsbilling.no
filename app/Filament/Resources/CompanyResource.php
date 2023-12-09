@@ -39,11 +39,13 @@ class CompanyResource extends Resource
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->dateTime(),
 
                 Tables\Columns\TextColumn::make('updated_at')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->dateTime(),
             ])
             ->filters([
                 //
@@ -55,7 +57,8 @@ class CompanyResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getRelations(): array

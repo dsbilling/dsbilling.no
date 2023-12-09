@@ -58,15 +58,14 @@ class CertificationResource extends Resource
                 TextColumn::make('short')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('identifier')
-                    ->searchable()
-                    ->sortable(),
                 TextColumn::make('issued_at')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->date(),
                 TextColumn::make('expiration_at')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->date(),
                 TextColumn::make('company.name')
                     ->searchable()
                     ->sortable(),
@@ -81,7 +80,8 @@ class CertificationResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('issued_at', 'desc');
     }
 
     public static function getRelations(): array
