@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Http\Request;
 use Closure;
 use romanzipp\Seo\Structs\Meta;
 use romanzipp\Seo\Structs\Meta\OpenGraph;
@@ -10,7 +12,7 @@ use romanzipp\Seo\Structs\Script;
 
 class AddSeoDefaults
 {
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
         seo()->charset();
         seo()->viewport();
