@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.1.1 - 2023-12-09
+
+**Full Changelog**: https://github.com/dsbilling/dsbilling.no/compare/2.1.0...2.1.1
+
 ## 2.1.0 - 2023-12-09
 
 ### What's Changed
