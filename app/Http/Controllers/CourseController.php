@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 use App\Models\Company;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -15,7 +17,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $courses = Course::orderBy('issued_at', 'desc')->paginate(10);
 
@@ -27,7 +29,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         $companies = Company::pluck('name', 'id');
         $tags = Tag::all();
@@ -40,7 +42,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -87,7 +89,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(Course $course): View
     {
         return view('course.show', compact('course'));
     }
@@ -97,7 +99,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Course $course): View
     {
         $companies = Company::all();
         $tags = Tag::all();
@@ -110,7 +112,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Course $course): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -158,7 +160,7 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Course $course): RedirectResponse
     {
         $course->delete();
         session()->flash('flash.banner', 'Deleted Course!');

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 use App\Models\Social;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,7 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $socials = Social::orderBy('created_at', 'desc')->paginate(10);
 
@@ -24,7 +26,7 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         return view('social.create');
     }
@@ -34,7 +36,7 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -62,7 +64,7 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Social $social)
+    public function show(Social $social): View
     {
         return view('social.show', compact('social'));
     }
@@ -72,7 +74,7 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Social $social)
+    public function edit(Social $social): View
     {
         return view('social.edit', compact('social'));
     }
@@ -82,7 +84,7 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Social $social)
+    public function update(Request $request, Social $social): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -110,7 +112,7 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Social $social)
+    public function destroy(Social $social): RedirectResponse
     {
         $social->delete();
         session()->flash('flash.banner', 'Deleted Social!');

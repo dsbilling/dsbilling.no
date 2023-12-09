@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 use App\Models\Company;
 use App\Models\Experience;
 use Illuminate\Http\Request;
@@ -14,7 +16,7 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $experiences = Experience::orderBy('started_at', 'desc')->paginate(10);
 
@@ -26,7 +28,7 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         $companies = Company::pluck('name', 'id');
         $tags = Tag::all();
@@ -39,7 +41,7 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validatedData = $request->validate([
             'title' => [
@@ -83,7 +85,7 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Experience $experience)
+    public function show(Experience $experience): View
     {
         return view('experience.show', compact('experience'));
     }
@@ -93,7 +95,7 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Experience $experience)
+    public function edit(Experience $experience): View
     {
         $companies = Company::all();
         $tags = Tag::all();
@@ -106,7 +108,7 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Experience $experience)
+    public function update(Request $request, Experience $experience): RedirectResponse
     {
         $validatedData = $request->validate([
             'title' => [
@@ -151,7 +153,7 @@ class ExperienceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Experience $experience)
+    public function destroy(Experience $experience): RedirectResponse
     {
         $experience->delete();
         session()->flash('flash.banner', 'Deleted Experience!');

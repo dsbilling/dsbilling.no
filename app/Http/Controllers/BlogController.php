@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
 use App\Models\Post;
 use Illuminate\Support\Str;
 
@@ -12,7 +13,7 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         seo()->title('Blog - '.config('app.name'));
         $posts = Post::where('published_at', '<=', now())->where('draft', false)->orderByDesc('published_at')->paginate(10);
@@ -26,7 +27,7 @@ class BlogController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show($param)
+    public function show($param): View
     {
         $post = Post::where('uuid', $param)
             ->where('draft', false)

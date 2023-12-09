@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 use App\Models\Company;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,7 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $companies = Company::orderBy('created_at', 'desc')->paginate(10);
 
@@ -24,7 +26,7 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         return view('company.create');
     }
@@ -34,7 +36,7 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -54,7 +56,7 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Company $company)
+    public function show(Company $company): View
     {
         return view('company.show', compact('company'));
     }
@@ -64,7 +66,7 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Company $company)
+    public function edit(Company $company): View
     {
         return view('company.edit', compact('company'));
     }
@@ -74,7 +76,7 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request, Company $company): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -94,7 +96,7 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Company $company)
+    public function destroy(Request $request, Company $company): RedirectResponse
     {
         $company->delete();
         session()->flash('flash.banner', 'Deleted Company!');

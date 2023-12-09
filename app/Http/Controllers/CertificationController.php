@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 use App\Models\Certification;
 use App\Models\Company;
 use Illuminate\Http\Request;
@@ -15,7 +17,7 @@ class CertificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $certifications = Certification::orderBy('issued_at', 'desc')->paginate(10);
 
@@ -27,7 +29,7 @@ class CertificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         $companies = Company::pluck('name', 'id');
         $tags = Tag::all();
@@ -40,7 +42,7 @@ class CertificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -91,7 +93,7 @@ class CertificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Certification $certification)
+    public function show(Certification $certification): View
     {
         return view('certification.show', compact('certification'));
     }
@@ -101,7 +103,7 @@ class CertificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Certification $certification)
+    public function edit(Certification $certification): View
     {
         $companies = Company::all();
         $tags = Tag::all();
@@ -114,7 +116,7 @@ class CertificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Certification $certification)
+    public function update(Request $request, Certification $certification): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -166,7 +168,7 @@ class CertificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Certification $certification)
+    public function destroy(Certification $certification): RedirectResponse
     {
         $certification->delete();
         session()->flash('flash.banner', 'Deleted Certification!');
