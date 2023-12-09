@@ -2,16 +2,14 @@
     "name": "danielrtrd/daniel.rtrd.no",
     "type": "project",
     "description": "Just my personal website",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
+    "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
         "php": "^8.1",
         "barryvdh/laravel-dompdf": "^2.0.0",
         "cyrildewit/eloquent-viewable": "^7.0",
         "doctrine/dbal": "^3.5",
+        "filament/filament": "^3.0-stable",
         "guzzlehttp/guzzle": "^7.2",
         "kilobyteno/laravel-user-guest-like": "^1.1",
         "laravel/framework": "^10.35",
@@ -56,7 +54,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
