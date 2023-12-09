@@ -37,13 +37,13 @@
         <x-slot name="actions">
             <x-action-message class="mr-3" on="created">
                 {{ __('Created.') }}
-            </x-jet-action-message>
+            </x-action-message>
 
             <x-button>
                 {{ __('Create') }}
-            </x-jet-button>
+            </x-button>
         </x-slot>
-    </x-jet-form-section>
+    </x-form-section>
 
     @if ($this->user->tokens->isNotEmpty())
         <x-section-border />
@@ -89,7 +89,7 @@
                         @endforeach
                     </div>
                 </x-slot>
-            </x-jet-action-section>
+            </x-action-section>
         </div>
     @endif
 
@@ -114,9 +114,9 @@
         <x-slot name="footer">
             <x-secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
                 {{ __('Close') }}
-            </x-jet-secondary-button>
+            </x-secondary-button>
         </x-slot>
-    </x-jet-dialog-modal>
+    </x-dialog-modal>
 
     <!-- API Token Permissions Modal -->
     <x-dialog-modal wire:model.live="managingApiTokenPermissions">
@@ -138,13 +138,13 @@
         <x-slot name="footer">
             <x-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
                 {{ __('Cancel') }}
-            </x-jet-secondary-button>
+            </x-secondary-button>
 
             <x-button class="ml-2" wire:click="updateApiToken" wire:loading.attr="disabled">
                 {{ __('Save') }}
-            </x-jet-button>
+            </x-button>
         </x-slot>
-    </x-jet-dialog-modal>
+    </x-dialog-modal>
 
     <!-- Delete Token Confirmation Modal -->
     <x-confirmation-modal wire:model.live="confirmingApiTokenDeletion">
@@ -159,11 +159,11 @@
         <x-slot name="footer">
             <x-secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
                 {{ __('Cancel') }}
-            </x-jet-secondary-button>
+            </x-secondary-button>
 
             <x-danger-button class="ml-2" wire:click="deleteApiToken" wire:loading.attr="disabled">
                 {{ __('Delete') }}
-            </x-jet-danger-button>
+            </x-danger-button>
         </x-slot>
-    </x-jet-confirmation-modal>
+    </x-confirmation-modal>
 </div>

@@ -12,52 +12,52 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
                         {{ __('Timeline') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
                         {{ __('Companies') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
                         {{ __('Certifications') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
                         {{ __('Course') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
                         {{ __('Experience') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
                         {{ __('Social') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
                         {{ __('Users') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.*')">
                         {{ __('Tags') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.*')">
                         {{ __('Posts') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -88,12 +88,12 @@
                                     <!-- Team Settings -->
                                     <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                                         {{ __('Team Settings') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                                         <x-dropdown-link href="{{ route('teams.create') }}">
                                             {{ __('Create New Team') }}
-                                        </x-jet-dropdown-link>
+                                        </x-dropdown-link>
                                     @endcan
 
                                     <div class="border-t border-gray-100"></div>
@@ -108,7 +108,7 @@
                                     @endforeach
                                 </div>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                 @endif
 
@@ -142,12 +142,12 @@
 
                                 <x-dropdown-link href="{{ route('profile.show') }}">
                                     {{ __('Profile') }}
-                                </x-jet-dropdown-link>
+                                </x-dropdown-link>
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                     <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                         {{ __('API Tokens') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 @endif
 
                                 <div class="border-t border-gray-100"></div>
@@ -160,10 +160,10 @@
                                             onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                         {{ __('Log Out') }}
-                                    </x-jet-dropdown-link>
+                                    </x-dropdown-link>
                                 </form>
                             </x-slot>
-                        </x-jet-dropdown>
+                        </x-dropdown>
                     </div>
                 @endauth
             </div>
@@ -185,34 +185,34 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
                 {{ __('Timeline') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
                 {{ __('Companies') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
                 {{ __('Certifications') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
                 {{ __('Courses') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
                 {{ __('Experiences') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
                 {{ __('Socials') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
                 {{ __('Users') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.*')">
                 {{ __('Tags') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.*')">
                 {{ __('Posts') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
         </div>
 
         @auth
@@ -235,12 +235,12 @@
                     <!-- Account Management -->
                     <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                         {{ __('Profile') }}
-                    </x-jet-responsive-nav-link>
+                    </x-responsive-nav-link>
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                         <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                             {{ __('API Tokens') }}
-                        </x-jet-responsive-nav-link>
+                        </x-responsive-nav-link>
                     @endif
 
                     <!-- Authentication -->
@@ -251,7 +251,7 @@
                                     onclick="event.preventDefault();
                                         this.closest('form').submit();">
                             {{ __('Log Out') }}
-                        </x-jet-responsive-nav-link>
+                        </x-responsive-nav-link>
                     </form>
 
                     <!-- Team Management -->
@@ -265,12 +265,12 @@
                         <!-- Team Settings -->
                         <x-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
                             {{ __('Team Settings') }}
-                        </x-jet-responsive-nav-link>
+                        </x-responsive-nav-link>
 
                         @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                             <x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
                                 {{ __('Create New Team') }}
-                            </x-jet-responsive-nav-link>
+                            </x-responsive-nav-link>
                         @endcan
 
                         <div class="border-t border-gray-200"></div>

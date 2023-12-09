@@ -69,7 +69,7 @@
 						<div class="flex items-center justify-end px-3 text-right">
                             <x-button>
                                 {{ __('Save') }}
-                            </x-jet-button>
+                            </x-button>
                         </div>
 					</form>
 

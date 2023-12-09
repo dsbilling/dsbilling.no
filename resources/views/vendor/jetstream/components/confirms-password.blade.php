@@ -36,11 +36,11 @@
     <x-slot name="footer">
         <x-secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
             {{ __('Cancel') }}
-        </x-jet-secondary-button>
+        </x-secondary-button>
 
         <x-button class="ml-2" dusk="confirm-password-button" wire:click="confirmPassword" wire:loading.attr="disabled">
             {{ $button }}
-        </x-jet-button>
+        </x-button>
     </x-slot>
-</x-jet-dialog-modal>
+</x-dialog-modal>
 @endonce
