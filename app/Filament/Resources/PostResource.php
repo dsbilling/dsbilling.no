@@ -6,6 +6,7 @@ use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\SpatieTagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
@@ -43,6 +44,10 @@ class PostResource extends Resource
                 MarkdownEditor::make('body')
                     ->required()
                     ->placeholder(__('Body'))
+                    ->columnSpan(2),
+
+                SpatieTagsInput::make('tags')
+                    ->placeholder(__('Tags'))
                     ->columnSpan(2),
             ]);
     }

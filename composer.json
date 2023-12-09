@@ -10,6 +10,7 @@
         "cyrildewit/eloquent-viewable": "^7.0",
         "doctrine/dbal": "^3.5",
         "filament/filament": "^3.0-stable",
+        "filament/spatie-laravel-tags-plugin": "^3.0-stable",
         "guzzlehttp/guzzle": "^7.2",
         "kilobyteno/laravel-user-guest-like": "^1.1",
         "laravel/framework": "^10.35",

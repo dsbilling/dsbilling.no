@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abc7443d631ce7b0c3cf4de14785f4d3",
+    "content-hash": "cd99141ec18860915d56b0835e64e3e1",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1761,6 +1761,43 @@
                 "source": "https://github.com/filamentphp/filament"
             },
             "time": "2023-12-07T12:32:30+00:00"
+        },
+        {
+            "name": "filament/spatie-laravel-tags-plugin",
+            "version": "v3.1.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filamentphp/spatie-laravel-tags-plugin.git",
+                "reference": "6352acffb686c51c883928906edeeb83c190de55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filamentphp/spatie-laravel-tags-plugin/zipball/6352acffb686c51c883928906edeeb83c190de55",
+                "reference": "6352acffb686c51c883928906edeeb83c190de55",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^10.0",
+                "php": "^8.1",
+                "spatie/laravel-tags": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Filament\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament support for `spatie/laravel-tags`.",
+            "homepage": "https://github.com/filamentphp/filament",
+            "support": {
+                "issues": "https://github.com/filamentphp/filament/issues",
+                "source": "https://github.com/filamentphp/filament"
+            },
+            "time": "2023-10-26T13:32:04+00:00"
         },
         {
             "name": "filament/support",
@@ -4437,16 +4474,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.72.0",
+            "version": "2.72.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "a6885fcbad2ec4360b0e200ee0da7d9b7c90786b"
+                "reference": "2b3b3db0a2d0556a177392ff1a3bf5608fa09f78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/a6885fcbad2ec4360b0e200ee0da7d9b7c90786b",
-                "reference": "a6885fcbad2ec4360b0e200ee0da7d9b7c90786b",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2b3b3db0a2d0556a177392ff1a3bf5608fa09f78",
+                "reference": "2b3b3db0a2d0556a177392ff1a3bf5608fa09f78",
                 "shasum": ""
             },
             "require": {
@@ -4540,7 +4577,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-28T10:13:25+00:00"
+            "time": "2023-12-08T23:47:49+00:00"
         },
         {
             "name": "nette/schema",
