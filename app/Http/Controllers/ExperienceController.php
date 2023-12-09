@@ -37,7 +37,6 @@ class ExperienceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -82,7 +81,6 @@ class ExperienceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Experience  $experience
      * @return \Illuminate\Http\Response
      */
     public function show(Experience $experience)
@@ -93,7 +91,6 @@ class ExperienceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Experience  $experience
      * @return \Illuminate\Http\Response
      */
     public function edit(Experience $experience)
@@ -107,8 +104,6 @@ class ExperienceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Experience  $experience
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Experience $experience)
@@ -154,7 +149,6 @@ class ExperienceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Experience  $experience
      * @return \Illuminate\Http\Response
      */
     public function destroy(Experience $experience)

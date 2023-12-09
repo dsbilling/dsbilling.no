@@ -7,7 +7,9 @@ use Illuminate\View\Component;
 class LinkText extends Component
 {
     public $referrer;
+
     public $target;
+
     public $link;
 
     /**

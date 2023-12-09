@@ -9,8 +9,10 @@ use Livewire\Component;
 class Like extends Component
 {
     public Post $post;
+
     public int $count;
-    public User|null $user = null;
+
+    public ?User $user = null;
 
     public function mount(Post $post): void
     {

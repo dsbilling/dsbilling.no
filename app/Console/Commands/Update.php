@@ -32,6 +32,7 @@ class Update extends Command
         Artisan::call('migrate --force');
         $this->info('Sync schedule monitor...');
         $this->call('schedule-monitor:sync');
+
         return Command::SUCCESS;
     }
 }

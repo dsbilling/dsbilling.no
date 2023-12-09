@@ -11,7 +11,6 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
