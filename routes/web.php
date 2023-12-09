@@ -22,7 +22,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/cv', function () {
-    return view('about');
+    abort(404);
 })->name('cv');
 
 Route::resource('blog', BlogController::class);
