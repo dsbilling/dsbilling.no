@@ -28,7 +28,7 @@ class PostResource extends Resource
                 TextInput::make('title')
                     ->autofocus()
                     ->required()
-                    ->unique(Post::class, 'title')
+                    ->unique(Post::class, 'title', null, 'id')
                     ->placeholder(__('Title'))
                     ->columnSpan(2),
 

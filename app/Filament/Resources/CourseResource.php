@@ -27,7 +27,7 @@ class CourseResource extends Resource
                 TextInput::make('name')
                     ->autofocus()
                     ->required()
-                    ->unique(Course::class, 'name')
+                    ->unique(Course::class, 'name', null, 'id')
                     ->placeholder(__('Name')),
 
                 TextInput::make('short')

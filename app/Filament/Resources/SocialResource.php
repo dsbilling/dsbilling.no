@@ -23,7 +23,7 @@ class SocialResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->autofocus()
                     ->required()
-                    ->unique(Social::class, 'name')
+                    ->unique(Social::class, 'name', null, 'id')
                     ->label(__('Name')),
                 Forms\Components\TextInput::make('icon')
                     ->required()
