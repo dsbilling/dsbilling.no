@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section id="about">
+    <section id="about" class="mx-auto max-w-2xl lg:max-w-5xl">
         <div class="space-x-0 sm:space-x-5 lg:flex item-center lg:-mx-4">
             <div>
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-50 lg:text-4xl">

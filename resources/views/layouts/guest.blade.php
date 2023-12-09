@@ -23,6 +23,7 @@
 
     <!-- Scripts -->
     @vite('resources/js/app.js')
+
     @production
         <script defer data-domain="dsbilling.no" src="https://plausible.io/js/plausible.js"></script>
     @endproduction

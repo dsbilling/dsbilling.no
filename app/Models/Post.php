@@ -14,10 +14,10 @@ use Spatie\Tags\HasTags;
 class Post extends Model implements Viewable
 {
     use HasFactory;
-    use InteractsWithViews;
-    use SoftDeletes;
     use HasTags;
     use HasUserGuestLike;
+    use InteractsWithViews;
+    use SoftDeletes;
 
     protected $removeViewsOnDelete = true;
 

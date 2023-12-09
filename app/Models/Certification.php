@@ -10,8 +10,8 @@ use Spatie\Tags\HasTags;
 class Certification extends Model
 {
     use HasFactory;
-    use SoftDeletes;
     use HasTags;
+    use SoftDeletes;
 
     protected $fillable = [
         'name',

@@ -10,8 +10,8 @@ use Spatie\Tags\HasTags;
 class Course extends Model
 {
     use HasFactory;
-    use SoftDeletes;
     use HasTags;
+    use SoftDeletes;
 
     protected $fillable = [
         'name',
