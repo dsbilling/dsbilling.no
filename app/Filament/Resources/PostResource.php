@@ -11,6 +11,8 @@ use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class PostResource extends Resource
@@ -49,7 +51,28 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')
+                    ->searchable()
+                    ->sortable(),
+
+                IconColumn::make('draft')
+                    ->label(__('Draft'))
+                    ->boolean()
+                    ->sortable(),
+
+                TextColumn::make('published_at')
+                    ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('created_at')
+                    ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('updated_at')
+                    ->searchable()
+                    ->sortable(),
+
+
             ])
             ->filters([
                 //
@@ -61,7 +84,8 @@ class PostResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getRelations(): array
