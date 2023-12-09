@@ -44,3 +44,7 @@ Route::middleware(['auth:sanctum', 'verified', 'role:super-admin'])->group(funct
         Route::get('/courses', [ExportController::class, 'courses'])->name('export.cv');
     });
 });
+
+Route::get('/login', function () {
+    abort(404);
+})->name('login');
