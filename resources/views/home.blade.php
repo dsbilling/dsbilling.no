@@ -36,8 +36,8 @@
                             </span>
                             {{ now()->subMonth(1) > $post->published_at ? $post->published_at->isoFormat('D. MMMM YYYY') : $post->published_at->diffForHumans() }}
                         </time>
-                        <h2 class="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">
-                            <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-orange-400/10 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-orange-400/10 sm:-inset-x-6 sm:rounded-xl"></div>
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100 hover:text-orange-500">
+                            <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-slate-100 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-slate-800/50 sm:-inset-x-6 sm:rounded-xl"></div>
                             <a href="{{ route('blog.show', $post->slug) }}">
                                 <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                                 <span class="relative z-10">{{ $post->title }}</span>
