@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CourseResource\Pages;
 use App\Models\Course;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -48,6 +49,13 @@ class CourseResource extends Resource
                 Select::make('company_id')
                     ->required()
                     ->relationship('company', 'name'),
+
+                FileUpload::make('file_path')
+                    ->required()
+                    ->acceptedFileTypes(['application/pdf'])
+                    ->directory('uploads')
+                    ->preserveFilenames()
+                    ->downloadable(),
 
             ]);
     }
