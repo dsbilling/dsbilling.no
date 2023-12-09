@@ -5,9 +5,11 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\SocialResource\Pages;
 use App\Models\Social;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class SocialResource extends Resource
@@ -20,16 +22,17 @@ class SocialResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                TextInput::make('name')
                     ->autofocus()
                     ->required()
                     ->unique(Social::class, 'name', null, 'id')
                     ->label(__('Name')),
-                Forms\Components\TextInput::make('icon')
+                TextInput::make('icon')
                     ->required()
                     ->label(__('Icon')),
-                Forms\Components\TextInput::make('link')
+                TextInput::make('link')
                     ->required()
+                    ->url()
                     ->label(__('Link')),
             ]);
     }
@@ -38,15 +41,15 @@ class SocialResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                TextColumn::make('name')
                     ->sortable()
                     ->searchable()
                     ->label(__('Name')),
-                Tables\Columns\TextColumn::make('icon')
+                TextColumn::make('icon')
                     ->sortable()
                     ->searchable()
                     ->label(__('Icon')),
-                Tables\Columns\TextColumn::make('link')
+                TextColumn::make('link')
                     ->sortable()
                     ->searchable()
                     ->label(__('Link')),
