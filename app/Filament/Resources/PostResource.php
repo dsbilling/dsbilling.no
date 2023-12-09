@@ -75,7 +75,6 @@ class PostResource extends Resource
                     ->sortable()
                     ->dateTime(),
 
-
             ])
             ->filters([
                 //
