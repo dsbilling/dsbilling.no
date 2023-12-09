@@ -23,27 +23,4 @@ class HomeController extends Controller
         return view('home', compact('posts', 'experiences'));
     }
 
-    /**
-     * Display a listing of the resource.
-     */
-    public function dashboard(): View
-    {
-        $certifications = Certification::count();
-        $courses = Course::count();
-        $companies = Company::count();
-        $experiences = Experience::count();
-        $socials = Social::count();
-
-        return view('dashboard', compact('certifications', 'courses', 'companies', 'experiences', 'socials'));
-    }
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function timeline(): View
-    {
-        $experiences = Experience::orderBy('ended_at', 'DESC')->orderby('started_at', 'DESC')->get();
-
-        return view('timeline', compact('experiences'));
-    }
 }

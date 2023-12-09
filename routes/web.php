@@ -26,16 +26,13 @@ Route::get('/cv', function () {
 })->name('cv');
 
 Route::resource('blog', BlogController::class);
+
 Route::get('/uses', function () {
     return redirect()->route('blog.show', ['blog' => config('blog.uses')]);
 })->name('uses');
 
 Route::prefix('tools')->group(function () {
     Route::get('/liter', \App\Livewire\LiterTool::class)->name('liter-calculator');
-});
-
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'role:super-admin'])->group(function () {
