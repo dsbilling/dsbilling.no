@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Certification;
-use App\Models\Company;
-use App\Models\Course;
 use App\Models\Experience;
 use App\Models\Post;
-use App\Models\Social;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -22,5 +18,4 @@ class HomeController extends Controller
 
         return view('home', compact('posts', 'experiences'));
     }
-
 }

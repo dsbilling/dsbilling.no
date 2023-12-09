@@ -4,7 +4,6 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
