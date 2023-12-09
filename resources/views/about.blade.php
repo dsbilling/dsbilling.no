@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="items-center flex-shrink-0 mx-auto mt-12 lg:px-4 lg:mt-0 sm:mx-0">
-                <img alt="Profile" src="{{ asset('img/daniel.jpg') }}"
+                <img alt="Daniel S. Billing" src="{{ asset('img/daniel.jpg') }}"
                      class="flex w-56 h-56 mx-auto rounded-full sm:mx-0">
             </div>
         </div>
