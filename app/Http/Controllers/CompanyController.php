@@ -11,8 +11,6 @@ class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index(): View
     {
@@ -23,8 +21,6 @@ class CompanyController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create(): View
     {
@@ -33,8 +29,6 @@ class CompanyController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request): RedirectResponse
     {
@@ -53,8 +47,6 @@ class CompanyController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function show(Company $company): View
     {
@@ -63,8 +55,6 @@ class CompanyController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function edit(Company $company): View
     {
@@ -73,8 +63,6 @@ class CompanyController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Company $company): RedirectResponse
     {
@@ -93,8 +81,6 @@ class CompanyController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, Company $company): RedirectResponse
     {

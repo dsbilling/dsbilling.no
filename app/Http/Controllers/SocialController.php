@@ -11,8 +11,6 @@ class SocialController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index(): View
     {
@@ -23,8 +21,6 @@ class SocialController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create(): View
     {
@@ -33,8 +29,6 @@ class SocialController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request): RedirectResponse
     {
@@ -61,8 +55,6 @@ class SocialController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function show(Social $social): View
     {
@@ -71,8 +63,6 @@ class SocialController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function edit(Social $social): View
     {
@@ -81,8 +71,6 @@ class SocialController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Social $social): RedirectResponse
     {
@@ -109,8 +97,6 @@ class SocialController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function destroy(Social $social): RedirectResponse
     {

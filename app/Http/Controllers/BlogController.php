@@ -10,8 +10,6 @@ class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index(): View
     {
@@ -25,7 +23,6 @@ class BlogController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
      */
     public function show($param): View
     {
