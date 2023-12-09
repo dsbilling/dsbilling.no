@@ -4,7 +4,7 @@
             {{ __('Edit Post') }}
         </h2>
     </x-slot>
-	
+
 	<div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 			<div class="px-4 py-4 -mx-4 overflow-hidden sm:-mx-8 sm:px-8">
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="flex items-center justify-end px-3 text-right">
-                            <x-jet-button>
+                            <x-button>
                                 {{ __('Save') }}
                             </x-jet-button>
                         </div>

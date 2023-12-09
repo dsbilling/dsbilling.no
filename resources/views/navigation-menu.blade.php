@@ -10,52 +10,52 @@
                     </a>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
+                    <x-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
                         {{ __('Timeline') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
+                    <x-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
                         {{ __('Companies') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
+                    <x-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
                         {{ __('Certifications') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
+                    <x-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
                         {{ __('Course') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
+                    <x-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
                         {{ __('Experience') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
+                    <x-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
                         {{ __('Social') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
+                    <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
                         {{ __('Users') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.*')">
+                    <x-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.*')">
                         {{ __('Tags') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.*')">
+                    <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.*')">
                         {{ __('Posts') }}
                     </x-jet-nav-link>
                 </div>
@@ -65,7 +65,7 @@
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="relative ml-3">
-                        <x-jet-dropdown align="right" width="60">
+                        <x-dropdown align="right" width="60">
                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition bg-white border border-transparent rounded-md hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50">
@@ -86,12 +86,12 @@
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                                         {{ __('Team Settings') }}
                                     </x-jet-dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                        <x-jet-dropdown-link href="{{ route('teams.create') }}">
+                                        <x-dropdown-link href="{{ route('teams.create') }}">
                                             {{ __('Create New Team') }}
                                         </x-jet-dropdown-link>
                                     @endcan
@@ -104,7 +104,7 @@
                                     </div>
 
                                     @foreach (Auth::user()->allTeams() as $team)
-                                        <x-jet-switchable-team :team="$team" />
+                                        <x-switchable-team :team="$team" />
                                     @endforeach
                                 </div>
                             </x-slot>
@@ -115,7 +115,7 @@
                 @auth
                     <!-- Settings Dropdown -->
                     <div class="relative ml-3">
-                        <x-jet-dropdown align="right" width="48">
+                        <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                     <button class="flex text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
@@ -140,12 +140,12 @@
                                     {{ __('Manage Account') }}
                                 </div>
 
-                                <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                                <x-dropdown-link href="{{ route('profile.show') }}">
                                     {{ __('Profile') }}
                                 </x-jet-dropdown-link>
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                    <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                                    <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                         {{ __('API Tokens') }}
                                     </x-jet-dropdown-link>
                                 @endif
@@ -156,7 +156,7 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
 
-                                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                    <x-dropdown-link href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                         {{ __('Log Out') }}
@@ -183,34 +183,34 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
+            <x-responsive-nav-link href="{{ route('timeline') }}" :active="request()->routeIs('timeline')">
                 {{ __('Timeline') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
+            <x-responsive-nav-link href="{{ route('companies.index') }}" :active="request()->routeIs('companies.*')">
                 {{ __('Companies') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
+            <x-responsive-nav-link href="{{ route('certifications.index') }}" :active="request()->routeIs('certifications.*')">
                 {{ __('Certifications') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
+            <x-responsive-nav-link href="{{ route('courses.index') }}" :active="request()->routeIs('courses.*')">
                 {{ __('Courses') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
+            <x-responsive-nav-link href="{{ route('experiences.index') }}" :active="request()->routeIs('experiences.*')">
                 {{ __('Experiences') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
+            <x-responsive-nav-link href="{{ route('socials.index') }}" :active="request()->routeIs('socials.*')">
                 {{ __('Socials') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
+            <x-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
                 {{ __('Users') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.*')">
+            <x-responsive-nav-link href="{{ route('tags.index') }}" :active="request()->routeIs('tags.*')">
                 {{ __('Tags') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.*')">
+            <x-responsive-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.*')">
                 {{ __('Posts') }}
             </x-jet-responsive-nav-link>
         </div>
@@ -233,12 +233,12 @@
 
                 <div class="mt-3 space-y-1">
                     <!-- Account Management -->
-                    <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                    <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                         {{ __('Profile') }}
                     </x-jet-responsive-nav-link>
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                        <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                        <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                             {{ __('API Tokens') }}
                         </x-jet-responsive-nav-link>
                     @endif
@@ -247,7 +247,7 @@
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
-                        <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                        <x-responsive-nav-link href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                         this.closest('form').submit();">
                             {{ __('Log Out') }}
@@ -263,12 +263,12 @@
                         </div>
 
                         <!-- Team Settings -->
-                        <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
+                        <x-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
                             {{ __('Team Settings') }}
                         </x-jet-responsive-nav-link>
 
                         @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                            <x-jet-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
+                            <x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
                                 {{ __('Create New Team') }}
                             </x-jet-responsive-nav-link>
                         @endcan
@@ -281,7 +281,7 @@
                         </div>
 
                         @foreach (Auth::user()->allTeams() as $team)
-                            <x-jet-switchable-team :team="$team" component="jet-responsive-nav-link" />
+                            <x-switchable-team :team="$team" component="jet-responsive-nav-link" />
                         @endforeach
                     @endif
                 </div>

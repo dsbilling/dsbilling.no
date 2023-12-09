@@ -26,7 +26,7 @@
         @vite('resources/js/app.js')
     </head>
     <body class="font-sans antialiased {{ env('APP_DEBUG') ? 'debug-screens' : '' }}">
-        <x-jet-banner />
+        <x-banner />
 
         <div class="min-h-screen bg-gray-100 dark:bg-gray-800">
             @livewire('navigation-menu')
@@ -42,7 +42,7 @@
 
             <!-- Page Content -->
             <main>
-                <x-jet-validation-errors class="relative max-w-4xl py-3 pl-4 pr-10 mx-auto my-5 leading-normal text-red-700 bg-red-100 rounded-lg" />
+                <x-validation-errors class="relative max-w-4xl py-3 pl-4 pr-10 mx-auto my-5 leading-normal text-red-700 bg-red-100 rounded-lg" />
                 {{ $slot }}
             </main>
         </div>
