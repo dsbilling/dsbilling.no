@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
 use App\Models\Certification;
 use App\Models\Company;
 use App\Models\Course;
 use App\Models\Experience;
 use App\Models\Post;
 use App\Models\Social;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
