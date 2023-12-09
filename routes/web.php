@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/cv', function () {
-    abort(404);
+    return response()->download(public_path('doc/dsbilling_cv.pdf'));
 })->name('cv');
 
 Route::resource('blog', BlogController::class);
