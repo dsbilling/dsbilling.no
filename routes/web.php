@@ -39,7 +39,7 @@ Route::get('/uses', function () {
 })->name('uses');
 
 Route::prefix('tools')->group(function () {
-    Route::get('/liter', \App\Http\Livewire\LiterTool::class)->name('liter-calculator');
+    Route::get('/liter', \App\Livewire\LiterTool::class)->name('liter-calculator');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
