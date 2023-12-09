@@ -34,13 +34,14 @@ class UserResource extends Resource
                 TextInput::make('password')
                     ->password()
                     ->required()
-                    ->visibleOn(['create'])
+                    ->visibleOn(['create', 'edit'])
                     ->placeholder(__('Password')),
 
                 TextInput::make('password_confirmation')
                     ->password()
                     ->required('create')
                     ->visibleOn(['create'])
+                    ->rules('same:password')
                     ->placeholder(__('Confirm Password')),
             ]);
     }
