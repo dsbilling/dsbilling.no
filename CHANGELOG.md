@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.0 - 2023-12-09
+
+### What's Changed
+
+* Update styling by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/49
+* Bump json5 from 1.0.1 to 1.0.2 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/51
+* Bump dependabot/fetch-metadata from 1.3.5 to 1.3.6 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/52
+* Bump symfony/http-kernel from 6.2.5 to 6.2.6 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/53
+* Added app health checks by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/54
+* Bump dompdf/dompdf from 2.0.2 to 2.0.3 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/55
+* Migrate from Laravel Mix to Vite by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/56
+* Bump dependabot/fetch-metadata from 1.3.6 to 1.4.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/57
+* Bump guzzlehttp/psr7 from 2.4.3 to 2.5.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/58
+* Bump nyholm/psr7 from 1.5.1 to 1.7.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/59
+* Giscus Comments by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/50
+* Bump dependabot/fetch-metadata from 1.4.0 to 1.5.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/61
+* Bump dependabot/fetch-metadata from 1.5.0 to 1.5.1 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/62
+* Bump vite from 3.2.5 to 3.2.7 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/63
+* Bump dependabot/fetch-metadata from 1.5.1 to 1.6.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/64
+* Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/65
+* Bump postcss from 8.4.21 to 8.4.31 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/66
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/67
+* Bump axios from 0.25.0 to 1.6.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/68
+* Redesign by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/69
+* Laravel 10.x Shift by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/70
+
+**Full Changelog**: https://github.com/dsbilling/dsbilling.no/compare/1.1.0...2.0.0
+
 ## 1.1.0 - 2022-12-21
 
 ### What's Changed
