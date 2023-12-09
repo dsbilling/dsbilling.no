@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.1.0 - 2023-12-09
+
+### What's Changed
+
+* New admin panel + major package bumps by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/71
+
+**Full Changelog**: https://github.com/dsbilling/dsbilling.no/compare/2.0.0...2.1.0
+
 ## 2.0.0 - 2023-12-09
 
 ### What's Changed
