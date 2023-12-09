@@ -3,14 +3,16 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 use romanzipp\Seo\Structs\Meta;
 use romanzipp\Seo\Structs\Meta\OpenGraph;
 use romanzipp\Seo\Structs\Meta\Twitter;
 use romanzipp\Seo\Structs\Script;
+use Symfony\Component\HttpFoundation\Response;
 
 class AddSeoDefaults
 {
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
         seo()->charset();
         seo()->viewport();

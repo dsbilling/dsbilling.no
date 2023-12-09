@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Illuminate\View\View;
 use Spatie\Tags\Tag;
 
 class PostController extends Controller
@@ -20,10 +22,8 @@ class PostController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $posts = Post::orderByDesc('created_at')->paginate(5);
 
@@ -32,10 +32,8 @@ class PostController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         $tags = Tag::all();
 
@@ -44,11 +42,8 @@ class PostController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255', 'unique:posts,title'],
@@ -73,7 +68,6 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
@@ -83,11 +77,8 @@ class PostController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Post $post): View
     {
         $tags = Tag::all();
 
@@ -96,12 +87,8 @@ class PostController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Post $post): RedirectResponse
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255', Rule::unique('posts')->ignore($post->id)],
@@ -125,7 +112,6 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)

@@ -8,15 +8,14 @@ use App\Models\Course;
 use App\Models\Experience;
 use App\Models\Post;
 use App\Models\Social;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $posts = Post::where('published_at', '<=', now())->where('draft', false)->orderByDesc('published_at')->take(3)->get();
         $experiences = Experience::where('type', 'full-time')->orderByRaw('-ended_at ASC')->orderby('started_at', 'DESC')->take(5)->get();
@@ -26,10 +25,8 @@ class HomeController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function dashboard()
+    public function dashboard(): View
     {
         $certifications = Certification::count();
         $courses = Course::count();
@@ -42,10 +39,8 @@ class HomeController extends Controller
 
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function timeline()
+    public function timeline(): View
     {
         $experiences = Experience::orderBy('ended_at', 'DESC')->orderby('started_at', 'DESC')->get();
 

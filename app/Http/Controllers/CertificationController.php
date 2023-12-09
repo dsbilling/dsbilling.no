@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Certification;
 use App\Models\Company;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 use Spatie\Tags\Tag;
 
 class CertificationController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $certifications = Certification::orderBy('issued_at', 'desc')->paginate(10);
 
@@ -24,10 +24,8 @@ class CertificationController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         $companies = Company::pluck('name', 'id');
         $tags = Tag::all();
@@ -37,11 +35,8 @@ class CertificationController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -89,22 +84,16 @@ class CertificationController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Certification  $certification
-     * @return \Illuminate\Http\Response
      */
-    public function show(Certification $certification)
+    public function show(Certification $certification): View
     {
         return view('certification.show', compact('certification'));
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Certification  $certification
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Certification $certification)
+    public function edit(Certification $certification): View
     {
         $companies = Company::all();
         $tags = Tag::all();
@@ -114,12 +103,8 @@ class CertificationController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Certification  $certification
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Certification $certification)
+    public function update(Request $request, Certification $certification): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -168,11 +153,8 @@ class CertificationController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Certification  $certification
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Certification $certification)
+    public function destroy(Certification $certification): RedirectResponse
     {
         $certification->delete();
         session()->flash('flash.banner', 'Deleted Certification!');

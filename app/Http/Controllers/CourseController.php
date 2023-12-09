@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Course;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 use Spatie\Tags\Tag;
 
 class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $courses = Course::orderBy('issued_at', 'desc')->paginate(10);
 
@@ -24,10 +24,8 @@ class CourseController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
         $companies = Company::pluck('name', 'id');
         $tags = Tag::all();
@@ -37,11 +35,8 @@ class CourseController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -85,22 +80,16 @@ class CourseController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(Course $course): View
     {
         return view('course.show', compact('course'));
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Course $course): View
     {
         $companies = Company::all();
         $tags = Tag::all();
@@ -110,12 +99,8 @@ class CourseController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Course $course): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => [
@@ -160,11 +145,8 @@ class CourseController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Course $course): RedirectResponse
     {
         $course->delete();
         session()->flash('flash.banner', 'Deleted Course!');
