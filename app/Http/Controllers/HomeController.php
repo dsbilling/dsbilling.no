@@ -19,9 +19,9 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::where('published_at', '<=', now())->where('draft', false)->orderByDesc('published_at')->take(3)->get();
-        $poststotalcount = Post::where('published_at', '<=', now())->where('draft', false)->count();
+        $experiences = Experience::where('type', 'full-time')->orderByRaw('-ended_at ASC')->orderby('started_at', 'DESC')->take(5)->get();
 
-        return view('home', compact('posts', 'poststotalcount'));
+        return view('home', compact('posts', 'experiences'));
     }
 
     /**

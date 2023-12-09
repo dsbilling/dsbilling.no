@@ -102,25 +102,27 @@
                         <span class="ml-3">Experience</span>
                     </h2>
                     <ol class="mt-6 space-y-4">
-                        <li class="flex gap-4">
-                            <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-slate-800/5 ring-1 ring-slate-900/5 dark:border dark:border-slate-700/50 dark:bg-slate-800 dark:ring-0">
-                                <img alt="" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="h-7 w-7" style="color:transparent" src="">
-                            </div>
-                            <dl class="flex flex-auto flex-wrap gap-x-2">
-                                <dt class="sr-only">Company</dt>
-                                <dd class="w-full flex-none text-sm font-medium text-slate-900 dark:text-slate-100">
-                                    Kilobyte AS
-                                </dd>
-                                <dt class="sr-only">Role</dt>
-                                <dd class="text-xs text-slate-500 dark:text-slate-300">Founder & Lead Developer</dd>
-                                <dt class="sr-only">Date</dt>
-                                <dd class="ml-auto text-xs text-slate-400 dark:text-slate-400">
-                                    <time datetime="01-2022">February 2022</time>
-                                    <span aria-hidden="true">&mdash;</span>
-                                    <time datetime="2023">Now</time>
-                                </dd>
-                            </dl>
-                        </li>
+                        @foreach($experiences as $experience)
+                            <li class="flex gap-4">
+                                <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-slate-800/5 ring-1 ring-slate-900/5 dark:border dark:border-slate-700/50 dark:bg-slate-800 dark:ring-0">
+                                    <img alt="{{ $experience->company->name }}" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="h-7 w-7" style="color:transparent" src="">
+                                </div>
+                                <dl class="flex flex-auto flex-wrap gap-x-2">
+                                    <dt class="sr-only">Company</dt>
+                                    <dd class="w-full flex-none text-sm font-medium text-slate-900 dark:text-slate-100">
+                                        {{ $experience->company->name }}
+                                    </dd>
+                                    <dt class="sr-only">Role</dt>
+                                    <dd class="text-xs text-slate-500 dark:text-slate-300">{{ $experience->title }}</dd>
+                                    <dt class="sr-only">Date</dt>
+                                    <dd class="ml-auto text-xs text-slate-400 dark:text-slate-400">
+                                        <time datetime="{{ $experience->started_at->isoFormat('MMMM YYYY') }}">{{ $experience->started_at->isoFormat('MMMM YYYY') }}</time>
+                                        <span aria-hidden="true">&mdash;</span>
+                                        <time datetime="{{ $experience->ended_at ? $experience->ended_at->isoFormat('MMMM YYYY') : 'Now' }}">{{ $experience->ended_at ? $experience->ended_at->isoFormat('MMMM YYYY') : 'Now' }}</time>
+                                    </dd>
+                                </dl>
+                            </li>
+                        @endforeach
                     </ol>
                     <a class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-slate-100 font-medium text-slate-900 hover:bg-slate-200 active:bg-slate-100 active:text-slate-900/60 dark:bg-slate-800/50 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:active:bg-slate-800/50 dark:active:text-slate-50/70 group mt-6 w-full"
                        href="{{ route('cv') }}">Download my CV
