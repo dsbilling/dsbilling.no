@@ -4,7 +4,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ExperienceResource\Pages;
 use App\Models\Experience;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -25,11 +27,14 @@ class ExperienceResource extends Resource
                 TextInput::make('title')
                     ->autofocus()
                     ->required()
-                    ->placeholder(__('Title'))
-                    ->columnSpan(2),
+                    ->placeholder(__('Title')),
+
+                Select::make('company_id')
+                    ->relationship('company', 'name')
+                    ->required()
+                    ->placeholder(__('Company')),
 
                 TextInput::make('department')
-                    ->autofocus()
                     ->placeholder(__('Department')),
 
                 Select::make('type')
@@ -47,26 +52,17 @@ class ExperienceResource extends Resource
                     ->required()
                     ->placeholder(__('Type')),
 
-                TextInput::make('description')
-                    ->autofocus()
-                    ->required()
+                Textarea::make('description')
                     ->placeholder(__('Description'))
-                    ->columnSpan(2),
+                    ->columnSpan(2)
+                    ->rows(5),
 
-                TextInput::make('started_at')
-                    ->autofocus()
+                DatePicker::make('started_at')
                     ->required()
                     ->placeholder(__('Started At')),
 
-                TextInput::make('ended_at')
-                    ->autofocus()
-                    ->required()
+                DatePicker::make('ended_at')
                     ->placeholder(__('Ended At')),
-
-                Select::make('company_id')
-                    ->relationship('company', 'name')
-                    ->required()
-                    ->placeholder(__('Company')),
             ]);
     }
 
