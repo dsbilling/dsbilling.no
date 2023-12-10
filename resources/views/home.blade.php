@@ -109,7 +109,7 @@
                                 </div>
                                 <dl class="flex flex-auto flex-wrap gap-x-2">
                                     <dt class="sr-only">Company</dt>
-                                    <dd class="w-full flex-none text-sm font-medium text-slate-900 dark:text-slate-100">
+                                    <dd class="w-full flex-none text-sm font-semibold text-slate-900 dark:text-slate-100">
                                         {{ $experience->company->name }}
                                     </dd>
                                     <dt class="sr-only">Role</dt>
