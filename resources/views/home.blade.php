@@ -105,7 +105,7 @@
                         @foreach($experiences as $experience)
                             <li class="flex gap-4">
                                 <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-slate-800/5 ring-1 ring-slate-900/5 dark:border dark:border-slate-700/50 dark:bg-slate-800 dark:ring-0 overflow-clip">
-                                    <img alt="{{ $experience->company->name }}" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="h-10 w-10" src="{{ $experience->company->logo }}">
+                                    <img alt="{{ $experience->company->name }}" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="h-10 w-10 text-transparent" src="{{ $experience->company->logo }}">
                                 </div>
                                 <dl class="flex flex-auto flex-wrap gap-x-2">
                                     <dt class="sr-only">Company</dt>
