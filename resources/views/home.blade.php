@@ -104,12 +104,12 @@
                     <ol class="mt-6 space-y-4">
                         @foreach($experiences as $experience)
                             <li class="flex gap-4">
-                                {{--<div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-slate-800/5 ring-1 ring-slate-900/5 dark:border dark:border-slate-700/50 dark:bg-slate-800 dark:ring-0">
-                                    <img alt="{{ $experience->company->name }}" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="h-7 w-7" style="color:transparent" src="">
-                                </div>--}}
+                                <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-slate-800/5 ring-1 ring-slate-900/5 dark:border dark:border-slate-700/50 dark:bg-slate-800 dark:ring-0 overflow-clip">
+                                    <img alt="{{ $experience->company->name }}" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="h-10 w-10 text-transparent" src="{{ $experience->company->logo }}">
+                                </div>
                                 <dl class="flex flex-auto flex-wrap gap-x-2">
                                     <dt class="sr-only">Company</dt>
-                                    <dd class="w-full flex-none text-sm font-medium text-slate-900 dark:text-slate-100">
+                                    <dd class="w-full flex-none text-sm font-semibold text-slate-900 dark:text-slate-100">
                                         {{ $experience->company->name }}
                                     </dd>
                                     <dt class="sr-only">Role</dt>

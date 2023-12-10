@@ -6,6 +6,7 @@ use App\Filament\Resources\CompanyResource\Pages;
 use App\Filament\Resources\CompanyResource\RelationManagers\CertificationsRelationManager;
 use App\Filament\Resources\CompanyResource\RelationManagers\CoursesRelationManager;
 use App\Models\Company;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -26,6 +27,12 @@ class CompanyResource extends Resource
                     ->autofocus()
                     ->required()
                     ->placeholder(__('Name')),
+
+                FileUpload::make('logo')
+                    ->image()
+                    ->directory('companies')
+                    ->imageCropAspectRatio('1:1')
+                    ->preserveFilenames(),
             ]);
     }
 

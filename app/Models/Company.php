@@ -12,11 +12,11 @@ class Company extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name',
+        'logo',
+    ];
 
-    /**
-     * Get the certifications for the company.
-     */
     public function certifications(): HasMany
     {
         return $this->hasMany(Certification::class);
