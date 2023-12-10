@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.1.2 - 2023-12-10
+
+### What's Changed
+
+* Added logo to companies by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/72
+
+**Full Changelog**: https://github.com/dsbilling/dsbilling.no/compare/2.1.1...2.1.2
+
 ## 2.1.1 - 2023-12-09
 
 **Full Changelog**: https://github.com/dsbilling/dsbilling.no/compare/2.1.0...2.1.1
