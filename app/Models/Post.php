@@ -21,18 +21,20 @@ class Post extends Model implements Viewable
 
     protected $removeViewsOnDelete = true;
 
-    public static function boot()
+    public static function boot(): void
     {
         parent::boot();
 
         self::creating(function ($model) {
             $model->uuid = Str::uuid()->toString();
+            $model->slug = Str::slug($model->title);
         });
 
         self::updating(function ($model) {
             if (! $model->uuid) {
                 $model->uuid = Str::uuid()->toString();
             }
+            $model->slug = Str::slug($model->title);
         });
     }
 
