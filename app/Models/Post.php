@@ -28,6 +28,7 @@ class Post extends Model implements Viewable
         self::creating(function ($model) {
             $model->uuid = Str::uuid()->toString();
             $model->slug = Str::slug($model->title);
+            $model->user_id = auth()->id();
         });
 
         self::updating(function ($model) {
