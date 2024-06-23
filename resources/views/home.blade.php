@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="items-center mx-auto mt-12 lg:px-4 lg:mt-0 sm:mx-0 w-full">
-            <img alt="Daniel S. Billing" src="{{ asset('img/daniel.jpg') }}" class="w-56 h-56 mx-auto rounded-full">
+            <img alt="Daniel S. Billing" src="{{ asset('img/dsbilling_1024.jpg') }}" class="w-56 h-56 mx-auto rounded-full">
         </div>
     </div>
 
