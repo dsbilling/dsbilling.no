@@ -7,12 +7,10 @@
                 </h1>
                 <div class="mt-4 text-gray-800 dark:text-gray-100">
                     <p>I currently work as a
-                        <x-gradient-text>Backend Lead</x-gradient-text>
+                        <x-gradient-text>Tech Lead</x-gradient-text>
                         for
-                        <x-link-text link="https://izy.no" noreferrer="true">Izy AS</x-link-text>
-                        , where we develop platform for landlords to take care of tenants' needs in a digital
-                        everyday life, with an associated mobile application for communication, trade, information
-                        and booking.
+                        <x-link-text link="https://tieconnect.com" noreferrer="true">TIE Connect AS</x-link-text>
+                        , where we develop platform where we connect students, companies and universities to solve the challenges of tomorrow.
                     </p>
                     <p class="mt-2">In January 2022, I started my own company called
                         <x-link-text link="https://kilobyte.no">

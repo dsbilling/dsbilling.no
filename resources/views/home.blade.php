@@ -7,7 +7,7 @@
                 Hi there, I'm Daniel 👋
             </h1>
             <p class="mt-6 text-base text-slate-600 dark:text-slate-300">
-                I am a Tech Lead and Senior Fullstack Developer from Norway. I have a passion for creating and developing digital solutions. Get to know <x-link-text link="{{ route('about') }}" target="_self">about me</x-link-text> or get in touch using any of my socials!
+                I am a Tech Lead and Lead Fullstack Developer from Norway. I have a passion for creating and developing digital solutions. Get to know <x-link-text link="{{ route('about') }}" target="_self">about me</x-link-text> or get in touch using any of my socials!
             </p>
             <div class="mt-6 space-x-4 justify-between">
                 @foreach (Social::orderBy('name')->get() as $social)
