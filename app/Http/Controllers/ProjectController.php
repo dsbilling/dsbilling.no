@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -17,6 +16,7 @@ class ProjectController extends Controller
     {
         seo()->title('Projects - '.config('app.name'));
         $projects = Project::active()->orderByDesc('start_date')->paginate(12);
+
         return view('projects.index', compact('projects'));
     }
 
