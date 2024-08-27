@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.1.3 - 2024-08-27
+
+### What's Changed
+
+* Bump phenx/php-svg-lib from 0.5.0 to 0.5.1 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/73
+* Bump dompdf/dompdf from 2.0.3 to 2.0.4 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/74
+* Bump aglipanci/laravel-pint-action from 2.3.0 to 2.3.1 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/75
+* Bump follow-redirects from 1.15.3 to 1.15.4 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/76
+* Bump vite from 3.2.7 to 3.2.8 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/77
+* Bump actions/cache from 3 to 4 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/78
+* Bump phenx/php-svg-lib from 0.5.1 to 0.5.2 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/79
+* Bump follow-redirects from 1.15.4 to 1.15.6 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/80
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.0.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/81
+* Bump vite from 3.2.8 to 3.2.10 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/82
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/83
+* Bump dependabot/fetch-metadata from 2.0.0 to 2.1.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/84
+* Bump braces from 3.0.2 to 3.0.3 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/85
+* Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/dsbilling/dsbilling.no/pull/86
+
+**Full Changelog**: https://github.com/dsbilling/dsbilling.no/compare/2.1.2...2.1.3
+
 ## 2.1.2 - 2023-12-10
 
 ### What's Changed
