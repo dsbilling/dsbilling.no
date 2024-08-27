@@ -36,7 +36,7 @@
                         </article>
                     @empty
                         <div class="w-full m-auto text-center">
-                            <x-gradient-text>{{ Inspiring::quote() }}</x-gradient-text>
+                            <x-gradient-text>{!! Inspiring::quote() !!}</x-gradient-text>
                         </div>
                     @endforelse
                 </div>
