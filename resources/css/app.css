@@ -1,5 +1,4 @@
 @import '@fortawesome/fontawesome-free';
-@import 'easymde/dist/easymde.min.css';
 
 @tailwind base;
 @tailwind components;
@@ -7,8 +6,4 @@
 
 .svg-inline--fa {
     margin-right: 0.25rem !important;
-}
-
-.editor-toolbar {
-    background-color: #fff;
 }

@@ -20,8 +20,6 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.6.0",
-        "easymde": "^2.18.0",
-        "flatpickr": "^4.6.13",
         "shiki": "^1.17.7"
     },
     "resolutions": {
