@@ -13,7 +13,7 @@
         <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl break-word mt-4"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
 
         <p class="text-xs sm:text-sm font-medium text-gray-400 mt-2">
-            {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }} &middot; {{ $post->likes_count }} {{ Str::plural('like', $post->likes_count) }} {!! $post->updated_at > $post->published_at ? ' &middot; Updated ' . $post->updated_at->isoFormat('D. MMMM YYYY [at] HH:mm') : '' !!}
+            {{ read_time($post->body)}} &middot;  {{ App\Helpers\NumberHelper::nearestK(views($post)->count()) }} {{ Str::plural('view', views($post)->count()) }} &middot; {{ $post->likes_count }} {{ Str::plural('like', $post->likes_count) }} {!! $post->updated_at > $post->published_at->addMinutes(10) ? ' &middot; Updated ' . $post->updated_at->isoFormat('D. MMMM YYYY [at] HH:mm') : '' !!}
             {{--@foreach ($post->tags as $tag)
                 <span class="inline-flex items-center justify-center mr-1 font-semibold leading-none uppercase">{{ $tag->name }}</span>
             @endforeach--}}
