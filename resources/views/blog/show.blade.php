@@ -8,7 +8,7 @@
             Back to the blog
         </a>--}}
 
-        <time datetime="{{ $post->published_at->isoFormat('Y-m-d') }}" class="order-first flex items-center text-sm sm:text-base text-slate-400 dark:text-slate-500"><span class="h-4 w-0.5 rounded-full bg-slate-200 dark:bg-slate-500"></span><span class="ml-3">{{ $post->published_at->isoFormat('D. MMMM YYYY') }}</span></time>
+        <time datetime="{{ $post->published_at->isoFormat('Y-m-d') }}" class="order-first flex items-center text-sm sm:text-base text-slate-400 dark:text-slate-500"><span class="h-4 w-0.5 rounded-full bg-slate-200 dark:bg-slate-500"></span><span class="ml-3">{{ $post->published_at->isoFormat('D. MMMM YYYY [at] HH:mm') }}</span></time>
 
         <h1 class="text-3xl font-semibold sm:text-4xl lg:text-5xl break-word mt-4"><x-gradient-text>{{ $post->title }}</x-gradient-text></h1>
 
