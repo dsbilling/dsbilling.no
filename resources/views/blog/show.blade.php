@@ -43,7 +43,7 @@
         </div>--}}
 
         <article class="w-full mt-6 prose max-w-2xl lg:mt-10 dark:prose-invert prose-a:text-orange-500 prose-h1:text-4xl">
-            <x-markdown>{!! $post->body !!}</x-markdown>
+            @markdown($post->body)
         </article>
 
         <livewire:like :post="$post" />
