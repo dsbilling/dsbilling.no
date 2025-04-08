@@ -15,7 +15,7 @@
         "filament/filament": "^3.2",
         "filament/spatie-laravel-tags-plugin": "^3.0-stable",
         "graham-campbell/markdown": "^15.2",
-        "kilobyteno/laravel-user-guest-like": "^1.1",
+        "kilobyteno/laravel-user-guest-like": "^1.4.0",
         "laravel/framework": "^11.44",
         "laravel/jetstream": "^5.0",
         "laravel/sanctum": "^4.0",
