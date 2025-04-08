@@ -23,10 +23,13 @@ class Experience extends Model
         'company_id',
     ];
 
-    protected $casts = [
-        'started_at' => 'datetime',
-        'ended_at' => 'datetime',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'started_at' => 'datetime',
+            'ended_at' => 'datetime',
+        ];
+    }
 
     /**
      * Get the company for the certification.

@@ -54,13 +54,16 @@ class Post extends Model implements Viewable
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * Get the attributes that should be cast.
      *
-     * @var array
+     * @return array<string, string>
      */
-    protected $casts = [
-        'published_at' => 'datetime',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'published_at' => 'datetime',
+        ];
+    }
 
     protected $withCount = [
         'likes',
