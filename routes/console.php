@@ -3,8 +3,6 @@
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
-use Spatie\Health\Commands\RunHealthChecksCommand;
-use Spatie\Health\Commands\ScheduleCheckHeartbeatCommand;
 use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
 
 /*
@@ -22,8 +20,5 @@ use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');*/
 
-// Often commands
-Schedule::command(RunHealthChecksCommand::class)->everyMinute();
-Schedule::command(ScheduleCheckHeartbeatCommand::class)->everyMinute();
 // Daily commands
 Schedule::command('model:prune', ['--model' => MonitoredScheduledTaskLogItem::class])->daily();
