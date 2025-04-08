@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('hacker', function (Blueprint $table) {
-            $table->id();
-            $table->ipAddress('ip')->nullable();
-            $table->string('user_agent')->nullable();
-            $table->timestamps();
-        });
+        // Drop the unused tables
+        Schema::dropIfExists('hacker');
+        Schema::dropIfExists('health_check_result_history_items');
+        Schema::dropIfExists('monitored_scheduled_task_log_items');
+        Schema::dropIfExists('monitored_scheduled_tasks');
     }
 
     /**
