@@ -7,10 +7,10 @@
                 </h1>
                 <div class="mt-4 text-gray-800 dark:text-gray-100">
                     <p>I currently work as a
-                        <x-gradient-text>Tech Lead</x-gradient-text>
+                        <x-gradient-text>CTO</x-gradient-text>
                         for
-                        <x-link-text link="https://tieconnect.com" noreferrer="true">TIE Connect AS</x-link-text>
-                        , where we develop platform where we connect students, companies and universities to solve the challenges of tomorrow.
+                        <x-link-text link="https://voids.no" noreferrer="true">Voids AS</x-link-text>
+                        , where we develop a platform that simplifies parking management and leasing, from large facilities to private spots, all in one app.
                     </p>
                     <p class="mt-2">In January 2022, I started my own company called
                         <x-link-text link="https://kilobyte.no">
