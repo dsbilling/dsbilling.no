@@ -30,7 +30,7 @@
         "spatie/laravel-permission": "^6.2",
         "spatie/laravel-schedule-monitor": "^3.7",
         "spatie/laravel-tags": "^4.6",
-        "torchlight/torchlight-commonmark": "^0.5.5"
+        "torchlight/torchlight-commonmark": "dev-main"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10",
@@ -86,5 +86,11 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+         {
+             "type": "vcs",
+             "url": "https://github.com/caendesilva/torchlight-commonmark-php"
+         }
+     ]
 }
