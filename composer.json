@@ -11,7 +11,6 @@
         "php": "^8.2",
         "barryvdh/laravel-dompdf": "^2.1",
         "cyrildewit/eloquent-viewable": "^7.0",
-        "doctrine/dbal": "^3.5",
         "filament/filament": "^3.3",
         "filament/spatie-laravel-tags-plugin": "^3.3",
         "graham-campbell/markdown": "^15.2",
