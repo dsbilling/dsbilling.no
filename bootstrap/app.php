@@ -1,14 +1,21 @@
 <?php
 
+use App\Http\Middleware\AddSeoDefaults;
 use App\Providers\AppServiceProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Laravel\Jetstream\Http\Middleware\AuthenticateSession;
 use Sentry\Laravel\Integration;
+use Spatie\Permission\Middleware\PermissionMiddleware;
+use Spatie\Permission\Middleware\RoleMiddleware;
+use Spatie\Permission\Middleware\RoleOrPermissionMiddleware;
+use Spatie\Permission\PermissionServiceProvider;
+use Torchlight\Middleware\RenderTorchlight;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withProviders([
-        \Spatie\Permission\PermissionServiceProvider::class,
+        PermissionServiceProvider::class,
     ])
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
@@ -21,27 +28,21 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectGuestsTo(fn () => route('login'));
         $middleware->redirectUsersTo(AppServiceProvider::HOME);
 
-        $middleware->append(\Torchlight\Middleware\RenderTorchlight::class);
+        $middleware->append(RenderTorchlight::class);
 
         $middleware->web([
-            \Laravel\Jetstream\Http\Middleware\AuthenticateSession::class,
-            \App\Http\Middleware\AddSeoDefaults::class,
+            AuthenticateSession::class,
+            AddSeoDefaults::class,
         ]);
 
         $middleware->throttleApi();
 
         $middleware->alias([
-            'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
-            'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
-            'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
+            'permission' => PermissionMiddleware::class,
+            'role' => RoleMiddleware::class,
+            'role_or_permission' => RoleOrPermissionMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        /*$exceptions->reportable(function (Throwable $e) {
-            if ($this->shouldReport($e) && app()->bound('sentry')) {
-                app('sentry')->captureException($e);
-            }
-        });
-
-        Integration::handles($exceptions);*/
+        Integration::handles($exceptions);
     })->create();
