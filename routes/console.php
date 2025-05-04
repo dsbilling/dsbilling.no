@@ -2,6 +2,8 @@
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
+use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Artisan;
 /*Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');*/
+
+// Daily commands
+Schedule::command('model:prune', ['--model' => MonitoredScheduledTaskLogItem::class])->daily();
