@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\HomeController;
+use App\Livewire\LiterTool;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +33,7 @@ Route::get('/uses', function () {
 })->name('uses');
 
 Route::prefix('tools')->group(function () {
-    Route::get('/liter', \App\Livewire\LiterTool::class)->name('liter-calculator');
+    Route::get('/liter', LiterTool::class)->name('liter-calculator');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'role:super-admin'])->group(function () {
