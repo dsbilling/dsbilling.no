@@ -30,9 +30,9 @@
     @endproduction
 
     {{-- Rybbit Analytics Script --}}
-    @production
+    @if(app()->environment('production') && config('services.rybbit.site_id') && config('services.rybbit.instance_url'))
         <script async defer src="{{ config('services.rybbit.instance_url', 'https://app.rybbit.io') }}/api/script.js" data-site-id="{{ config('services.rybbit.site_id') }}"></script>
-    @endproduction
+    @endif
 </head>
 <body class="flex h-full bg-slate-50 dark:bg-slate-900 {{ config('app.debug') ? 'debug-screens' : '' }}">
 <div class="flex w-full my-12">
