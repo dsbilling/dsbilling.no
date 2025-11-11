@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'rybbit' => [
+        'instance_url' => env('RYBBIT_INSTANCE_URL'),
+        'site_id' => env('RYBBIT_SITE_ID'),
+    ],
+
 ];
