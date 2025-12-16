@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,7 @@ Route::get('/cv', function () {
 })->name('cv');
 
 Route::resource('blog', BlogController::class);
+Route::resource('projects', ProjectController::class);
 
 Route::get('/uses', function () {
     return redirect()->route('blog.show', ['blog' => config('blog.uses')]);
