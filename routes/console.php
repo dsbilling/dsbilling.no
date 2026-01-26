@@ -22,7 +22,6 @@ use Spatie\ScheduleMonitor\Models\MonitoredScheduledTaskLogItem;
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');*/
 
-
 // Often commands
 Schedule::command(RunHealthChecksCommand::class)->everyMinute();
 Schedule::command(ScheduleCheckHeartbeatCommand::class)->everyMinute();
