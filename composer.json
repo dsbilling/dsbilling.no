@@ -24,13 +24,10 @@
         "mtownsend/read-time": "^2.0",
         "romanzipp/laravel-seo": "^2.7",
         "sentry/sentry-laravel": "^4.3",
-        "spatie/cpu-load-health-check": "^1.0",
-        "spatie/laravel-health": "^1.27",
         "spatie/laravel-honeypot": "^4.5",
         "spatie/laravel-permission": "^6.2",
-        "spatie/laravel-schedule-monitor": "^3.7",
         "spatie/laravel-tags": "^4.6",
-        "torchlight/torchlight-commonmark": "^0.5.5"
+        "torchlight/torchlight-commonmark": "^0.6.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10",
