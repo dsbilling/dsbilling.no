@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\AppServiceProvider;
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
 use Laravel\Jetstream\Jetstream;
@@ -30,7 +31,7 @@ test('new users can register', function () {
     ]);
 
     $this->assertAuthenticated();
-    $response->assertRedirect(RouteServiceProvider::HOME);
+    $response->assertRedirect(AppServiceProvider::HOME);
 })->skip(function () {
     return ! Features::enabled(Features::registration());
 }, 'Registration support is not enabled.');
