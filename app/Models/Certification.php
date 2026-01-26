@@ -23,10 +23,13 @@ class Certification extends Model
         'file_path',
     ];
 
-    protected $casts = [
-        'issued_at' => 'datetime',
-        'expiration_at' => 'datetime',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'issued_at' => 'datetime',
+            'expiration_at' => 'datetime',
+        ];
+    }
 
     /**
      * Get the company for the certification.

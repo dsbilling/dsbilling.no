@@ -22,9 +22,12 @@ class Course extends Model
         'file_path',
     ];
 
-    protected $casts = [
-        'issued_at' => 'datetime',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'issued_at' => 'datetime',
+        ];
+    }
 
     /**
      * Get the company for the course.
