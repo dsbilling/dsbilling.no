@@ -4,6 +4,7 @@ namespace App\Models;
 
 use CyrildeWit\EloquentViewable\Contracts\Viewable;
 use CyrildeWit\EloquentViewable\InteractsWithViews;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -78,7 +79,8 @@ class Post extends Model implements Viewable
         return $this->belongsTo(User::class);
     }
 
-    public function scopeIsPublished($query)
+    #[Scope]
+    protected function isPublished($query)
     {
         return $query->where('draft', false)->where('published_at', '<=', now());
     }
