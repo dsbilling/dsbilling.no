@@ -39,7 +39,7 @@ Route::prefix('tools')->group(function () {
 Route::middleware(['auth:sanctum', 'verified', 'role:super-admin'])->group(function () {
     Route::prefix('export')->group(function () {
         Route::get('/cv', [ExportController::class, 'cv'])->name('export.cv');
-        Route::get('/courses', [ExportController::class, 'courses'])->name('export.cv');
+        Route::get('/courses', [ExportController::class, 'courses'])->name('export.courses');
     });
 });
 

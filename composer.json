@@ -1,5 +1,5 @@
 {
-    "name": "danielrtrd/daniel.rtrd.no",
+    "name": "dsbilling/dsbilling.no",
     "type": "project",
     "description": "Just my personal website",
     "keywords": [
@@ -8,14 +8,14 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "barryvdh/laravel-dompdf": "^2.1",
         "cyrildewit/eloquent-viewable": "^7.0",
         "filament/filament": "^3.3",
         "filament/spatie-laravel-tags-plugin": "^3.3",
         "graham-campbell/markdown": "^15.2",
         "kilobyteno/laravel-user-guest-like": "^1.4.0",
-        "laravel/framework": "^11.44",
+        "laravel/framework": "^11.48",
         "laravel/jetstream": "^5.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
@@ -25,9 +25,8 @@
         "sentry/sentry-laravel": "^4.3",
         "spatie/laravel-honeypot": "^4.5",
         "spatie/laravel-permission": "^6.2",
-        "spatie/laravel-schedule-monitor": "^3.7",
         "spatie/laravel-tags": "^4.6",
-        "torchlight/torchlight-commonmark": "dev-main"
+        "torchlight/torchlight-commonmark": "^0.6.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.10",
@@ -83,11 +82,5 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
-    "repositories": [
-         {
-             "type": "vcs",
-             "url": "https://github.com/caendesilva/torchlight-commonmark-php"
-         }
-     ]
+    "prefer-stable": true
 }
