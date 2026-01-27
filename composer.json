@@ -1,5 +1,5 @@
 {
-    "name": "danielrtrd/daniel.rtrd.no",
+    "name": "dsbilling/dsbilling.no",
     "type": "project",
     "description": "Just my personal website",
     "keywords": [
@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "barryvdh/laravel-dompdf": "^2.1",
         "cyrildewit/eloquent-viewable": "^7.0",
         "doctrine/dbal": "^3.5",
