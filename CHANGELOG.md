@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.2.0 - 2026-01-27
+
+### What's Changed
+
+* Bump axios from 1.6.0 to 1.7.4 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/88
+* Bump vite from 3.2.10 to 3.2.11 in the npm_and_yarn group by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/89
+* Bump rollup from 4.21.3 to 4.22.4 in the npm_and_yarn group by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/90
+* Bump symfony/http-client from 7.1.5 to 7.1.7 in the composer group by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/91
+* Bump the composer group with 2 updates by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/92
+* Bump laravel/framework from 10.48.22 to 10.48.23 in the composer group by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/93
+* Bump symfony/http-client from 7.1.7 to 7.1.8 in the composer group by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/94
+* Bump league/commonmark from 2.5.3 to 2.6.0 in the composer group by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/95
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/96
+* Bump vite from 5.4.6 to 5.4.14 in the npm_and_yarn group by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/97
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/98
+* Bump getsentry/action-release from 1 to 2 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/99
+* Bump getsentry/action-release from 2 to 3 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/100
+* Bump the npm_and_yarn group across 1 directory with 4 updates by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/101
+* Bump vite from 6.2.3 to 6.2.4 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/102
+* Bump vite from 6.2.4 to 6.2.5 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/103
+* Bump vite from 6.2.5 to 6.2.6 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/105
+* Bump vite from 6.2.6 to 6.3.4 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/106
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/107
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/108
+* Bump form-data from 4.0.0 to 4.0.4 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/109
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/110
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/111
+* Bump vite from 6.3.4 to 6.3.6 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/112
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/113
+* Bump vite from 6.3.6 to 6.4.1 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/114
+* Add Rybbit analytics by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/115
+* Bump glob from 10.4.5 to 10.5.0 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/116
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/117
+* Bump actions/cache from 4 to 5 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/118
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/119
+* Bump lodash from 4.17.21 to 4.17.23 in the npm_and_yarn group across 1 directory by @dependabot[bot] in https://github.com/dsbilling/dsbilling.no/pull/120
+* Laravel 11.x Shift by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/121
+* Laravel 11.x Shift by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/104
+* Laravel 12.x Shift by @dsbilling in https://github.com/dsbilling/dsbilling.no/pull/122
+
+**Full Changelog**: https://github.com/dsbilling/dsbilling.no/compare/2.1.3...2.2.0
+
 ## 2.1.3 - 2024-08-27
 
 ### What's Changed
