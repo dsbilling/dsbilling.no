@@ -24,9 +24,15 @@
     <!-- Scripts -->
     @vite('resources/js/app.js')
 
+    {{-- Plausible Analytics Script --}}
     @production
         <script defer data-domain="dsbilling.no" src="https://plausible.io/js/plausible.js"></script>
     @endproduction
+
+    {{-- Rybbit Analytics Script --}}
+    @if(app()->environment('production') && config('services.rybbit.site_id') && config('services.rybbit.instance_url'))
+        <script async defer src="{{ config('services.rybbit.instance_url', 'https://app.rybbit.io') }}/api/script.js" data-site-id="{{ config('services.rybbit.site_id') }}"></script>
+    @endif
 </head>
 <body class="flex h-full bg-slate-50 dark:bg-slate-900 {{ config('app.debug') ? 'debug-screens' : '' }}">
 <div class="flex w-full my-12">
