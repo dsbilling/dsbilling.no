@@ -17,6 +17,7 @@
         "kilobyteno/laravel-user-guest-like": "^1.4.0",
         "laravel/framework": "^12.48",
         "laravel/jetstream": "^5.3",
+        "laravel/nightwatch": "^1.22",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.5",
