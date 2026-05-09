@@ -2,25 +2,15 @@
 
 namespace App\Console\Commands;
 
+use Illuminate\Console\Attributes\Description;
+use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 
+#[Signature('app:update')]
+#[Description('Update the application')]
 class Update extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'app:update';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Update the application';
-
     /**
      * Execute the console command.
      */
