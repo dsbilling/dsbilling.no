@@ -49,6 +49,7 @@
                                 <ul class="flex mx-auto w-fit rounded-full bg-white/90 px-3 text-sm font-medium text-slate-800 shadow-lg shadow-slate-800/5 ring-1 ring-slate-900/5 backdrop-blur dark:bg-slate-800/90 dark:text-slate-200 dark:ring-white/10">
                                     <li><x-nav-link-front href="{{ route('home') }}" :active="request()->routeIs('home')">Home</x-nav-link-front></li>
                                     <li><x-nav-link-front href="{{ route('blog.index') }}" :active="request()->routeIs('blog.*')">Blog</x-nav-link-front></li>
+                                    <li><x-nav-link-front href="{{ route('projects.index') }}" :active="request()->routeIs('projects.*')">Projects</x-nav-link-front></li>
                                     <li><x-nav-link-front href="{{ route('about') }}" :active="request()->routeIs('about')">About</x-nav-link-front></li>
                                     @if(config('blog.uses'))
                                         <li><x-nav-link-front href="{{ route('uses') }}">My Setup</x-nav-link-front></li>
