@@ -6953,16 +6953,16 @@
         },
         {
             "name": "spatie/schema-org",
-            "version": "3.23.1",
+            "version": "3.23.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/schema-org.git",
-                "reference": "a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d"
+                "reference": "85def9a383ce0da75a44e839bff95f8e5198ffb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/schema-org/zipball/a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d",
-                "reference": "a8dc1b6fcdd06afc1ab084c3ead9b7a4c3d7a35d",
+                "url": "https://api.github.com/repos/spatie/schema-org/zipball/85def9a383ce0da75a44e839bff95f8e5198ffb7",
+                "reference": "85def9a383ce0da75a44e839bff95f8e5198ffb7",
                 "shasum": ""
             },
             "require": {
@@ -7010,7 +7010,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/schema-org/issues",
-                "source": "https://github.com/spatie/schema-org/tree/3.23.1"
+                "source": "https://github.com/spatie/schema-org/tree/3.23.2"
             },
             "funding": [
                 {
@@ -7022,7 +7022,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-31T14:54:12+00:00"
+            "time": "2026-05-29T07:44:19+00:00"
         },
         {
             "name": "symfony/clock",
