@@ -52,7 +52,21 @@ it('reports success when the source disk is empty', function () {
     Storage::fake('s3');
 
     $this->artisan('storage:migrate-to-s3')
-        ->expectsOutput('No files found on the source disk.')
+        ->expectsOutputToContain('No upload files found on the source disk.')
+        ->assertSuccessful();
+});
+
+it('ignores dotfiles such as gitignore on the source disk', function () {
+    Storage::fake('public');
+    Storage::fake('s3');
+
+    Storage::disk('public')->put('.gitignore', '*');
+    Storage::disk('public')->put('companies/logo.jpg', 'logo-contents');
+
+    $this->artisan('storage:migrate-to-s3', ['--dry-run' => true])
+        ->doesntExpectOutputToContain('Would copy: .gitignore')
+        ->expectsOutputToContain('Would copy: companies/logo.jpg')
+        ->expectsOutputToContain('Would copy: 1')
         ->assertSuccessful();
 });
 

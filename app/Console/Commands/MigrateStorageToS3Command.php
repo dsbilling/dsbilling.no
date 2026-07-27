@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Throwable;
 
 class MigrateStorageToS3Command extends Command
@@ -27,10 +28,18 @@ class MigrateStorageToS3Command extends Command
         $source = Storage::disk($sourceDiskName);
         $destination = Storage::disk($destinationDiskName);
 
-        $files = $source->allFiles();
+        $this->line("Source disk: {$sourceDiskName}");
+        $this->line('Source root: '.$this->diskRoot($sourceDiskName));
+        $this->line("Destination disk: {$destinationDiskName}");
+
+        $files = collect($source->allFiles())
+            ->reject(fn (string $path): bool => $this->shouldIgnore($path))
+            ->values()
+            ->all();
 
         if ($files === []) {
-            $this->info('No files found on the source disk.');
+            $this->warn('No upload files found on the source disk.');
+            $this->line('Run this on the Forge server (or a machine that has storage/app/public/{companies,uploads}), after configuring Cloud AWS_* credentials.');
 
             return self::SUCCESS;
         }
@@ -68,7 +77,7 @@ class MigrateStorageToS3Command extends Command
         bool $force,
         bool $dryRun,
     ): string {
-        if ($destination->exists($path) && ! $force) {
+        if ($this->destinationExists($destination, $path) && ! $force) {
             $this->line("Skipped (exists): {$path}");
 
             return 'skipped';
@@ -93,5 +102,32 @@ class MigrateStorageToS3Command extends Command
         $this->line("Copied: {$path}");
 
         return 'copied';
+    }
+
+    private function destinationExists(Filesystem $destination, string $path): bool
+    {
+        try {
+            return $destination->exists($path);
+        } catch (Throwable) {
+            return false;
+        }
+    }
+
+    private function shouldIgnore(string $path): bool
+    {
+        return Str::of($path)
+            ->explode('/')
+            ->contains(fn (string $segment): bool => Str::startsWith($segment, '.'));
+    }
+
+    private function diskRoot(string $disk): string
+    {
+        $root = config("filesystems.disks.{$disk}.root");
+
+        if (is_string($root) && $root !== '') {
+            return $root;
+        }
+
+        return '(remote / no local root)';
     }
 }
