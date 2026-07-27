@@ -30,6 +30,8 @@ class CompanyResource extends Resource
 
                 FileUpload::make('logo')
                     ->image()
+                    ->disk(config('filament.default_filesystem_disk'))
+                    ->visibility('public')
                     ->directory('companies')
                     ->imageCropAspectRatio('1:1')
                     ->preserveFilenames(),

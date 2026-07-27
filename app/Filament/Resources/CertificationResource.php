@@ -49,6 +49,8 @@ class CertificationResource extends Resource
                 FileUpload::make('file_path')
                     ->required()
                     ->acceptedFileTypes(['application/pdf'])
+                    ->disk(config('filament.default_filesystem_disk'))
+                    ->visibility('public')
                     ->directory('uploads')
                     ->preserveFilenames()
                     ->downloadable(),
