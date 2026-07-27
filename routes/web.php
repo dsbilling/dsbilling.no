@@ -22,10 +22,6 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/cv', function () {
-    return response()->download(public_path('doc/dsbilling_cv.pdf'));
-})->name('cv');
-
 Route::resource('blog', BlogController::class);
 
 Route::get('/uses', function () {
